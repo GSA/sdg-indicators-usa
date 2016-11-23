@@ -86,6 +86,11 @@ header.fixed-header .site-navbar ul {
     padding: 0;
 }
 
+header.usa-unstyled-list:first-child {
+    @media (min-width: 700px) {
+        padding-left: 2.7em;
+    }
+}
 header.fixed-header .site-navbar ul li {
     display: table-cell;
     position: relative;
