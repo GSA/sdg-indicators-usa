@@ -86,8 +86,8 @@ header.fixed-header .site-navbar ul {
     padding: 0;
 }
 
-header.usa-unstyled-list:first-child {
-    @media (min-width: 700px) {
+@media (min-width: 700px) {
+    header.usa-unstyled-list:first-child {
         padding-left: 2.7em;
     }
 }
