@@ -91,6 +91,7 @@ header.usa-unstyled-list:first-child {
         padding-left: 2.7em;
     }
 }
+
 header.fixed-header .site-navbar ul li {
     display: table-cell;
     position: relative;
