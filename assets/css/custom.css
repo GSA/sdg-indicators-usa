@@ -77,7 +77,7 @@ header.fixed-header {
 }
 
 header.fixed-header .site-navbar ul {
-    padding: 32px;
+    padding-left: 32px;
 }
 
 .usa-unstyled-list {
