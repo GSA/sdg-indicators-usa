@@ -1,13 +1,2 @@
-year,percent below poverty,Note
-2007,12.5,
-2008,13.2,
-2009,14.3,
-2010,15.1,
-2011,15,
-2012,15,
-2013a,14.8,redesigned income questions
-2013b,14.5,consistent income questions
-2014,14.8,
-2015,13.5,
-,,
-,,
+year,var_1,var_2
+2015,0,0

@@ -1,4 +1,4 @@
-year,annual_ mean_partmatter_cities_pw(PM2.5),annual_ mean_partmatter_cities_pw(PM10)
+year,annl_mn_pm_cities_pw_pm2_5,annl_mn_pm_cities_pw_pm10
 2007,13.2,33.1
 2008,12.1,30.5
 2009,11.0,27.5
@@ -8,5 +8,3 @@ year,annual_ mean_partmatter_cities_pw(PM2.5),annual_ mean_partmatter_cities_pw(
 2013,10.2,25.0
 2014,10.1,25.1
 2015,9.9,24.8
-2016,,
-2017,,

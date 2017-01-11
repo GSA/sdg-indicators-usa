@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% include head.html %}
 
-  {% include head.html %}
-
-  <body>
-    
-
-      {% include header.html %}
-
-
+{% include header.html %}
 
       <div id="main" class="main-content initiative-content">
 
@@ -56,7 +48,7 @@
 
   {% if sdg_indicator_page.indicator == indicators.indicator_id %}
 
-    {% if sdg_indicator_page.graph == 'longitudinal' %}
+    {% if sdg_indicator_page.graph != "" and sdg_indicator_page.graph != nil %}
       {% assign graph_type = sdg_indicator_page.graph %}
       {% assign graph_set = 'graph ' %}
     {% else %}
@@ -78,8 +70,4 @@
       
     </div>
     
-    {% include scripts.html %}
-    
-  </body>
-
-</html>
+{% include footer.html %}

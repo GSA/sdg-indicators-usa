@@ -77,13 +77,19 @@ header.fixed-header {
 }
 
 header.fixed-header .site-navbar ul {
-    padding: 0;
+    padding-left: 34px;
 }
 
 .usa-unstyled-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+@media (min-width: 700px) {
+    header.usa-unstyled-list:first-child {
+        padding-left: 2.7em;
+    }
 }
 
 header.fixed-header .site-navbar ul li {
@@ -145,6 +151,18 @@ a.nav-toggle {
     float : right;
 }
 
+.intro-paragraph, .goals-list {
+    margin : 1rem 0;
+}
+
+.goals-list {
+    display: inline-block;
+    margin-top : 0;
+}
+
+.goals-list .usa-width-one-fourth {
+    margin-bottom : 0.35765%;
+}
 
 @media (min-width: 700px) {
     .nav-logo-text,

@@ -46,18 +46,32 @@ prose:
       - name: "target"
         field: 
             element: text
-            label: "SDG Target Addressed"  
+            label: "SDG Target Addressed"
             scope: global
       - name: "indicator_definition"
         field: 
             element: textarea
-            label: "Definition of SDG Indicator"  
+            label: "Definition of SDG Indicator"
             scope: global
       - name: "method_of_computation"
         field: 
             element: textarea
-            label: "Method of computation for global SDG indicator"  
-            scope: global      
+            label: "Method of computation for global SDG indicator"
+            scope: global
+      - name: "un_designated_tier"
+        field: 
+            element: text
+            label: "UN Designated Tier"
+            scope: global
+      - name: "un_custodial_agency"
+        field: 
+            element: text
+            label: "UN Custodial Agency"
+            scope: global
+      - name: "graph_title"
+        field: 
+            element: text
+            label: "Graph Title"  
       - name: "actual_indicator_available"
         field: 
             element: text

@@ -9,7 +9,7 @@ permalink: /news/
 **Coming Soon.....**
 
 
-- US National Reporting Platform launches its Pilot (ETA 9/2016)
+- US National Reporting Platform launches its Pilot
 
 - US Cities Engaging in Sustainable Development Goal Activities
 

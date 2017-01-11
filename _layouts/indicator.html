@@ -55,16 +55,27 @@
   {% assign labels = labels | push: indicator.year %}
 {% endfor %}
 
-<h2>Indicator {{ page.indicator }} - {{ indicator_title }}</h2>
+
+<h3>Indicator {{ page.indicator }} - {{ indicator_title }}</h3>
+
+{% if page.graph == 'bar' or page.graph == 'longitudinal' %}
+
+{% assign graph_type = page.graph %}
 
 {% if page.graph == 'longitudinal' %}
-  {% include components/line.html row=row labels=labels %}
+  {% assign graph_type = 'line' %}
+{% endif %}
+
+{% assign graph_template = 'components/' | append: graph_type | append: '.html' %}
+
+  <h4>{{ page.graph_title }}</h4>
+  {% include {{graph_template}} row=row labels=labels %}
 {% endif %}
 
 {{ page.content }}
 
 <div>
-
+      <aside id="secondary" class="related plm-mu"><h4>See metadata tab for sources, definitions, and methodology information</h4></aside>
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#data" aria-controls="data" role="tab" data-toggle="tab">Data</a></li>
@@ -79,18 +90,14 @@
     <div role="tabpanel" class="tab-pane active" id="data">
 
       <div class="datatable-container">
-
+        <h4>{{ page.graph_title }}</h4>
         <div id="datatable"></div>
 
-        <aside id="secondary" class="related plm-mu">
-
-          <h4>See metadata tab for sources, definitions, and methodology information</h4>
 
           <div class="button_wrapper">
               <a class="usa-button usa-button-big" href="{{ site.baseurl }}/data/{{ dataset_name }}.csv">Download CSV</a>
           </div>
-
-        </aside>        
+        
 
 
       </div>
