@@ -56,7 +56,7 @@
 {% endfor %}
 
 <h2>Indicator {{ page.indicator }} - {{ indicator_title }}</h2>
-
+              <h3>Actual indicator available</h3>
 {% if page.graph == 'longitudinal' %}
   {% include components/line.html row=row labels=labels %}
 {% endif %}
