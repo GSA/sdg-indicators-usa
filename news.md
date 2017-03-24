@@ -1,16 +1,16 @@
 ---
 layout: page
-title: News & Events
+title: Noticias y Eventos
 permalink: /news/
 ---
 
-### Check this page for news regarding the reporting of US statistics for global indicators and opportunities to contribute to measuring achievement of the sustainable development goals
+### Verifique esta página para noticias futuras relativas a la divulgación de las estadísticas y para oportunidades para contribuir a actividades estadísticas sobre los indicadores de Objetivos de Desarrollo Sostenible de los Estados Unidos de América.
 
-**Coming Soon.....**
+**Próximamente.....**
 
 
-- US National Reporting Platform launches its Pilot (ETA 9/2016)
+- Plataforma de Información Nacional de Estados Unidos de América lanza su piloto
 
-- US Cities Engaging in Sustainable Development Goal Activities
+- Ciudades de Estados Unidos de América participando en actividades del Objetivo de Desarrollo Sostenible
 
-- Opportunities to Contribute Sustainable Development Goal Measurement
+- Oportunidades para contribuir a estadisticas del Objetivo de Desarrollo Sostenible
