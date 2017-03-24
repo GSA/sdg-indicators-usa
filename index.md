@@ -1,5 +1,5 @@
 ---
-title: Welcome
+title: Bienvenido
 permalink: /
 layout: frontpage
 ---
