@@ -4,5 +4,5 @@ permalink: /
 layout: frontpage
 ---
 
-Coming Soon.
+Próximamente.
 -------------------
