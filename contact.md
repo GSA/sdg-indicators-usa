@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Contact
+title: Contactos
 permalink: /contact/
 ---
 ### We are interested in your feedback regarding this website and its contents.
