@@ -6,9 +6,9 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: U.S. Indicators For The Sustainable Development Goals
+title: Estadísticas Nacionales de USA para los Objetivos de Desarrollo Sostenible de la ONU
 description: Data Platform Prototype
-baseurl: "/sdg-indicators" # the subpath of your site, e.g. /blog
+baseurl: "/sdg-indicators-spanish" # the subpath of your site, e.g. /blog
 url: ""
 data_dir: data
 
