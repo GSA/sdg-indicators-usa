@@ -62,7 +62,7 @@ table th {
 header.fixed-header {
     top: 0;
     position: fixed;
-    height: 155px;
+    height: 162px;
     width: 100%;
     z-index: 1;
     background-color: #ffffff;
