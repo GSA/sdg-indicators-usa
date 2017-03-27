@@ -5,7 +5,7 @@ permalink: /documentation/
 ---
 
 
-# United Nations sites that contain details about the development and implementation of the SDG initiative
+# Sitios web de las Naciones Unidas que contienen detalles sobre el desarrollo e implementación de la iniciativa Objetivos de Desarrollo Sostenible (ODS) (Sustainable Development Goals SDG)
 
 
 - [UN Homepage](https://sustainabledevelopment.un.org)
