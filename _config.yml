@@ -8,7 +8,7 @@
 # Site settings
 title: Estadísticas Nacionales de USA para los Objetivos de Desarrollo Sostenible de la ONU
 description: Data Platform Prototype
-baseurl: "/sdg-indicators-spanish" # the subpath of your site, e.g. /blog
+baseurl: "/sdg-indicators" # the subpath of your site, e.g. /blog
 url: ""
 data_dir: data
 
