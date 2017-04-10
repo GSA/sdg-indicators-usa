@@ -23,13 +23,13 @@ permalink: /training/
 **Conducting a Data Needs Assessment**
 <br/>Thinking about how to identify data gaps? These materials may be helpful.
 
-- US Data Needs Survey 
-- UNECE Survey of Data Needs 
+- US SDG Data Needs Survey 
+- UNECE CES Survey of Data Needs for SDG
 
 **Training Data Providers**
 <br/>Here are some materials that may help train data providers to input statistics and metadata into your NRP.
 
-- Data Provider Guide and webinar 
+- NRP Data Provider Guide and webinar 
 
 **Road Maps for Reporting SDG Statistics**
 <br/>Thinking about how to plan for reporting SDG statistics? These links may help.
