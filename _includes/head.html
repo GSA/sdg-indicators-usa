@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% if page.lang == 'en' %}
+  {% assign lang = '' %}
+{% else %}
+  {% capture lang %}/{{page.lang}}{% endcapture %}
+{% endif %}
+
+{% assign t = site.translations | where:"translation_id", "header"  | first %}
+{% assign t = t[page.lang] %}
+
     <head>
         <!-- Basic Page Needs
 ================================================== -->
@@ -11,7 +20,7 @@
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
 ================================================== -->
-        <title>{% if page.title %}{{ page.title | escape }} - {{ site.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+        <title>{% if page.title %}{{ page.title | escape }} - {{ t.site-title | escape }}{% else %}{{ t.site-title | escape }}{% endif %}</title>
 
         <meta property="og:title" content="U.S. Data Federation">
         <meta name="description" content="">

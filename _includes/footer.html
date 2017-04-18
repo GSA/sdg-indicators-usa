@@ -1,3 +1,6 @@
+{% assign t = site.translations | where:"translation_id", "footer"  | first %}
+{% assign t = t[page.lang] %}
+
 <footer class="usa-footer usa-footer-big usa-sans" role="contentinfo">
     <div class="usa-grid usa-footer-return-to-top">
       <a href="#">Return to top</a>
@@ -7,17 +10,15 @@
       <div class="usa-grid">
         <div class="usa-footer-contact-links usa-width-one-half">
           <address>
-            <h3 class="usa-footer-contact-heading footer-about-heading">About</h3>
-            <p> This is the official website of the United States of America providing information for national reporting of the United Nations Sustainable
-              Development Goal global indicators.  It is developed in collaboration with the US Office of Management and Budget, Office of Information and Regulatory Affairs: the US Department of State,
-               Office of International Organizations; the US General Services Administration; and the US Office of Science and Technology Policy.</p>
+            <h3 class="usa-footer-contact-heading footer-about-heading">{{ t.about-heading }}</h3>
+            <p> {{ t.about-text }} </p>
 
           </address>
         </div>
 
         <div class="usa-footer-logo usa-width-one-half">
-          <h3 class="footer-contact-heading">Contact</h3>
-            <p class="contact">For content questions, <br>Email: SDGs@omb.eop.gov <br>For site functionality, <br>Email: datagov@gsa.gov</p>
+          <h3 class="footer-contact-heading">{{ t.contact-heading }}</h3>
+            <p class="contact">{{ t.contact-text }}</p>
           <p>&nbsp;</p>
         </div>
       </div>

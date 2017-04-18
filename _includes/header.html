@@ -13,26 +13,32 @@
                         {% if site.github.environment == 'dotcom' %}
                           <a href="{{ site.baseurl }}/admin" class="login-link">Login / Logout</a>
                         {% endif %}
-                        <span class="usa-disclaimer-stage">This site is a work in progress</span>
+                        <span class="usa-disclaimer-stage">{{ t.disclaimer-wip }}</span>
                     </div>
                 </div>
-                <div class="usa-grid">  <div class="usa-width-one-whole" id="google_translate_element"></div>
+                <div class="usa-grid">  
+                  <div class="usa-width-one-whole" id="google_translate_element"></div>
                  
-                 <a href="{{ site.baseurl }}/" class="logo-home-mobile"><h1>Sustainable Development Goals</h1></a>
+                  <a href="{{ site.baseurl }}/" class="logo-home-mobile"><h1>Sustainable Development Goals</h1></a>
 
-                <nav class="site-navbar nav-collapse usa-grid">
-                  <a href="{{ site.baseurl }}/" class="logo-home"><h1>Sustainable Development Goals</h1></a>
+                  <nav class="site-navbar nav-collapse usa-grid">
+                    <a href="{{ site.baseurl }}/" class="logo-home"><h1>Sustainable Development Goals</h1></a>
 
-                          <ul class="usa-unstyled-list"><li class="nav-item"><a href="{{ site.baseurl }}/reporting-status">Reporting Status</a></li>
-                                      <li class="nav-item"><a href="{{ site.baseurl }}/">Statistics</a></li>
-                                      <li class="nav-item"><a href="{{ site.baseurl }}/training">Training Materials</a></li>
-                            </ul></nav>
-                         <div class="usa-grid">
-                                    <div class="usa-width-one-whole">
-                                                <a href="https://angela-smithers.github.io/sdg-indicators/">
-                                                            <span style="float: right;">Spanish</span>
-                                                </a>
-                                    </div>
-                        </div>
+                    <ul class="usa-unstyled-list">
+                        <li class="nav-item"><a href="{{ site.baseurl }}{{ lang }}/reporting-status">{{ t.nav-reporting-status }}</a></li>
+                        <li class="nav-item"><a href="{{ site.baseurl }}{{ lang }}/">{{ t.nav-statistics }}</a></li>
+                        <li class="nav-item"><a href="{{ site.baseurl }}{{ lang }}/training">{{ t.nav-training }}</a></li>
+                      </ul>
+                  </nav>
+
+                  <div class="usa-grid">
+                    <div class="usa-width-one-whole">
+                    {% if page.lang == 'en' %}
+                      <a class='pull-right lang es' data-lang='es' href='{{site.baseurl}}/es{{page.url | remove: 'index.html'}}'>Español</a>
+                    {% else %}
+                      <a class='pull-right lang'  data-lang='en' href='{{site.baseurl}}{{page.url | replace_first:'/es', ''}}'>English</a>
+                    {% endif %}
+                    </div>
+                  </div>
 
             </header>

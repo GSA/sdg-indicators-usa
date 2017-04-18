@@ -28,7 +28,16 @@ collections:
   indicators:
     output: true
   goals:
-    output: true    
+    output: true
+  translations:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      lang: en
 
 analytics:
   ga_prod: 'UA-42145528-4'
