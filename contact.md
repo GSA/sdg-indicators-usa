@@ -3,11 +3,11 @@ layout: page
 title: Contactos
 permalink: /contact/
 ---
-### We are interested in your feedback regarding this website and its contents.
+### Estamos interesados en sus comentarios sobre este sitio web y sus contenidos.
 
 
-- If you have questions about the statistics, data sources, or metadata provided for US national statistics, please contact [SDGs@omb.eop.gov](mailto:US_Chief_Statistician@omb.eop.gov)
+- Si tiene preguntas sobre las estadísticas, las fuentes de datos o los metadatos proporcionados para las estadísticas nacionales de los Estados Unidos, póngase en contacto con [SDGs@omb.eop.gov](mailto:US_Chief_Statistician@omb.eop.gov)
 
-- If you have suggestions regarding additional site content or data sources, please contact [SDGs@omb.eop.gov](mailto:US_Chief_Statistician@omb.eop.gov)  
+- Si tiene sugerencias sobre contenido adicional o fuentes de datos, póngase en contacto con [SDGs@omb.eop.gov](mailto:US_Chief_Statistician@omb.eop.gov)  
 
-- If you have suggestions on how to improve the functionality of this website, including data accessibility, please contact [datagov@gsa.gov](mailto:datagov@gsa.gov)
+- Si tiene sugerencias sobre cómo mejorar la funcionalidad de este sitio web, incluida la accesibilidad de datos, contacto con [datagov@gsa.gov](mailto:datagov@gsa.gov)
