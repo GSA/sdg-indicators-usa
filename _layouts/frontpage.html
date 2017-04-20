@@ -28,7 +28,13 @@
                     
 
                     <section class="goals-list">
-                    {% assign sdg_goals = site.data.sdg_goals %}
+                    {% if page.lang == 'en' %}
+                        {% assign sdg_goals = site.data.sdg_goals %}
+                    {% endif %}
+
+                    {% if page.lang == 'es' %}
+                        {% assign sdg_goals = site.data.es.sdg_goals %}
+                    {% endif %}
 
                     {% for goals in sdg_goals %}
 

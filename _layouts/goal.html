@@ -9,7 +9,14 @@
             <div class="usa-grid">
                 <div class="usa-banner-content">
                   <h2 class="goal-heading">
-                    {% assign sdg_goals = site.data.sdg_goals %}
+                    {% if page.lang == 'en' %}
+                        {% assign sdg_goals = site.data.sdg_goals %}
+                    {% endif %}
+
+                    {% if page.lang == 'es' %}
+                        {% assign sdg_goals = site.data.es.sdg_goals %}
+                    {% endif %}
+
                     {% for goals in sdg_goals %}
 
                       {% assign page_goal_num = page.sdg_goal | plus:0 %}
@@ -32,8 +39,14 @@
         <div class="usa-grid initiative-description">
       {{ content }}
 
-{% assign sdg_goals = site.data.sdg_goals %}
-{% assign sdg_indicators = site.data.sdg_indicator_metadata %}
+{% if page.lang == 'en' %}
+    {% assign sdg_indicators = site.data.sdg_indicator_metadata %}
+{% endif %}
+
+{% if page.lang == 'es' %}
+    {% assign sdg_indicators = site.data.es.sdg_indicator_metadata %}
+{% endif %}
+
 {% assign sdg_indicator_pages = site.indicators %}
 
 
