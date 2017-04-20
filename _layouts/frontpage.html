@@ -42,15 +42,15 @@
 
 
                     <a class="usa-width-one-fourth" href="./{{ goals.short | slugify }}/">
-                    <img class="goal-icon" src="{{ site.baseurl }}/assets/img/TGG_Icon_Color_{{ img_path }}{{ goals.goal }}.png" alt="icon for Goal {{ goals.goal }} - {{ goals.title }}" />
+                    <img class="goal-icon" src="{{ site.baseurl }}/assets/img/{{ page.lang }}/{{ page.lang }}-sdg-goal-{{ img_path }}{{ goals.goal }}.png" alt="icon for Goal {{ goals.goal }} - {{ goals.title }}" />
                     </a>                    
 
                     {% endfor %}
 
                     <div class="usa-width-one-fourth">
-                      <a href="https://angela-smithers.github.io/sdg-indicators/">      
-                        <img class="goal-icon" src="{{ site.baseurl }}/assets/img/es/TGG_Icon_Color_18.png" alt="icon for Global Goals" />
-                            </a>
+                      <a href="{{ site.baseurl }}">      
+                        <img class="goal-icon" src="{{ site.baseurl }}/assets/img/{{ page.lang }}/{{ page.lang }}-sdg-goals-logo.png" alt="icon for Global Goals" />
+                      </a>
                     </div>                    
 
                     </section>
