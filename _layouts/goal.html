@@ -11,10 +11,8 @@
                   <h2 class="goal-heading">
                     {% if page.lang == 'en' %}
                         {% assign sdg_goals = site.data.sdg_goals %}
-                    {% endif %}
-
-                    {% if page.lang == 'es' %}
-                        {% assign sdg_goals = site.data.es.sdg_goals %}
+                    {% else %}
+                        {% assign sdg_goals = site.data[page.lang].sdg_goals %}
                     {% endif %}
 
                     {% for goals in sdg_goals %}
@@ -41,10 +39,8 @@
 
 {% if page.lang == 'en' %}
     {% assign sdg_indicators = site.data.sdg_indicator_metadata %}
-{% endif %}
-
-{% if page.lang == 'es' %}
-    {% assign sdg_indicators = site.data.es.sdg_indicator_metadata %}
+{% else %}
+    {% assign sdg_indicators = site.data[page.lang].sdg_indicator_metadata %}
 {% endif %}
 
 {% assign sdg_indicator_pages = site.indicators %}
