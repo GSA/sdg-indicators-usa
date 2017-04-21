@@ -3,7 +3,7 @@ layout: page
 title: Contact
 permalink: /contact/
 ---
-### We are interested in your feedback <a href="{{ site.baseurl }}/assets/documents/blank-test-document.pdf" target="_blank">regarding</a> this website and its contents.
+### We are interested in your feedback regarding this website and its contents.
 
 
 - If you have questions about the statistics, data sources, or metadata provided for US national statistics, please contact [SDGs@omb.eop.gov](mailto:US_Chief_Statistician@omb.eop.gov)
