@@ -29,7 +29,7 @@ permalink: /training/
 **Training Data Providers**
 <br/>Here are some materials that may help train data providers to input statistics and metadata into your NRP.
 
-- <a href="{{ site.baseurl }}/assets/documents/Training_Guide_SDG-NRP_20170201.docx">NRP Data Provider Guide, training deck</a>, and webinar 
+- <a href="{{ site.baseurl }}/assets/documents/Training_Guide_SDG-NRP_20170201.docx">NRP Data Provider Guide</a>, <a href="{{ site.baseurl }}/assets/documents/USG%20NRP%20SDG%2020170324.pptx">training deck</a>, and webinar 
 
 **Road Maps for Reporting SDG Statistics**
 <br/>Thinking about how to plan for reporting SDG statistics? These links may help.
