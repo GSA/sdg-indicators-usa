@@ -1,0 +1,42 @@
+#File provides short-hand creation of various Boostrap CSS features for access through Jekyll's site.data variable SEE - http://jekyllrb.com/docs/datafiles/ & http://getbootstrap.com/components/
+---
+alert_info: '<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>: </b>'
+alert_todo: '<div class="alert alert-danger" role="alert"><i class="fa fa-exclamation-circle"></i> <b>To Do: </b>'
+alert_doing: '<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Doing: </b>'
+alert_done: '<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Done: </b>'
+alert_link_start: '<a href="'
+alert_link_end: '" class="alert-link">Go To</a>'
+alert_end: '</div>'
+
+callout_info: '<div class="bs-callout bs-callout-info">'
+callout_todo: '<div class="bs-callout bs-callout-danger">'
+callout_doing: '<div class="bs-callout bs-callout-warning">'
+callout_done: '<div class="bs-callout bs-callout-success">'
+callout_default: '<div class="bs-callout bs-callout-default">'
+callout_primary: '<div class="bs-callout bs-callout-primary">'
+callout_end: '</div>'
+
+label_info: '<span class="label label-info">'
+label_todo: '<span class="label label-danger">'
+label_doing: '<span class="label label-warning">'
+label_done: '<span class="label label-success">'
+label_default: '<span class="label label-default">'
+label_primary: '<span class="label label-primary">'
+label_primary_pullright: '<span class="label label-primary pull-right">'
+label_end: '</span>'
+
+hr_faded: '<hr class="faded"/>'
+hr_shaded: '<hr class="shaded"/>'
+
+progress_start: '<div class="progress">'
+progress_done: '<div class="progress-bar progress-bar-success" style="width: '
+progress_doing: '<div class="progress-bar progress-bar-warning" style="width: '
+progress_todo: '<div class="progress-bar progress-bar-danger" style="width: '
+progress_end: '%"><span class="sr-only">Progress Bar</span></div>'
+
+progress_label_middle: '%"><span class="sr-only">'
+progress_label_end: '</span></div>'
+
+badge_start: '<span class="badge">'
+badge_end: '</span>'
+---
