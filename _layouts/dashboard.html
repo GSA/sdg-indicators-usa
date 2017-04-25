@@ -13,7 +13,7 @@
 
 <h2> Status by Goal</h2>
   <ul class="usa-accordion-bordered">
-{% for item in site.data.dashboard.goals %}
+{% for goals in sdg_goals %}
 {% assign todos = 0 %}
 {% assign doings = 0 %}
 {% assign dones = 0 %}
