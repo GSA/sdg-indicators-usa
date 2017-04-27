@@ -1,0 +1,130 @@
+{% include head.html %}
+
+{% include header.html %}
+
+      <div id="main" class="main-content initiative-content">
+
+
+        <section class="usa-banner">
+            <div class="usa-grid">
+                <div class="usa-banner-content">
+                  <h2>{{ page.title }}</h2>
+                </div>
+            </div>
+        </section>
+
+        <div class="usa-grid initiative-description">
+      {{ content }}
+
+      <ul class="usa-accordion-bordered">
+
+{% if page.lang == 'en' %}
+    {% assign goals = site.data.sdg_goals %}
+{% else %}
+    {% assign goals = site.data[page.lang].sdg_goals %}
+{% endif %}
+
+{% for goal in goals %}
+
+{% assign this_goal = goal.goal | plus:0 %}
+
+{% assign indicators_count = 0 %}
+
+{% assign unsourced_data = 0 %}
+{% assign compiling_statistic = 0 %}
+{% assign finalized_reporting = 0 %}
+
+{% assign unsourced_percent = 0 %}
+{% assign compiling_percent = 0 %}
+{% assign finalized_percent = 0 %}
+
+    {% for indicator in site.indicators %}
+      
+        {% if indicator.sdg_goal == this_goal %}
+
+                {% assign indicators_count = indicators_count | plus:1 %}
+                {% assign unsourced_data = unsourced_data | plus:1 %}
+
+                {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                  {% assign unsourced_data = unsourced_data | minus:1 %}
+                  {% assign compiling_statistic = compiling_statistic | plus:1 %}
+
+                  {% if indicator.graph != nil AND indicator.graph != "" %}
+                    {% assign compiling_statistic = compiling_statistic | minus:1 %}
+                    {% assign finalized_reporting = finalized_reporting | plus:1 %}
+                  {% endif %}
+
+                {% endif %}
+
+        {% endif %}
+      
+    {% endfor %}
+
+    {% assign indicators_count = indicators_count | round: 1 %}
+
+    {% assign unsourced_percent = unsourced_data | divided_by:indicators_count | times:100 %}
+    {% assign compiling_percent = compiling_statistic | divided_by:indicators_count | times:100 %}
+    {% assign finalized_percent = finalized_reporting | divided_by:indicators_count | times:100 %}
+
+    {% assign indicators_count = indicators_count | round %}
+
+    <li>
+      <button class="usa-accordion-button" aria-controls="amendment-b-{{ goal.goal }}">
+        {{ goal.short }}
+      </button>
+      <div id="amendment-b-{{ goal.goal }}" class="usa-accordion-content">
+
+        <div class="media usa-grid-full">
+
+          <div class="usa-width-one-sixth">
+            <div class="media-left">
+              <a href="{{ goal.goal }}_{{ goal.short }}">
+              {{ goal.title}}
+              </a>
+            </div>
+          </div> 
+
+          <div class="usa-width-five-sixths">
+
+             <div class="usa-grid-full">
+               <span class="badge" style="background-color: #333;">{{ datasets }}</span>
+             </div>
+
+             <div class="media-body">
+
+                <div class="usa-grid-full" style="margin-top: 18px;">
+                  <div class="usa-width-one-third">exploring data sources {{ unsourced_data }}/{{ indicators_count }}</div>
+                  <div class="usa-width-one-third">statistics in progress {{ compiling_statistic }}/{{ indicators_count }}</div>
+                  <div class="usa-width-one-third">reported online {{ finalized_reporting }}/{{ indicators_count }}</div>                  
+                </div>
+
+                <div class="usa-width-one-whole">
+                  <div class="progress" style="margin-top: 18px;">
+                    <div class="progress-bar progress-bar-danger" style="width:{{ unsourced_percent }}%">
+                      <span class="sr-only">Unsourced {{ unsourced_percent }}%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-warning" style="width:{{ compiling_percent }}%">
+                      <span class="sr-only">Compiling {{ compiling_percent }}%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-success" style="width:{{ finalized_percent }}%">
+                      <span class="sr-only">Finalized {{ finalized_percent }}%</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+{% endfor %}
+      </ul>
+
+
+
+      </div>
+      
+    </div>
+    
+{% include footer.html %}

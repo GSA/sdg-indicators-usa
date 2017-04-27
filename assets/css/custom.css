@@ -472,3 +472,13 @@ p a, .usa-content-list a {
 .ct-chart .ct-label {
     font-size: 1.25rem;
 }
+
+.usa-accordion,
+.usa-accordion-bordered {
+    width : 100%;
+}
+
+.usa-accordion > li::before,
+.usa-accordion-bordered > li::before {
+    content : "";
+}
