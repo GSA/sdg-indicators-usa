@@ -1,86 +1,130 @@
-<!DOCTYPE html>
-<html>
+{% include head.html %}
 
-  {% include head.html %}
+{% include header.html %}
 
-  <body>
-    
-
-      {% include header.html %}
+      <div id="main" class="main-content initiative-content">
 
 
-<h1>Overall Reporting Status</h1>
+        <section class="usa-banner">
+            <div class="usa-grid">
+                <div class="usa-banner-content">
+                  <h2>{{ page.title }}</h2>
+                </div>
+            </div>
+        </section>
 
-<h2> Status by Goal</h2>
-  <ul class="usa-accordion-bordered">
-{% assign sdg_goals = site.data.sdg_goals %}
-    
-{% for goals in sdg_goals %}
-{% assign todos = 0 %}
-{% assign doings = 0 %}
-{% assign dones = 0 %}
-{% assign items = 0 %}
+        <div class="usa-grid initiative-description">
+      {{ content }}
 
-{% assign issues_total = 0 %}
-{% assign todos_percent = 0 %}
-{% assign doings_percent = 0 %}
-{% assign dones_percent = 0 %}
+      <ul class="usa-accordion-bordered">
+
+{% if page.lang == 'en' %}
+    {% assign goals = site.data.sdg_goals %}
+{% else %}
+    {% assign goals = site.data[page.lang].sdg_goals %}
+{% endif %}
+
+{% for goal in goals %}
+
+{% assign this_goal = goal.goal | plus:0 %}
+
+{% assign indicators_count = 0 %}
+
+{% assign unsourced_data = 0 %}
+{% assign compiling_statistic = 0 %}
+{% assign finalized_reporting = 0 %}
+
+{% assign unsourced_percent = 0 %}
+{% assign compiling_percent = 0 %}
+{% assign finalized_percent = 0 %}
 
     {% for indicator in site.indicators %}
-        {% if indicator.goal == item.goal %}
-            {% for dataset in indicator.datasets %}
-                {% assign datasets = datasets | plus:1 %}
-                {% assign todos = todos | plus:dataset.todo %}
-                {% assign doings = doings | plus:dataset.doing %}
-                {% assign dones = dones | plus:dataset.done %}
-            {% endfor %}
+      
+        {% if indicator.sdg_goal == this_goal %}
+
+                {% assign indicators_count = indicators_count | plus:1 %}
+                {% assign unsourced_data = unsourced_data | plus:1 %}
+
+                {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                  {% assign unsourced_data = unsourced_data | minus:1 %}
+                  {% assign compiling_statistic = compiling_statistic | plus:1 %}
+
+                  {% if indicator.graph != nil AND indicator.graph != "" %}
+                    {% assign compiling_statistic = compiling_statistic | minus:1 %}
+                    {% assign finalized_reporting = finalized_reporting | plus:1 %}
+                  {% endif %}
+
+                {% endif %}
+
         {% endif %}
+      
     {% endfor %}
 
-    {% assign issues_total = todos | plus:doings | plus:dones | round: 1 %}
+    {% assign indicators_count = indicators_count | round: 1 %}
 
-    {% assign todos_percent = todos | divided_by:issues_total | times:100 %}
-    {% assign doings_percent = doings | divided_by:issues_total | times:100 %}
-    {% assign dones_percent = dones | divided_by:issues_total | times:100 %}
+    {% assign unsourced_percent = unsourced_data | divided_by:indicators_count | times:100 %}
+    {% assign compiling_percent = compiling_statistic | divided_by:indicators_count | times:100 %}
+    {% assign finalized_percent = finalized_reporting | divided_by:indicators_count | times:100 %}
 
+    {% assign indicators_count = indicators_count | round %}
 
     <li>
-      <button class="usa-accordion-button"
-        aria-controls="amendment-b-{{ item.short }}">
-        {{ item.short }}
+      <button class="usa-accordion-button" aria-controls="amendment-b-{{ goal.goal }}">
+        {{ goal.short }}
       </button>
-      <div id="amendment-b-{{ item.short }}" class="usa-accordion-content">
- <div class="media usa-grid-full">
-   <div class="usa-width-one-sixth">
-  <div class="media-left">
-    <a href="{{ item.goal }}_{{ item.short }}">
-      <img class="media-object" src="{{ site.baseurl }}/{{ item.icon }}" height="100" width="100" alt="">
-    </a>
-  </div>
-   </div> 
- <div class="usa-width-five-sixths">
-   <div class="usa-grid-full">
-     <span class="badge" style="background-color: #333;">{{ datasets }}</span>
-   </div>
-  <div class="media-body">
-      <div class="usa-grid-full" style="margin-top: 18px;">
-      <div class="usa-width-one-third">reported online %</div><div class="usa-width-one-third">statistics in progress %</div><div class="usa-width-one-third">exploring data sources %</div>
-      </div>
-    <div class="usa-width-one-whole">
-      <div class="progress" style="margin-top: 18px;">
-      {{ site.bootstrap.progress_done }}{{ dones_percent }}{{ site.bootstrap.progress_end}}
-      {{ site.bootstrap.progress_doing }}{{ doings_percent }}{{ site.bootstrap.progress_end }}
-      {{ site.bootstrap.progress_todo }}{{ todos_percent }}{{ site.bootstrap.progress_end }}
-    </div>
-    </div>
-   </div>
-  </div>
-</div>
-{% endfor %}
+      <div id="amendment-b-{{ goal.goal }}" class="usa-accordion-content">
+
+        <div class="media usa-grid-full">
+
+          <div class="usa-width-one-sixth">
+            <div class="media-left">
+              <a href="{{ goal.goal }}_{{ goal.short }}">
+              {{ goal.title}}
+              </a>
+            </div>
+          </div> 
+
+          <div class="usa-width-five-sixths">
+
+             <div class="usa-grid-full">
+               <span class="badge" style="background-color: #333;">{{ datasets }}</span>
+             </div>
+
+             <div class="media-body">
+
+                <div class="usa-grid-full" style="margin-top: 18px;">
+                  <div class="usa-width-one-third">exploring data sources {{ unsourced_data }}/{{ indicators_count }}</div>
+                  <div class="usa-width-one-third">statistics in progress {{ compiling_statistic }}/{{ indicators_count }}</div>
+                  <div class="usa-width-one-third">reported online {{ finalized_reporting }}/{{ indicators_count }}</div>                  
+                </div>
+
+                <div class="usa-width-one-whole">
+                  <div class="progress" style="margin-top: 18px;">
+                    <div class="progress-bar progress-bar-danger" style="width:{{ unsourced_percent }}%">
+                      <span class="sr-only">Unsourced {{ unsourced_percent }}%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-warning" style="width:{{ compiling_percent }}%">
+                      <span class="sr-only">Compiling {{ compiling_percent }}%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-success" style="width:{{ finalized_percent }}%">
+                      <span class="sr-only">Finalized {{ finalized_percent }}%</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
         </div>
-    </li>
-  </ul>
-{% include footer.html %}
+      </li>
+{% endfor %}
+      </ul>
+
+
+
+      </div>
+      
+    </div>
     
-  </body>
-</html>
+{% include footer.html %}
