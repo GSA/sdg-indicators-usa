@@ -18,11 +18,6 @@
 
       <ul class="usa-accordion-bordered">
 
-{% if page.lang == 'en' %}
-    {% assign goals = site.data.sdg_goals %}
-{% else %}
-    {% assign goals = site.data[page.lang].sdg_goals %}
-{% endif %}
 
 {% for goal in goals %}
 
