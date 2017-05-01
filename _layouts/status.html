@@ -8,11 +8,35 @@
         <section class="usa-banner">
             <div class="usa-grid">
                 <div class="usa-banner-content">
-                  <h2>{{ page.title }}</h2>
+                  <h2>{{ page.title }} Summary</h2>
                 </div>
             </div>
         </section>
 
+            <div class="usa-grid">
+              <span style="font-size: 28px;">Overall Reporting Status</span>
+              <div class="usa-grid-full">
+                  <span class="badge" style="background-color: #333;">240</span>
+              </div>
+              <div class="usa-width-one-whole">
+                  <div class="progress" style="margin-top: 18px;">
+                    <div class="progress-bar progress-bar-danger" style="width:{{ unsourced_percent }}%">
+                      <span class="sr-only">Unsourced {{ unsourced_percent }}%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-warning" style="width:{{ compiling_percent }}%">
+                      <span class="sr-only">Compiling {{ compiling_percent }}%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-success" style="width:{{ finalized_percent }}%">
+                      <span class="sr-only">Finalized {{ finalized_percent }}%</span>
+                    </div>
+                  </div>
+                </div>
+    
+                  
+              <span style="font-size: 28px;">Status by Goal</span>
+
+            </div>
+            
         <div class="usa-grid initiative-description">
       {{ content }}
 
