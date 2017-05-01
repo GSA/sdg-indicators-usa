@@ -126,10 +126,16 @@
 
              <div class="media-body">
 
-                <div class="usa-grid-full" style="margin-top: 18px;">
-                  <div class="usa-width-one-third">exploring data sources {{ unsourced_data }}/{{ indicators_count }}</div>
-                  <div class="usa-width-one-third">statistics in progress {{ compiling_statistic }}/{{ indicators_count }}</div>
-                  <div class="usa-width-one-third">reported online {{ finalized_reporting }}/{{ indicators_count }}</div>                  
+                <div class="usa-grid-full status-traffic-statbox" style="margin-top: 18px;">
+                  <div class="usa-width-one-third">
+                    {{ unsourced_percent | round }}% exploring data sources <span class="label label-danger">{{ unsourced_data }}</span>
+                  </div>
+                  <div class="usa-width-one-third">
+                    {{ compiling_percent | round }}% statistics in progress <span class="label label-warning">{{ compiling_statistic }}</span>
+                  </div>
+                  <div class="usa-width-one-third">
+                    {{ finalized_percent | round }}% reported online <span class="label label-success">{{ finalized_reporting }}</span>
+                  </div>
                 </div>
 
                 <div class="usa-width-one-whole">

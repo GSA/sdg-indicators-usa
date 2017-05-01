@@ -482,3 +482,7 @@ p a, .usa-content-list a {
 .usa-accordion-bordered > li::before {
     content : "";
 }
+
+.status-traffic-statbox {
+    font-size : .75em;
+}
