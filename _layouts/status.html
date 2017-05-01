@@ -92,6 +92,12 @@
 
     {% assign indicators_count = indicators_count | round %}
 
+    {% if this_goal < 10 %}
+        {% assign img_path = 0  %}
+    {% else %}
+        {% assign img_path = ''  %}
+    {% endif %}
+
     <li>
       <button class="usa-accordion-button" aria-controls="amendment-b-{{ goal.goal }}">
         {{ goal.short }}
@@ -103,7 +109,7 @@
           <div class="usa-width-one-sixth">
             <div class="media-left">
               <a href="{{ goal.goal }}_{{ goal.short }}">
-                  <img class="media-object" src="{{ site.baseurl }}//assets/img/bw/{{ goal.goal }}.png" height="100" width="100" alt="{{ goal.short}}">
+                  <img class="media-object" src="{{ site.baseurl }}/assets/img/bw/{{ img_path }}{{ this_goal }}.png" height="100" width="100" alt="{{ goal.short}}">
               <span class="sr-only">
                     {{ goal.title}}</span>
               </a>
