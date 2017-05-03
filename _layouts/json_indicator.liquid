@@ -1,0 +1,29 @@
+{% capture api_output %}
+
+{% assign slug = page.indicator | replace: '.', '-' %}
+{% assign dataset_name = 'indicator_' | append: slug %}
+
+{% assign sdg_indicator_metadata = site.indicators %}
+{% assign sdg_indicator_seed_metadata = site.data.sdg_indicator_metadata %}
+{% assign sdg_indicator_data = site.data[dataset_name] %}
+
+{% for indicators in sdg_indicator_metadata %}
+{% if indicators.indicator == page.indicator %}
+  {% assign this_sdg_indicator_metadata = indicators %}  
+{% endif %}
+{% endfor %}
+
+{% assign api_output = site.prose.metadata._indicators %}
+{
+
+{% for api_field in api_output %}
+
+{% if api_field.field.scope != "global" %}
+{% if not_first == true %},{% endif %}"{{ api_field.name }}":{{ this_sdg_indicator_metadata[api_field.name] | jsonify }}
+{% assign not_first = true %}
+{% endif %}
+
+{% endfor %}
+
+}
+{% endcapture %}{{ api_output | strip_newlines }}
