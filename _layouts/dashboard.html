@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-  {% include head.html %}
-
-  <body>
-
+{% include head.html %}
 
 {% include header.html %}
 
@@ -14,16 +8,45 @@
         <section class="usa-banner">
             <div class="usa-grid">
                 <div class="usa-banner-content">
-                  <h2>{{ page.title }}</h2>
+                  <h2>{{ page.title }} Summary</h2>
                 </div>
             </div>
         </section>
 
+            <div class="usa-grid">
+              <span style="font-size: 28px;">Overall Reporting Status</span>
+              <div class="usa-grid-full">
+                  <span class="badge" style="background-color: #333;">240</span>
+              </div>
+              <div class="usa-width-one-whole">
+                  <div class="progress progress-top" style="margin-top: 18px;">
+                    <div class="progress-bar progress-bar-danger" style="width:{{ unsourced_percent }}%">
+                      <span class="sr-only">Unsourced {{ unsourced_percent }}%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-warning" style="width:{{ compiling_percent }}%">
+                      <span class="sr-only">Compiling {{ compiling_percent }}%</span>
+                    </div>
+                    <div class="progress-bar progress-bar-success" style="width:{{ finalized_percent }}%">
+                      <span class="sr-only">Finalized {{ finalized_percent }}%</span>
+                    </div>
+                  </div>
+                </div>
+    
+                  
+              <span style="font-size: 28px;">Status by Goal</span>
+
+            </div>
+            
         <div class="usa-grid initiative-description">
       {{ content }}
 
       <ul class="usa-accordion-bordered">
 
+{% if page.lang == 'en' %}
+    {% assign goals = site.data.sdg_goals %}
+{% else %}
+    {% assign goals = site.data[page.lang].sdg_goals %}
+{% endif %}
 
 {% for goal in goals %}
 
@@ -69,6 +92,12 @@
 
     {% assign indicators_count = indicators_count | round %}
 
+    {% if this_goal < 10 %}
+        {% assign img_path = 0  %}
+    {% else %}
+        {% assign img_path = ''  %}
+    {% endif %}
+
     <li>
       <button class="usa-accordion-button" aria-controls="amendment-b-{{ goal.goal }}">
         {{ goal.short }}
@@ -79,8 +108,12 @@
 
           <div class="usa-width-one-sixth">
             <div class="media-left">
-              <a href="{{ goal.goal }}_{{ goal.short }}">
-              {{ goal.title}}
+              <a href="{{ site.baseurl }}/{{ goal.short | slugify }}/">
+
+                  <img class="media-object" src="{{ site.baseurl }}/assets/img/bw/{{ img_path }}{{ this_goal }}.png" width="100%" height="calc(1 * width)" alt="{{ goal.short}}">
+
+              <span class="sr-only">
+                    {{ goal.title}}</span>
               </a>
             </div>
           </div> 
@@ -88,15 +121,21 @@
           <div class="usa-width-five-sixths">
 
              <div class="usa-grid-full">
-               <span class="badge" style="background-color: #333;">{{ datasets }}</span>
+               <span class="badge" style="background-color: #333;">{{ indicators_count }}</span>
              </div>
 
              <div class="media-body">
 
-                <div class="usa-grid-full" style="margin-top: 18px;">
-                  <div class="usa-width-one-third">exploring data sources {{ unsourced_data }}/{{ indicators_count }}</div>
-                  <div class="usa-width-one-third">statistics in progress {{ compiling_statistic }}/{{ indicators_count }}</div>
-                  <div class="usa-width-one-third">reported online {{ finalized_reporting }}/{{ indicators_count }}</div>                  
+                <div class="usa-grid-full status-traffic-statbox" style="margin-top: 18px;">
+                  <div class="usa-width-one-third">
+                    {{ unsourced_percent | round }}% exploring data sources <span class="label label-danger">{{ unsourced_data }}</span>
+                  </div>
+                  <div class="usa-width-one-third">
+                    {{ compiling_percent | round }}% statistics in progress <span class="label label-warning">{{ compiling_statistic }}</span>
+                  </div>
+                  <div class="usa-width-one-third">
+                    {{ finalized_percent | round }}% reported online <span class="label label-success">{{ finalized_reporting }}</span>
+                  </div>
                 </div>
 
                 <div class="usa-width-one-whole">
@@ -129,7 +168,3 @@
     </div>
     
 {% include footer.html %}
-
-          </body>
-
-</html>
