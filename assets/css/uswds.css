@@ -1950,6 +1950,23 @@ p a,
   margin-top: 0;
 }
 
+.usa-accordion,
+.usa-accordion-bordered {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
+  color: #212121;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.usa-accordion > li,
+.usa-accordion-bordered > li {
+  margin-bottom: 0;
+}
+
 .usa-accordion + .usa-accordion,
 .usa-accordion + .usa-accordion-bordered,
 .usa-accordion-bordered + .usa-accordion,
@@ -1959,10 +1976,19 @@ p a,
 
 .usa-accordion > ul,
 .usa-accordion-bordered > ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding-left: 0;
   color: #212121;
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+.usa-accordion > ul > li,
+.usa-accordion-bordered > ul > li {
+  margin-bottom: 0;
 }
 
 .usa-accordion > ul > li,
@@ -1974,16 +2000,17 @@ p a,
   width: 100%;
 }
 
-.usa-accordion button[aria-expanded=false],
-.usa-accordion-bordered button[aria-expanded=false] {
-  background-image: url("../img/plus.png");
-  background-image: url("../img/plus.svg");
-  background-repeat: no-repeat;
-  background-size: 1.3rem;
-}
-
-.usa-accordion button,
-.usa-accordion-bordered button {
+.usa-accordion > ul button,
+.usa-accordion-bordered > ul button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
   background-color: #f1f1f1;
   background-image: url("../img/minus.png");
   background-image: url("../img/minus.svg");
@@ -1994,35 +2021,58 @@ p a,
   cursor: pointer;
   display: inline-block;
   font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-weight: 700;
   margin: 0;
   padding: 1.5rem 5.5rem 1.5rem 3rem;
   width: 100%;
 }
 
-.usa-accordion button:focus,
-.usa-accordion-bordered button:focus {
+.usa-accordion > ul button:hover,
+.usa-accordion-bordered > ul button:hover {
+  background-color: transparent;
+}
+
+.usa-accordion > ul button:focus,
+.usa-accordion-bordered > ul button:focus {
   box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
 }
 
-.usa-accordion button:hover,
-.usa-accordion-bordered button:hover {
+.usa-accordion > ul button:hover,
+.usa-accordion-bordered > ul button:hover {
   background-color: #d6d7d9;
   color: #212121;
 }
 
-.usa-accordion button h1,
-.usa-accordion button h2,
-.usa-accordion button h3,
-.usa-accordion button h4,
-.usa-accordion button h5,
-.usa-accordion button h6,
-.usa-accordion-bordered button h1,
-.usa-accordion-bordered button h2,
-.usa-accordion-bordered button h3,
-.usa-accordion-bordered button h4,
-.usa-accordion-bordered button h5,
-.usa-accordion-bordered button h6 {
+.usa-accordion > ul button h1,
+.usa-accordion > ul button h2,
+.usa-accordion > ul button h3,
+.usa-accordion > ul button h4,
+.usa-accordion > ul button h5,
+.usa-accordion > ul button h6,
+.usa-accordion-bordered > ul button h1,
+.usa-accordion-bordered > ul button h2,
+.usa-accordion-bordered > ul button h3,
+.usa-accordion-bordered > ul button h4,
+.usa-accordion-bordered > ul button h5,
+.usa-accordion-bordered > ul button h6 {
   margin: 0;
+}
+
+.usa-accordion > ul [aria-expanded=false],
+.usa-accordion-bordered > ul [aria-expanded=false] {
+  background-image: url("../img/plus.png");
+  background-image: url("../img/plus.svg");
+  background-repeat: no-repeat;
+  background-size: 1.3rem;
+}
+
+.usa-accordion > li,
+.usa-accordion-bordered > li {
+  background-color: #f1f1f1;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  list-style: none;
+  margin-bottom: 6px;
+  width: 100%;
 }
 
 .usa-accordion-bordered .usa-accordion-content {
@@ -2033,7 +2083,6 @@ p a,
 
 .usa-accordion-content {
   background-color: #ffffff;
-  display: block;
   overflow: auto;
   padding: 3rem;
 }
@@ -2046,9 +2095,70 @@ p a,
   margin-bottom: 0;
 }
 
+.usa-accordion-content:not([aria-hidden]) {
+  position: absolute;
+  left: -999em;
+}
+
 .usa-accordion-content[aria-hidden=true] {
   display: none;
 }
+
+.usa-accordion-button {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  font-weight: 400;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  text-align: left;
+  -webkit-font-smoothing: auto;
+  background-color: #f1f1f1;
+  background-image: url("../img/minus.png");
+  background-image: url("../img/minus.svg");
+  background-position: right 3rem center;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  color: #212121;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  padding: 1.5rem 5.5rem 1.5rem 3rem;
+  width: 100%;
+}
+
+.usa-accordion-button:hover {
+  background-color: transparent;
+}
+
+.usa-accordion-button:focus {
+  box-shadow: 0 0 3px #3e94cf, 0 0 7px #3e94cf;
+}
+
+.usa-accordion-button:hover {
+  background-color: #d6d7d9;
+  color: #212121;
+}
+
+.usa-accordion-button h1,
+.usa-accordion-button h2,
+.usa-accordion-button h3,
+.usa-accordion-button h4,
+.usa-accordion-button h5,
+.usa-accordion-button h6 {
+  margin: 0;
+}
+
+.usa-accordion-button[aria-expanded=false] {
+  background-image: url("../img/plus.png");
+  background-image: url("../img/plus.svg");
+  background-repeat: no-repeat;
+  background-size: 1.3rem;
+}
+
 
 .usa-alert {
   background-color: #f1f1f1;
