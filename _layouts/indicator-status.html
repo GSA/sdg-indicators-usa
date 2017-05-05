@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    
+
+      {% include header.html %}
+
+
+
+      <div id="main" class="main-content initiative-content">
+
+
+        <section class="usa-banner">
+            <div class="usa-grid">
+                <div class="usa-banner-content">
+                  <h2 class="goal-heading">
+                    {% assign sdg_goals = site.data.sdg_goals %}
+                    {% for goals in sdg_goals %}
+
+                      {% assign page_goal_num = page.sdg_goal | plus:0 %}
+                      {% assign goals_goal_num = goals.goal | plus:0 %}
+
+                      {% if page_goal_num == goals_goal_num %}
+
+                        <a href="{{ site.baseurl }}/{{ goals.short | slugify }}/">
+                        Goal {{ goals.goal }} - {{ goals.title }}
+                        </a>
+
+                      {% endif %}
+
+                    {% endfor %}
+                  </h2>
+                </div>
+            </div>
+        </section>
+
+        <div class="usa-grid initiative-description">
+      {{ content }}
+
+{% assign sdg_goals = site.data.sdg_goals %}
+{% assign sdg_indicators = site.data.sdg_indicator_metadata %}
+{% assign sdg_indicator_pages = site.indicators %}
+
+
+{% for indicators in sdg_indicators %}
+
+{% assign goal = indicators.goal | plus:0 %}
+{% assign slug = indicators.indicator_id | replace: '.', '-' %}
+
+{% if goal == page.sdg_goal %}
+
+{% for sdg_indicator_page in sdg_indicator_pages %}
+
+  {% if sdg_indicator_page.indicator == indicators.indicator_id %}
+
+    {% if sdg_indicator_page.graph == 'longitudinal' %}
+      {% assign graph_type = sdg_indicator_page.graph %}
+      {% assign graph_set = 'graph ' %}
+    {% else %}
+      {% assign graph_type = '' %}
+      {% assign graph_set = 'no-graph' %}
+    {% endif %}
+
+  {% endif %}
+
+{% endfor %}
+
+  <h5 class="{{ graph_set }}{{ graph_type }}"><a href="{{ site.baseurl }}/{{ slug }}">{{ indicators.indicator_id }} {{ indicators.indicator }}</a></h5>
+
+{% endif %}
+
+{% endfor %}
+
+      </div>
+      
+    </div>
+    
+    {% include scripts.html %}
+    
+  </body>
+
+</html>
