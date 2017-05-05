@@ -62,7 +62,7 @@ table th {
 header.fixed-header {
     top: 0;
     position: fixed;
-    height: 162px;
+    height: 192px;
     width: 100%;
     z-index: 1;
     background-color: #ffffff;
@@ -131,7 +131,7 @@ header.fixed-header .site-navbar ul li#nav-logo a:hover {
 
 
 header.smaller {
-    height: 132px;
+    height: 162px;
 }
 
 header.smaller .site-navbar ul li {
