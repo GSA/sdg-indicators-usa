@@ -1684,12 +1684,6 @@ ul li {
   display: table-row;
 }
 
-ul li::before {
-  content: '\2022';
-  display: table-cell;
-  padding-right: 0.4em;
-}
-
 ol li {
   counter-increment: table-ol;
   display: table-row;
