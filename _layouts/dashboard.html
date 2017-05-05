@@ -2,7 +2,7 @@
 
 {% include header.html %}
 
-      <div id="main" class="main-content initiative-content">
+<div id="main" class="main-content initiative-content">
 
 
         <section class="usa-banner">
@@ -37,15 +37,15 @@
 
             </div>
             
-        <div class="usa-grid initiative-description">
+<div class="usa-grid initiative-description">
       {{ content }}
 
-      <ul class="usa-accordion-bordered">
+<ul class="usa-accordion-bordered">
 
 {% if page.lang == 'en' %}
     {% assign goals = site.data.sdg_goals %}
 {% else %}
-    {% assign goals = site.data[page.lang].sdg_goals %}
+    {% assign goals = site.data.sdg_goals %}
 {% endif %}
 
 {% for goal in goals %}
