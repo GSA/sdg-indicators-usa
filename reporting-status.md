@@ -1,5 +1,5 @@
 ---
 title: Dashboard
 layout: dashboard
-permalink: /dashboard/
+permalink: /reporting-status/
 ---
