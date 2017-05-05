@@ -1,5 +1,5 @@
 ---
 title: Estado del Indicador
-layout: indicatorstatus.html
+layout: indicatorstatus
 permalink: /indicator-status/
 ---
