@@ -41,7 +41,7 @@ header.fixed-header.smaller .logo-home {
 }
 
 .usa-banner h1 {
-    margin-top : 5rem;
+    margin : 5rem auto 4rem auto;
 }
 
 .usa-label {
@@ -477,6 +477,11 @@ p a, .usa-content-list a {
     font-size: 1.25rem;
 }
 
+.usa-accordion li::before,
+.usa-accordion-bordered li::before {
+    padding-right : 0;
+}
+
 .usa-accordion,
 .usa-accordion-bordered {
     width : 100%;
@@ -485,6 +490,10 @@ p a, .usa-content-list a {
 .usa-accordion > li::before,
 .usa-accordion-bordered > li::before {
     content : "";
+}
+
+.status-dashboard .usa-accordion-button {
+    text-align : left;
 }
 
 .status-traffic-statbox {
