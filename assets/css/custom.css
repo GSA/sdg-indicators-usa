@@ -437,7 +437,7 @@ p a, .usa-content-list a {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.login-link {
+.login-link, .language-toggle a {
     float : right;
     margin-left : 2em;
     border : 1px solid #ccc;
@@ -449,13 +449,17 @@ p a, .usa-content-list a {
     text-decoration: none;
 }
 
-.login-link:visited {
+.login-link:visited, .language-toggle a:visited {
     color : #205493;
 }
 
-.login-link:hover {
+.login-link:hover, .language-toggle a:hover {
     text-decoration: none;
     background-color: #fff;
+}
+
+.language-toggle {
+    float : right;
 }
 
 .github-login {

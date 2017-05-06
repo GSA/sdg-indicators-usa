@@ -10,6 +10,13 @@
                             This is an official website of the United States government                          
                           {% endif %}
                         </span>
+                        <span class="language-toggle">
+                        {% if page.lang == 'en' %}
+                          <a class='pull-right lang es' data-lang='es' href='{{site.baseurl}}/es{{page.url | remove: 'index.html'}}'>Español</a>
+                        {% else %}
+                          <a class='pull-right lang'  data-lang='en' href='{{site.baseurl}}{{page.url | replace_first:'/es', ''}}'>English</a>
+                        {% endif %}
+                        </span>
                         {% if site.github.environment == 'dotcom' %}
                           <a href="{{ site.baseurl }}/admin" class="login-link">Login / Logout</a>
                         {% endif %}
@@ -31,14 +38,5 @@
                       </ul>
                   </nav>
 
-                  <div class="usa-grid">
-                    <div class="usa-width-one-whole">
-                    {% if page.lang == 'en' %}
-                      <a class='pull-right lang es' data-lang='es' href='{{site.baseurl}}/es{{page.url | remove: 'index.html'}}'>Español</a>
-                    {% else %}
-                      <a class='pull-right lang'  data-lang='en' href='{{site.baseurl}}{{page.url | replace_first:'/es', ''}}'>English</a>
-                    {% endif %}
-                    </div>
-                  </div>
                 </div>
             </header>
