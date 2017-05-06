@@ -53,7 +53,7 @@ table th {
 }
 
 .main-content {
-    padding-top : 188px;
+    padding-top : 140px;
     background-color: #fff;
 }
 
@@ -62,7 +62,7 @@ table th {
 header.fixed-header {
     top: 0;
     position: fixed;
-    height: 189px;
+    height: 155px;
     width: 100%;
     z-index: 1;
     background-color: #ffffff;
@@ -131,7 +131,7 @@ header.fixed-header .site-navbar ul li#nav-logo a:hover {
 
 
 header.smaller {
-    height: 148px;
+    height: 105px;
 }
 
 header.smaller .site-navbar ul li {
