@@ -1680,10 +1680,6 @@ p + ol {
   margin-top: 0;
 }
 
-ul li {
-  display: table-row;
-}
-
 ol li {
   counter-increment: table-ol;
   display: table-row;
