@@ -69,8 +69,46 @@
 
 {% endfor %}
 
-  <h5 class="{{ graph_set }}{{ graph_type }}"><a href="{{ site.baseurl }}/{{ slug }}">{{ indicators.indicator_id }} {{ indicators.indicator }}</a></h5>
+<div class="media usa-grid-full">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Tier</th>
+                              <th>Status</th>
+                              <th>Indicator</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for indicator in site.indicators %}
+                                                
+                                {% if indicator.sdg_goal == this_goal %}
+                                  
+                                  {% assign indicator_status = "Unsourced Data" %}
+                                  {% assign status_label = "danger" %}
 
+                                  {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                                    {% assign indicator_status = "Compiling Statistics" %}
+                                    {% assign status_label = "warning" %}
+
+                                    {% if indicator.graph != nil AND indicator.graph != "" %}
+                                      {% assign indicator_status = "Reported Online" %}
+                                      {% assign status_label = "success" %}
+                                    {% endif %}
+
+                                  {% endif %}
+
+                                        <tr>
+                                          <td>{{ indicator.un_designated_tier }}</td>
+                                          <td><span class="label label-{{ status_label }}">{{ indicator_status }}</span></td>
+                                          <td><a href="{{ site.baseurl }}{{ indicator.permalink }}">{{ indicator.indicator }} {{ indicator.title }}</a></td>
+                                        </tr>
+
+                                {% endif %}
+                              
+                            {% endfor %}
+                        </tbody>
+                        </table>
+                      </div>
 {% endif %}
 
 {% endfor %}
