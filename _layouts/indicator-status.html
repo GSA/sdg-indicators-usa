@@ -35,6 +35,43 @@
         </section>
 
 
+                    <div class="usa-grid">
+            {{ content }}
+
+            {% assign indicators_count = 0 %}
+
+            {% assign unsourced_data = 0 %}
+            {% assign compiling_statistic = 0 %}
+            {% assign finalized_reporting = 0 %}
+
+            {% assign unsourced_percent = 0 %}
+            {% assign compiling_percent = 0 %}
+            {% assign finalized_percent = 0 %}
+
+            {% for indicator in site.indicators %}            
+
+                {% assign indicators_count = indicators_count | plus:1 %}
+                {% assign unsourced_data = unsourced_data | plus:1 %}
+
+                {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                  {% assign unsourced_data = unsourced_data | minus:1 %}
+                  {% assign compiling_statistic = compiling_statistic | plus:1 %}
+
+                  {% if indicator.graph != nil AND indicator.graph != "" %}
+                    {% assign compiling_statistic = compiling_statistic | minus:1 %}
+                    {% assign finalized_reporting = finalized_reporting | plus:1 %}
+                  {% endif %}
+
+                {% endif %}
+
+            {% endfor %}
+
+            {% assign indicators_count = indicators_count | round: 1 %}
+
+            {% assign unsourced_percent = unsourced_data | divided_by:indicators_count | times:100 %}
+            {% assign compiling_percent = compiling_statistic | divided_by:indicators_count | times:100 %}
+            {% assign finalized_percent = finalized_reporting | divided_by:indicators_count | times:100 %}
+                          
 <div class="media usa-grid-full">
                         <table>
                           <thead>
@@ -76,7 +113,7 @@
                         </table>
                       </div>
 
-
+            </div>
       
     </div>
     
