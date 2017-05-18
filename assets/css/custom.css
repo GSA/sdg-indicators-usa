@@ -492,10 +492,22 @@ p a, .usa-content-list a {
     content : "";
 }
 
+.status-dashboard .progress-bar.progress-bar-default {
+    background-color : #777;
+}
+
 .status-dashboard .usa-accordion-button {
     text-align : left;
 }
 
-.status-traffic-statbox {
-    font-size : .75em;
+.status-dashboard .status-traffic-statbox {
+    margin-top : 2em;
+}
+
+.status-dashboard .usa-accordion-bordered .status-traffic-statbox {
+   font-size : 1.35rem;
+}
+
+.status-dashboard .dark-badge {
+    background-color : #333;
 }
