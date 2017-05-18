@@ -35,45 +35,52 @@
         </section>
 
         <div class="usa-grid initiative-description">
-      {{ content }}
+          {{ content }}
 
-{% if page.lang == 'en' %}
-    {% assign sdg_indicators = site.data.sdg_indicator_metadata %}
-{% else %}
-    {% assign sdg_indicators = site.data[page.lang].sdg_indicator_metadata %}
-{% endif %}
+          {% if page.lang == 'en' %}
+              {% assign sdg_indicators = site.data.sdg_indicator_metadata %}
+          {% else %}
+              {% assign sdg_indicators = site.data[page.lang].sdg_indicator_metadata %}
+          {% endif %}
 
-{% assign sdg_indicator_pages = site.indicators %}
+          <table>
+            <thead>
+              <tr>
+                <th>Tier</th>
+                <th>Status</th>
+                <th>Indicator</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for indicator in site.indicators %}
+                                  
+                  {% if indicator.sdg_goal == page.sdg_goal %}
+                    
+                    {% assign indicator_status = "Exploring Data" %}
+                    {% assign status_label = "danger" %}
 
+                    {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                      {% assign indicator_status = "Compiling Statistics" %}
+                      {% assign status_label = "warning" %}
 
-{% for indicators in sdg_indicators %}
+                      {% if indicator.graph != nil AND indicator.graph != "" %}
+                        {% assign indicator_status = "Reported Online" %}
+                        {% assign status_label = "success" %}
+                      {% endif %}
 
-{% assign goal = indicators.goal | plus:0 %}
-{% assign slug = indicators.indicator_id | replace: '.', '-' %}
+                    {% endif %}
 
-{% if goal == page.sdg_goal %}
+                          <tr>
+                            <td>{{ indicator.un_designated_tier }}</td>
+                            <td><span class="label label-{{ status_label }}">{{ indicator_status }}</span></td>
+                            <td><a href="{{ site.baseurl }}{{ indicator.permalink }}">{{ indicator.indicator }} {{ indicator.title }}</a></td>
+                          </tr>
 
-{% for sdg_indicator_page in sdg_indicator_pages %}
-
-  {% if sdg_indicator_page.indicator == indicators.indicator_id %}
-
-    {% if sdg_indicator_page.graph != "" and sdg_indicator_page.graph != nil %}
-      {% assign graph_type = sdg_indicator_page.graph %}
-      {% assign graph_set = 'graph ' %}
-    {% else %}
-      {% assign graph_type = '' %}
-      {% assign graph_set = 'no-graph' %}
-    {% endif %}
-
-  {% endif %}
-
-{% endfor %}
-
-  <h5 class="{{ graph_set }}{{ graph_type }}"><a href="{{ site.baseurl }}/{{ slug }}">{{ indicators.indicator_id }} {{ indicators.indicator }}</a></h5>
-
-{% endif %}
-
-{% endfor %}
+                  {% endif %}
+                
+              {% endfor %}
+          </tbody>
+          </table>
 
       </div>
       
