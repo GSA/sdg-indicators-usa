@@ -58,7 +58,7 @@
             {% assign finalized_percent = finalized_reporting | divided_by:indicators_count | times:100 %}
             {% assign tier3_percent = tier3 | divided_by:indicators_count | times:100 %}
 
-            <h4>Overall Reporting Status <span class="badge dark-badge">{{ indicators_count | round }}</span></h4>
+            <h4>Overall Reporting Status <span class="badge dark-badge">{{ indicators_count | round }} indicators</span></h4>
 
             <div class="container-fluid status-traffic-statbox">
                <div class="col-md-3">
@@ -95,9 +95,7 @@
     
         <div class="usa-grid initiative-description">
 
-            <h4>Status by Goal</h4>
-
-            <ul class="usa-accordion-bordered">
+            <div class="goal-list">
 
             {% if page.lang == 'en' %}
               {% assign goals = site.data.sdg_goals %}
@@ -163,24 +161,22 @@
                     {% assign img_path = ''  %}
                 {% endif %}
 
-                <li>
-                  <button class="usa-accordion-button" aria-controls="amendment-b-{{ goal.goal }}">
-                    {{ goal.goal }}. {{ goal.short }}
-                  </button>
-                  <div id="amendment-b-{{ goal.goal }}" class="usa-accordion-content">
+                <a class="goal-progress" href="{{ site.baseurl }}/{{ goal.short | slugify }}/">
+                  <h4>{{ goal.goal }}. {{ goal.short }} <span class="badge dark-badge">{{ indicators_count }} indicators</span></h4>
+                  <div>
 
                     <div class="media usa-grid-full">
 
                       <div class="usa-width-one-sixth">
                         <div class="media-left">
-                          <a href="{{ site.baseurl }}/{{ goal.short | slugify }}/">
+                          <div>
 
                               <img class="media-object" src="{{ site.baseurl }}/assets/img/bw/{{ img_path }}{{ this_goal }}.png" width="100%" height="calc(1 * width)" alt="{{ goal.short}}">
 
                           <span class="sr-only">
                                 {{ goal.title}}
                           </span>
-                          </a>
+                          </div>
                         </div>
                       </div> 
 
@@ -189,8 +185,6 @@
 
 
                          <div class="media-body">
-
-                            <span class="badge dark-badge">{{ indicators_count }} indicators</span>
 
                             <div class="container-fluid status-traffic-statbox">
                                <div class="col-md-3">
@@ -228,50 +222,11 @@
 
                         </div>
                       </div>
-                      <div class="media usa-grid-full">
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Tier</th>
-                              <th>Status</th>
-                              <th>Indicator</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {% for indicator in site.indicators %}
-                                                
-                                {% if indicator.sdg_goal == this_goal %}
-                                  
-                                  {% assign indicator_status = "Exploring Data" %}
-                                  {% assign status_label = "danger" %}
 
-                                  {% if indicator.source_url != nil AND indicator.source_url != "" %}
-                                    {% assign indicator_status = "Compiling Statistics" %}
-                                    {% assign status_label = "warning" %}
-
-                                    {% if indicator.graph != nil AND indicator.graph != "" %}
-                                      {% assign indicator_status = "Reported Online" %}
-                                      {% assign status_label = "success" %}
-                                    {% endif %}
-
-                                  {% endif %}
-
-                                        <tr>
-                                          <td>{{ indicator.un_designated_tier }}</td>
-                                          <td><span class="label label-{{ status_label }}">{{ indicator_status }}</span></td>
-                                          <td><a href="{{ site.baseurl }}{{ indicator.permalink }}">{{ indicator.indicator }} {{ indicator.title }}</a></td>
-                                        </tr>
-
-                                {% endif %}
-                              
-                            {% endfor %}
-                        </tbody>
-                        </table>
-                      </div>
                     </div>
-                  </li>
+                  </a>
             {% endfor %}
-            </ul>
+
         </div>
       
     </div>

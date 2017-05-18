@@ -504,8 +504,16 @@ p a, .usa-content-list a {
     margin-top : 2em;
 }
 
-.status-dashboard .usa-accordion-bordered .status-traffic-statbox {
+.status-dashboard .goal-list .status-traffic-statbox {
    font-size : 1.35rem;
+}
+
+.goal-list {
+    margin-top : 2em;
+}
+
+.goal-progress, .goal-progress:visited {
+    color : #000;
 }
 
 .status-dashboard .dark-badge {
