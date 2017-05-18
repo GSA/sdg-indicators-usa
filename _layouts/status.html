@@ -57,7 +57,7 @@
 
             <div class="usa-grid-full status-traffic-statbox">
               <div class="usa-width-one-third">
-                {{ unsourced_percent | round }}% exploring data sources <span class="label label-danger">{{ unsourced_data }}</span>
+                {{ unsourced_percent | round }}% exploring data <span class="label label-danger">{{ unsourced_data }}</span>
               </div>
               <div class="usa-width-one-third">
                 {{ compiling_percent | round }}% statistics in progress <span class="label label-warning">{{ compiling_statistic }}</span>
@@ -70,7 +70,7 @@
             <div class="usa-width-one-whole">
               <div class="progress progress-top" style="margin-top: 18px;">
                 <div class="progress-bar progress-bar-danger" style="width:{{ unsourced_percent }}%">
-                  <span class="sr-only">Unsourced {{ unsourced_percent }}%</span>
+                  <span class="sr-only">Exploring {{ unsourced_percent }}%</span>
                 </div>
                 <div class="progress-bar progress-bar-warning" style="width:{{ compiling_percent }}%">
                   <span class="sr-only">Compiling {{ compiling_percent }}%</span>
@@ -168,22 +168,22 @@
                       <div class="usa-width-five-sixths">
 
                          <div class="usa-grid-full" style="display: flex;">
-  <div class="usa-width-one-third"> 
+ <div class="usa-width-two-thirds"> 
      <div class="usa-width-one-whole">
-  <div class="usa-width-one-third">Tier 1 <span class="label label-info">#</span></div>
-         <div class="usa-width-one-third">Tier 2 <span class="label label-info">#</span></div>
-         <div class="usa-width-one-third">Tier 3 <span class="label label-info">#</span></div>
-    </div>
-  </div><div class="usa-width-one-half"></div>
-                            <div class="usa-width-one-sixth">total 
-                           <span class="badge" style="background-color: #333;">{{ indicators_count }}</span></div>
+         Indicators ready to report (Tier 1 &amp; Tier 2) <span class="label label-info">#</span>
+      </div>
+      
+  </div>
+                             
+                             <div class="usa-width-one-sixth"></div>
+                            <div class="usa-width-one-sixth" style="text-align: right;">Total  
+                           <span class="badge" style="background-color: #333; vertical-align: bottom;">{{ indicators_count }}</span></div>
                          </div>
-
                          <div class="media-body">
 
                             <div class="usa-grid-full status-traffic-statbox" style="margin-top: 18px;">
                               <div class="usa-width-one-third">
-                                {{ unsourced_percent | round }}% exploring data sources <span class="label label-danger">{{ unsourced_data }}</span>
+                                {{ unsourced_percent | round }}% exploring data <span class="label label-danger">{{ unsourced_data }}</span>
                               </div>
                               <div class="usa-width-one-third">
                                 {{ compiling_percent | round }}% statistics in progress <span class="label label-warning">{{ compiling_statistic }}</span>
@@ -196,7 +196,7 @@
                             <div class="usa-width-one-whole">
                               <div class="progress" style="margin-top: 18px;">
                                 <div class="progress-bar progress-bar-danger" style="width:{{ unsourced_percent }}%">
-                                  <span class="sr-only">Unsourced {{ unsourced_percent }}%</span>
+                                  <span class="sr-only">Exploring {{ unsourced_percent }}%</span>
                                 </div>
                                 <div class="progress-bar progress-bar-warning" style="width:{{ compiling_percent }}%">
                                   <span class="sr-only">Compiling {{ compiling_percent }}%</span>
@@ -225,7 +225,7 @@
                                                 
                                 {% if indicator.sdg_goal == this_goal %}
                                   
-                                  {% assign indicator_status = "Unsourced Data" %}
+                                  {% assign indicator_status = "Exploring Data" %}
                                   {% assign status_label = "danger" %}
 
                                   {% if indicator.source_url != nil AND indicator.source_url != "" %}
