@@ -162,7 +162,7 @@
                 {% endif %}
 
                 <a class="goal-progress" href="{{ site.baseurl }}/{{ goal.short | slugify }}/">
-                  <h4>{{ goal.goal }}. {{ goal.short }} <span class="badge dark-badge">{{ indicators_count }} indicators</span></h4>
+                  <h4>{{ goal.short }} <span class="badge dark-badge">{{ indicators_count }} indicators</span></h4>
                   <div>
 
                     <div class="media usa-grid-full">
@@ -171,7 +171,7 @@
                         <div class="media-left">
                           <div>
 
-                              <img class="media-object" src="{{ site.baseurl }}/assets/img/bw/{{ img_path }}{{ this_goal }}.png" width="100%" height="calc(1 * width)" alt="{{ goal.short}}">
+                              <img class="media-object" src="{{ site.baseurl }}/assets/img/bw/{{ img_path }}{{ this_goal }}.png" width="75%" height="calc(1 * width)" alt="{{ goal.short}}">
 
                           <span class="sr-only">
                                 {{ goal.title}}
