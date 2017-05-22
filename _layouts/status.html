@@ -162,7 +162,7 @@
                 {% endif %}
 
                 <a class="goal-progress" href="{{ site.baseurl }}/{{ goal.short | slugify }}/">
-                  <h4>{{ goal.short }} <span class="badge dark-badge">{{ indicators_count }} indicators</span></h4>
+                  
                   <div>
 
                     <div class="media usa-grid-full">
@@ -185,7 +185,7 @@
 
 
                          <div class="media-body">
-
+<h4>{{ goal.short }} <span class="badge dark-badge">{{ indicators_count }} indicators</span></h4>
                             <div class="container-fluid status-traffic-statbox">
                                <div class="col-md-3">
                                 <span class="label label-danger">{{ unsourced_data }}</span> Exploring data <br>{{ unsourced_percent | round }}%
