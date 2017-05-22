@@ -527,3 +527,17 @@ p a, .usa-content-list a {
 .status-dashboard .dark-badge {
     background-color : #333;
 }
+
+.indicator-status-table .label-success {
+    background-color : #3F7E44;
+}
+
+.status-dashboard .goal-progress .usa-grid-full {
+margin-bottom : 1em;
+  padding-top : 1em;
+  border-top : 1px solid #ccc;
+}
+
+.status-dashboard .goal-progress .usa-grid-full .media-object {
+    max-width: 155px;
+}
