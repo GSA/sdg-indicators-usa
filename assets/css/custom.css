@@ -500,12 +500,16 @@ p a, .usa-content-list a {
     text-align : left;
 }
 
-.status-dashboard .status-traffic-statbox {
+/* .status-dashboard .status-traffic-statbox {
     margin-top : 2em;
-}
+} */
 
 .status-dashboard .goal-list .status-traffic-statbox {
    font-size : 1.35rem;
+}
+
+.media-left > img {
+ float : right;   
 }
 
 .goal-list {
