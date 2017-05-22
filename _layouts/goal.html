@@ -56,8 +56,8 @@
                                   
                   {% if indicator.sdg_goal == page.sdg_goal %}
                     
-                    {% assign indicator_status = "Exploring Data" %}
-                    {% assign status_label = "danger" %}
+                    {% assign indicator_status = "Tier 3" %}
+                    {% assign status_label = "default" %}
 
                     {% if indicator.source_url != nil AND indicator.source_url != "" %}
                       {% assign indicator_status = "Compiling Statistics" %}
