@@ -512,6 +512,10 @@ p a, .usa-content-list a {
  float : right;   
 }
 
+.media-body > h4 {
+    margin-top : 0;
+}
+
 .goal-list {
     margin-top : 2em;
 }
