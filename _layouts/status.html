@@ -77,18 +77,18 @@
 
             <div class="usa-width-one-whole">
               <div class="progress progress-top" style="margin-top: 18px;">               
+                <div class="progress-bar progress-bar-default" style="width:{{ tier3_percent }}%">
+                  <span class="sr-only">Improving measures {{ tier3_percent }}%</span>
+                </div> 
                 <div class="progress-bar progress-bar-danger" style="width:{{ unsourced_percent }}%">
                   <span class="sr-only">Exploring {{ unsourced_percent }}%</span>
                 </div>
                 <div class="progress-bar progress-bar-warning" style="width:{{ compiling_percent }}%">
-                  <span class="sr-only">Compiling {{ compiling_percent }}%</span>
+                  <span class="sr-only">Statistics in progress {{ compiling_percent }}%</span>
                 </div>
                 <div class="progress-bar progress-bar-success" style="width:{{ finalized_percent }}%">
-                  <span class="sr-only">Finalized {{ finalized_percent }}%</span>
+                  <span class="sr-only">Reported {{ finalized_percent }}%</span>
                 </div>
-                <div class="progress-bar progress-bar-default" style="width:{{ tier3_percent }}%">
-                  <span class="sr-only">Tier 3 {{ tier3_percent }}%</span>
-                </div> 
               </div>
             </div>
         </div>
@@ -148,10 +148,10 @@
 
                 {% assign indicators_count = indicators_count | round: 1 %}
 
+                {% assign tier3_percent = tier3 | divided_by:indicators_count | times:100 %}
                 {% assign unsourced_percent = unsourced_data | divided_by:indicators_count | times:100 %}
                 {% assign compiling_percent = compiling_statistic | divided_by:indicators_count | times:100 %}
                 {% assign finalized_percent = finalized_reporting | divided_by:indicators_count | times:100 %}
-                {% assign tier3_percent = tier3 | divided_by:indicators_count | times:100 %}
 
                 {% assign indicators_count = indicators_count | round %}
 
@@ -187,6 +187,9 @@
                          <div class="media-body">
 <h4>{{ goal.short }} <span class="badge dark-badge">{{ indicators_count }} indicators</span></h4>
                             <div class="container-fluid status-traffic-statbox">
+                              <div class="col-md-3">
+                                <span class="label label-default">{{ tier3 }}</span> Improving measures <br>{{ tier3_percent | round }}%
+                              </div>
                                <div class="col-md-3">
                                 <span class="label label-danger">{{ unsourced_data }}</span> Exploring data <br>{{ unsourced_percent | round }}%
                               </div>
@@ -196,25 +199,22 @@
                               <div class="col-md-3">
                                 <span class="label label-success">{{ finalized_reporting }}</span> Reported online <br>{{ finalized_percent | round }}%
                               </div>
-                              <div class="col-md-3">
-                                <span class="label label-default">{{ tier3 }}</span> Tier 3 <br>{{ tier3_percent | round }}%
-                              </div>
                             </div>
 
                             <div class="usa-width-one-whole">
                               <div class="progress">               
+                                <div class="progress-bar progress-bar-default" style="width:{{ tier3_percent }}%">
+                                  <span class="sr-only">Improving measures {{ tier3_percent }}%</span>
+                                </div> 
                                 <div class="progress-bar progress-bar-danger" style="width:{{ unsourced_percent }}%">
                                   <span class="sr-only">Exploring {{ unsourced_percent }}%</span>
                                 </div>
                                 <div class="progress-bar progress-bar-warning" style="width:{{ compiling_percent }}%">
-                                  <span class="sr-only">Compiling {{ compiling_percent }}%</span>
+                                  <span class="sr-only">Statistics in progress {{ compiling_percent }}%</span>
                                 </div>
                                 <div class="progress-bar progress-bar-success" style="width:{{ finalized_percent }}%">
-                                  <span class="sr-only">Finalized {{ finalized_percent }}%</span>
+                                  <span class="sr-only">Reported online {{ finalized_percent }}%</span>
                                 </div>
-                                <div class="progress-bar progress-bar-default" style="width:{{ tier3_percent }}%">
-                                  <span class="sr-only">Tier 3 {{ tier3_percent }}%</span>
-                                </div> 
                               </div>
                             </div>
 
