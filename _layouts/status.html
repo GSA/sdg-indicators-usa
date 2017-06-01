@@ -61,7 +61,10 @@
             <h4>Overall Reporting Status <span class="badge dark-badge">{{ indicators_count | round }} indicators</span></h4>
 
             <div class="container-fluid status-traffic-statbox">
-               <div class="col-md-3">
+              <div class="col-md-3">
+                <span class="label label-default">{{ tier3 }}</span> Improving measures <br>{{ tier3_percent | round }}%
+              </div>
+              <div class="col-md-3">
                 <span class="label label-danger">{{ unsourced_data }}</span> Exploring data <br>{{ unsourced_percent | round }}%
               </div>
               <div class="col-md-3">
@@ -69,9 +72,6 @@
               </div>
               <div class="col-md-3">
                 <span class="label label-success">{{ finalized_reporting }}</span> Reported online <br>{{ finalized_percent | round }}%
-              </div>
-              <div class="col-md-3">
-                <span class="label label-default">{{ tier3 }}</span> Tier 3 <br>{{ tier3_percent | round }}%
               </div>
             </div>
 
