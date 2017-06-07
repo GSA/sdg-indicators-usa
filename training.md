@@ -10,7 +10,7 @@ permalink: /training/
 <br/>Thinking about making your own version of this national reporting platform to report SDG statistics? These materials can help you get started. The US NRP is open source and free to copy (or “fork”).
 
 - <a href="{{ site.baseurl }}/assets/documents/Quick%20Start%20Guide%2004.28.17.pdf">US Quick Start Guide</a>
-- <a href="{{ site.baseurl }}/assets/documents/FAQ%20National%20Reporting%20Platform%204.28.17.pdf">Frequently Asked Questions</a>
+- <a href="{{ site.baseurl }}/assets/documents/US%20NRP%20FAQ%2020170602.pdf">Frequently Asked Questions</a>
 - <a href="{{ site.baseurl }}/assets/documents/NRP%20Quickstart%204.28.17.pptx">NRP intro deck</a> and webinar
 - <a href="{{ site.baseurl }}/assets/documents/How.the.UK.have.set.up.their.copy.of.the.US.SDGs.tool.v0_2.pdf">NRP forking description</a> and webinar
 
