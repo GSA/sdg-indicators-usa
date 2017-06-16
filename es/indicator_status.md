@@ -1,6 +1,6 @@
 ---
 layout: page
 lang: es
-title: Indicator Status
+title: Estatus Indicadores de los Objectivos
 permalink: /es/indicator-status/
 ---
