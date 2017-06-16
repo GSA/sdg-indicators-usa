@@ -1,6 +1,6 @@
 ---
 layout: status
 lang: es
-title: Reporting Status
+title: Estatus de Datos
 permalink: /es/status/
 ---
