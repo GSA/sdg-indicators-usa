@@ -1,11 +1,11 @@
 ---
 layout: page
 lang: es
-title: Training Materials
+title: Instrucción
 permalink: /es/training/
 ---
 
-<h4>This page provides resources for National Statistical Offices, data providers, and data users. </h4>
+<h4>Esta página proporciona recursos para las Oficinas Nacionales de Estadística, proveedores de datos y usuarios de datos.</h4>
 
 **Desarrollando su propia plataforma nacional**
 <br/>Si esta planeando su propia versión de esta plataforma, estos materiales pueden ayudarle a comenzar. La plataforma nacional (NRP) de Objetivos de Desarrollo Sostenible (ODS o SDG) de USA esta basado en un código abierto y gratuito, disponible para copiar.
