@@ -89,6 +89,8 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="data">
 
+      {% if page.graph == 'bar' or page.graph == 'longitudinal' %}
+
       <div class="datatable-container">
         <h4>{{ page.graph_title }}</h4>
         <div id="datatable"></div>
@@ -101,6 +103,11 @@
 
 
       </div>
+      {% else %}
+
+        <span class="">Exploring Data</span>
+
+      {% endif %}
 
     </div>
     <div role="tabpanel" class="tab-pane" id="metadata">
