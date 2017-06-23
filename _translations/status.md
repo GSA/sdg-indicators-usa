@@ -11,7 +11,7 @@ en:
   warning-text : "Statistics in progress"
   success-text : "Reported online"
 es:
-  site-title: "Estatus de Datos Disponibles"
+  page-title: "Estatus de Datos Disponibles"
   disclaimer-wip: "Este sitio web es un trabajo en progreso"
   nav-reporting-status : "Estatus de disponibilidad de datos"
   nav-statistics : "Estadística EE.UU"
