@@ -11,7 +11,7 @@ permalink: /es/training/
 <br/>Si esta planeando su propia versión de esta plataforma, estos materiales pueden ayudarle a comenzar. La plataforma nacional (NRP) de Objetivos de Desarrollo Sostenible (ODS o SDG) de USA esta basado en un código abierto y gratuito, disponible para copiar.
 
 - <a href="{{ site.baseurl }}/assets/documents/Quick%20Start%20Guide%2004.28.17.pdf" target="_blank">USA Guía de inicio rápido</a>
-- <a href="{{ site.baseurl }}/assets/documents/US%20NRP%20FAQ%2020170602.pdf" target="_blank">Preguntas frecuentes</a>
+- <a href="{{ site.baseurl }}/assets/documents/FAQ%20National%20Reporting%20Platform%20current.pdf" target="_blank">Preguntas frecuentes</a>
 - <a href="{{ site.baseurl }}/assets/documents/NRP%20Quickstart%204.28.17.pptx" target="_blank">Presentación</a> y seminario web de introduction de el NRP
 - <a href="{{ site.baseurl }}/assets/documents/How.the.UK.have.set.up.their.copy.of.the.US.SDGs.tool.v0_2.pdf" target="_blank">Descripción</a> y <a href="https://drive.google.com/a/nyu.edu/file/d/0BwiQGA4nFw7teTRUNmNaUEM1UW8/view?usp=drive_web" target="_blank">seminario web</a> de copiar el NRP
 
