@@ -55,6 +55,7 @@
             {% for indicator in site.indicators %}            
 
                 {% if indicator.sdg_goal == page.sdg_goal %}
+                {% if indicator.lang == page.lang %}
 
                     {% if indicator.un_designated_tier != '3' %}
                         {% assign indicator_status = "Exploring Data" %}
@@ -87,6 +88,7 @@
                         <td><a href="{{ site.baseurl }}{{ indicator.permalink }}">{{ indicator.indicator }} {{ indicator_title }}</a></td>
                     </tr>
 
+                {% endif %}
                 {% endif %}
 
             {% endfor %}
