@@ -24,7 +24,7 @@ permalink: /training/
 <br/>Thinking about how to identify data gaps? These materials may be helpful.
 
 - <a href="{{ site.baseurl }}/assets/documents/SDG%20Data%20Stocktaking%20Survey%20(SurveyMonkey).pdf" target="_blank">US SDG Data Needs Survey</a> 
-- UNECE CES Survey of Data Needs for SDG
+- <a href="https://statswiki.unece.org/download/attachments/127666441/Self-assessment%20template%20on%20availability%20of%20SDG%20indicators.xlsx?version=3&modificationDate=1484038447257&api=v2" target="_blank">UNECE CES Survey of Data Needs for SDG</a>
 
 **Training Data Providers**
 <br/>Here are some materials that may help train data providers to input statistics and metadata into your NRP.
@@ -34,7 +34,7 @@ permalink: /training/
 **Road Maps for Reporting SDG Statistics**
 <br/>Thinking about how to plan for reporting SDG statistics? These links may help.
 
-- UNECE CES Roadmap 
-- <a href="{{ site.baseurl }}/assets/documents/us-sdg-report%20(5).pdf">US SDG Roadmap</a> 
+- <a href="https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/2017/CES_2-Road_Map_on_Statistics_for_SDGs_final.pdf" target="_blank">UNECE CES Roadmap</a> 
+- <a href="{{ site.baseurl }}/assets/documents/us-sdg-report%20(5).pdf" target="_blank">US SDG Roadmap</a> 
 
 Have other questions about building your own NRP from our open source (free) model? Other questions or suggestions for our site? Contact us at sdgs@omb.eop.gov.
