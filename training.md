@@ -17,8 +17,8 @@ permalink: /training/
 **Customizing Your Platform**
 <br/>Once you’ve copied your platform, here are some tips for customizing it to fit your needs.
 
-- Translating the NRP
-- Changing national graphics on the NRP 
+- <a href="#">Translating the NRP</a>
+- <a href="https://github.com/datasciencecampus/sdg-indicators/wiki/What-do-we-need-to-change" target="_blank">Changing national graphics on the NRP</a> 
 
 **Conducting a Data Needs Assessment**
 <br/>Thinking about how to identify data gaps? These materials may be helpful.
@@ -37,4 +37,4 @@ permalink: /training/
 - <a href="https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/2017/CES_2-Road_Map_on_Statistics_for_SDGs_final.pdf" target="_blank">UNECE CES Roadmap</a> 
 - <a href="{{ site.baseurl }}/assets/documents/us-sdg-report%20(5).pdf" target="_blank">US SDG Roadmap</a> 
 
-Have other questions about building your own NRP from our open source (free) model? Other questions or suggestions for our site? Contact us at sdgs@omb.eop.gov.
+Have other questions about building your own NRP from our open source (free) model? Other questions or suggestions for our site? Contact us at <a href="mailto:sdgs@omb.eop.gov">sdgs@omb.eop.gov</a>.
