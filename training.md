@@ -17,8 +17,8 @@ permalink: /training/
 **Customizing Your Platform**
 <br/>Once you’ve copied your platform, here are some tips for customizing it to fit your needs.
 
-- Translating the NRP
-- Changing national graphics on the NRP 
+- <a href="#">Translating the NRP</a>
+- <a href="https://github.com/datasciencecampus/sdg-indicators/wiki/What-do-we-need-to-change" target="_blank">Changing national graphics on the NRP</a> 
 
 **Conducting a Data Needs Assessment**
 <br/>Thinking about how to identify data gaps? These materials may be helpful.
