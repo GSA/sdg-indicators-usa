@@ -7,7 +7,6 @@
 
     <div id="main" class="main-content initiative-content status-dashboard">
 
-
         <section class="usa-banner banner-small">
             <div class="usa-grid">
                 <div class="usa-banner-content">
@@ -33,23 +32,26 @@
 
             {% for indicator in site.indicators %}            
 
-                {% assign indicators_count = indicators_count | plus:1 %}
+                {% if indicator.lang == site.defaults[0].values.lang %}
 
-                {% if indicator.un_designated_tier != '3' %}
-                    {% assign unsourced_data = unsourced_data | plus:1 %}
+                    {% assign indicators_count = indicators_count | plus:1 %}
 
-                    {% if indicator.source_url != nil AND indicator.source_url != "" %}
-                      {% assign unsourced_data = unsourced_data | minus:1 %}
-                      {% assign compiling_statistic = compiling_statistic | plus:1 %}
+                    {% if indicator.un_designated_tier != '3' %}
+                        {% assign unsourced_data = unsourced_data | plus:1 %}
 
-                      {% if indicator.graph != nil AND indicator.graph != "" %}
-                        {% assign compiling_statistic = compiling_statistic | minus:1 %}
-                        {% assign finalized_reporting = finalized_reporting | plus:1 %}
-                      {% endif %}
+                        {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                          {% assign unsourced_data = unsourced_data | minus:1 %}
+                          {% assign compiling_statistic = compiling_statistic | plus:1 %}
 
+                          {% if indicator.graph != nil AND indicator.graph != "" %}
+                            {% assign compiling_statistic = compiling_statistic | minus:1 %}
+                            {% assign finalized_reporting = finalized_reporting | plus:1 %}
+                          {% endif %}
+
+                        {% endif %}
+                    {% else %}
+                        {% assign tier3 = tier3 | plus:1 %}
                     {% endif %}
-                {% else %}
-                    {% assign tier3 = tier3 | plus:1 %}
                 {% endif %}
 
             {% endfor %}
@@ -124,27 +126,29 @@
 
                 {% for indicator in site.indicators %}
 
-                    {% if indicator.sdg_goal == this_goal %}
+                    {% if indicator.lang == site.defaults[0].values.lang %}
+                        {% if indicator.sdg_goal == this_goal %}
 
-                        {% assign indicators_count = indicators_count | plus:1 %}
+                            {% assign indicators_count = indicators_count | plus:1 %}
 
-                        {% if indicator.un_designated_tier != '3' %}
-                            {% assign unsourced_data = unsourced_data | plus:1 %}
+                            {% if indicator.un_designated_tier != '3' %}
+                                {% assign unsourced_data = unsourced_data | plus:1 %}
 
-                            {% if indicator.source_url != nil AND indicator.source_url != "" %}
-                              {% assign unsourced_data = unsourced_data | minus:1 %}
-                              {% assign compiling_statistic = compiling_statistic | plus:1 %}
+                                {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                                  {% assign unsourced_data = unsourced_data | minus:1 %}
+                                  {% assign compiling_statistic = compiling_statistic | plus:1 %}
 
-                              {% if indicator.graph != nil AND indicator.graph != "" %}
-                                {% assign compiling_statistic = compiling_statistic | minus:1 %}
-                                {% assign finalized_reporting = finalized_reporting | plus:1 %}
-                              {% endif %}
+                                  {% if indicator.graph != nil AND indicator.graph != "" %}
+                                    {% assign compiling_statistic = compiling_statistic | minus:1 %}
+                                    {% assign finalized_reporting = finalized_reporting | plus:1 %}
+                                  {% endif %}
 
+                                {% endif %}
+                            {% else %}
+                                {% assign tier3 = tier3 | plus:1 %}
                             {% endif %}
-                        {% else %}
-                            {% assign tier3 = tier3 | plus:1 %}
-                        {% endif %}
 
+                        {% endif %}
                     {% endif %}
 
                 {% endfor %}
