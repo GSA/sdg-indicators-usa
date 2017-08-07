@@ -11,7 +11,7 @@ permalink: /training/
 
 - <a href="{{ site.baseurl }}/assets/documents/Quick%20Start%20Guide%2004.28.17.pdf" target="_blank">US Quick Start Guide</a>
 - <a href="{{ site.baseurl }}/assets/documents/FAQ%20National%20Reporting%20Platform%20current.pdf" target="_blank">Frequently Asked Questions</a>
-- <a href="{{ site.baseurl }}/assets/documents/NRP%20Quickstart%204.28.17.pptx" target="_blank">NRP intro deck</a> and webinar
+- <a href="{{ site.baseurl }}/assets/documents/NRP%20Quickstart%204.28.17.pptx" target="_blank">NRP intro deck</a> and <a href="https://drive.google.com/open?id=0BwiQGA4nFw7teHllemdLRkpZeGc" target="_blank">webinar</a>
 - <a href="{{ site.baseurl }}/assets/documents/How.the.UK.have.set.up.their.copy.of.the.US.SDGs.tool.v0_2.pdf" target="_blank">NRP forking description</a> and <a href="https://drive.google.com/a/nyu.edu/file/d/0BwiQGA4nFw7teTRUNmNaUEM1UW8/view?usp=drive_web" target="_blank">webinar</a>
 
 **Customizing Your Platform**
