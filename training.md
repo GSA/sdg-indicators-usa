@@ -37,4 +37,9 @@ permalink: /training/
 - <a href="https://www.unece.org/fileadmin/DAM/stats/documents/ece/ces/2017/CES_2-Road_Map_on_Statistics_for_SDGs_final.pdf" target="_blank">UNECE CES Roadmap</a> 
 - <a href="{{ site.baseurl }}/assets/documents/us-sdg-report%20(5).pdf" target="_blank">US SDG Roadmap</a> 
 
+**Collaborations**
+<br/>We are proud to collaborate with other countries on NRP development. We look forward to future opportunities to exchange ideas and improve access to official national statistics. Some examples of our collaborations to date appear below.
+
+- Collaboration with U.K.
+
 Have other questions about building your own NRP from our open source (free) model? Other questions or suggestions for our site? Contact us at <a href="mailto:JPark@omb.eop.gov">JPark@omb.eop.gov</a>.
