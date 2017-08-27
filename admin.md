@@ -2,9 +2,10 @@
 layout: page
 title: Admin
 permalink: /admin/
+published: true
 ---
 
-The National Reporting Platform is managed through GitHub. To submit updates for review, please first login to GitHub. 
+The National Reporting Platform is managed through GitHub. To submit updates for review, please first login to GitHub. testing
 
 <div class="button_wrapper github-login">
     <a class="usa-button usa-button-big" href="https://github.com/login">GitHub Login</a> <a class="usa-button usa-button-big logout" href="https://github.com/logout">GitHub Logout</a>
@@ -12,4 +13,4 @@ The National Reporting Platform is managed through GitHub. To submit updates for
 
 #### Intitialize Your Account
 
-If you've never authorized your GitHub account to make edits on this website, please go to the [account page](http://prose.io/#GSA/sdg-indicators/edit/gh-pages/account.md) and click the green button in the bottom right corner of the screen and follow the next prompt. 
+If you've never authorized your GitHub account to make edits on this website, please go to the [account page](http://prose.io/#GSA/sdg-indicators/edit/gh-pages/account.md) and click the green button in the bottom right corner of the screen and follow the next prompt.
