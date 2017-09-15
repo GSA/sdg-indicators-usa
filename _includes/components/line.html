@@ -17,8 +17,10 @@
     showArea: true,
     scaleMinSpace: 30,
     axisY: {
+      {% if page.graph_negative != true %}
       low: 0,
       offset: 50,
+      {% endif %}
       onlyInteger: false,
       labelInterpolationFnc: function (value) {
         // do whatever math operation you want here
