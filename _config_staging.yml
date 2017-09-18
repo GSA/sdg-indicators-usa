@@ -62,7 +62,6 @@ prose:
         field: 
             element: textarea
             label: "Method of computation for global SDG indicator"
-            scope: global
       - name: "un_designated_tier"
         field: 
             element: text
