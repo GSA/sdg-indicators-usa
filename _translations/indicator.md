@@ -7,9 +7,9 @@ en:
   metadata : "Metadata"
   us : "U.S."
   editing : "Edit (Requires Password)"
-  this-table : "This table provides information on metadata for SDG indicators as defined by the UNSC. Complete global "
+  this-table : "This table provides information on metadata for SDG indicators as defined by the United Nations Statistical Commission. Complete global "
   documentation : "metadata documentation on all indicators in Goal "
-  provided : "is provided by the UN Statistics Division."
+  provided : ", unless otherwise noted, is provided by the UN Statistics Division."
   available : "This table provides metadata for the actual indicator available from U.S. statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from U.S. statistics, this table should be consulted for information on national methodology and other US-specific metadata information."
 es:
   sub-subtitle : "Indicador"
