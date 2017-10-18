@@ -5,5 +5,5 @@ title: Account
 permalink: /fr/account/
 ---
 
-No translation available 
+Si vous n'avez pas encore autorisé votre compte sur GitHub, cliquez sur le bouton vert dans le coin inférieur droit de l'écran.
 
