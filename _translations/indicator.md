@@ -22,4 +22,11 @@ es:
   documentaion : "documentación global de metadatos sobre los indicadores en el Objetivo"
   provided : "es proporcionada por la División de Estadística de las Naciones Unidas."
   available : "Esta tabla presenta metadatos sobre el indicador disponible de las estadísticas de Estados Unidos más cercano al indicador SDG global correspondiente. Tenga en cuenta que incluso cuando el indicador SDG global está totalmente disponible, esta tabla debe consultarse para obtener información sobre la metodología nacional e información relacionada."
+fr:
+  sub-subtitle : "Indicatuer"
+  tab-instructions : "Voir l'onglet de métadonnées pour les sources, les définitions et les informations de méthodologie"
+  data : "Data"
+  metadata : "Métadonnées"
+  us : "Etats-Unis"
+  editing : "Modifier (Nécessite un mot de passe)"
 ---
