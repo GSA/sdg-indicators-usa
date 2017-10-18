@@ -29,4 +29,8 @@ fr:
   metadata : "Métadonnées"
   us : "Etats-Unis"
   editing : "Modifier (Nécessite un mot de passe)"
+  this-table : "This table provides information on metadata for SDG indicators as defined by the United Nations Statistical Commission. Complete global "
+  documentation : "metadata documentation on all indicators in Goal "
+  provided : ", unless otherwise noted, is provided by the UN Statistics Division."
+  available : "Cette table fournit des métadonnées pour l'indicateur réel disponible à partir des statistiques des États-Unis les plus proches de l'indicateur mondiale des ODD  correspondant. Veuillez noter que même lorsque l'indicateur mondial des ODD est entièrement disponible à partir des statistiques des États-Unis, cette table devrait être consulté pour obtenir des informations sur la méthodologie nationale et d'autres informations sur les métadonnées spécifiques aux États-Unis."
 ---
