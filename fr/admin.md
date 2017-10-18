@@ -1,8 +1,8 @@
 ---
 layout: page
-lang: es
+lang: fr
 title: Admin
-permalink: /es/admin/
+permalink: /fr/admin/
 ---
 
 No translation available
