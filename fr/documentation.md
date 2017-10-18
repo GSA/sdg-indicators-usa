@@ -1,8 +1,8 @@
 ---
 layout: page
-lang: es
-title: Documentación
-permalink: /es/documentation/
+lang: fr
+title: Documentation
+permalink: /fr/documentation/
 ---
 
 
