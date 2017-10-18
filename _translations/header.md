@@ -17,7 +17,7 @@ es:
 fr:
   site-title: "Indicateurs des États-Unis pour les Objectifs de développement durable"
   disclaimer-wip: "Ce site est un travail en cours"
-  nav-reporting-status : "État du rapport"
+  nav-reporting-status : "Statut des rapports"
   nav-statistics : "Statistiques des États-Unis"
   nav-training : "Instruction"
   nav-faq : "FAQ"
