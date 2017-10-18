@@ -1,8 +1,8 @@
 ---
 layout: page
-lang: es
+lang: fr
 title: Account
-permalink: /es/account/
+permalink: /fr/account/
 ---
 
 No translation available 
