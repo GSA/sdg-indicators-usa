@@ -1,7 +1,7 @@
 ---
 layout: page
 lang: fr
-title: Account
+title: Compte
 permalink: /fr/account/
 ---
 
