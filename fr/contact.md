@@ -1,16 +1,16 @@
 ---
 layout: page
-lang: es
+lang: fr
 title: Contactos
-permalink: /es/contact/
+permalink: /fr/contact/
 ---
 
-### Estamos interesados en sus comentarios sobre este sitio web y sus contenidos.
+### Nous sommes intéressés par vos commentaires sur ce site et son contenu.
 
-- Si tiene preguntas sobre las estadísticas, las fuentes de datos o los metadatos proporcionados para las estadísticas nacionales de los Estados Unidos, favor de contactar [JPark@omb.eop.gov](mailto:JPark@omb.eop.gov)
+- Si vous avez des questions sur les statistiques, les sources de données ou les métadonnées fournies pour les statistiques nationales des États-Unis, veuillez contacter [JPark@omb.eop.gov](mailto:JPark@omb.eop.gov)
 
-- Si tiene sugerencias sobre contenido o fuentes de datos adicionales, favor de contactar [JPark@omb.eop.gov](mailto:JPark@omb.eop.gov)  
+- Si vous avez des suggestions concernant le contenu ou les sources de données supplémentaires, veuillez contacter [JPark@omb.eop.gov](mailto:JPark@omb.eop.gov)  
 
-- Si tiene sugerencias sobre cómo mejorar la funcionalidad de este sitio web, incluyendo la accesibilidad de datos, favor de contactar [datagov@gsa.gov](mailto:datagov@gsa.gov)"
+- Si vous avez des suggestions pour améliorer la fonctionnalité de ce site, y compris l'accessibilité des données, veuillez contacter [datagov@gsa.gov](mailto:datagov@gsa.gov)"
 
 ---
