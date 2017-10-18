@@ -1,7 +1,7 @@
 ---
 layout: page
 lang: fr
-title: Contactos
+title: Contacts
 permalink: /fr/contact/
 ---
 
