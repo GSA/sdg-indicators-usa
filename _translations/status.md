@@ -20,4 +20,14 @@ es:
   danger-text : "Explorando feuntes de datos"
   warning-text : "Estadísticas en progreso"
   success-text : "Datos disponibles"
+fr:
+  page-title: "État du rapport"
+  disclaimer-wip: "This site is a work in progress"
+  nav-reporting-status : "Ce site est un travail en cours"
+  nav-statistics : "Statistiques des États-Unis"
+  page-subtitle : "Statut de rapport global"
+  default-text : "Mesures possibles à l'étude"
+  danger-text : "Exploration des données"
+  warning-text : "Statistiques en cours"
+  success-text : "Données disponibles"
 ---
