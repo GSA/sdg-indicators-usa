@@ -22,7 +22,7 @@ permalink: /fr/training/
 - Modification des graphiques nationaux sur la PNR 
 
 **Faire une évaluation des besoins en données**
-<br/>Réfléchir à la façon d'identifier les déficits dans les données? Ces matériaux peuvent être utiles.
+<br/>En pensant à la façon d'identifier les déficits dans les données? Ces matériaux peuvent être utiles.
 
 - <a href="{{ site.baseurl }}/assets/documents/SDG%20Data%20Stocktaking%20Survey%20(SurveyMonkey).pdf" target="_blank">US ODD Enquête sur les besoins en données</a> 
 - UNECE CES Enquête sur les besoins en données des ODD
