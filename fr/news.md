@@ -10,7 +10,7 @@ permalink: /es/news/
 **Prochainement.....**
 
 
--La Plateforme nationale de rapports des États-Unis lance son projet pilote
+- La Plateforme nationale de rapports des États-Unis lance son projet pilote
 
 - Les villes américaines s'engagent dans des activités des Objectifs de développement durable.
 
