@@ -1,15 +1,14 @@
 ---
 layout: page
-lang: es
+lang: fr
 title: Matériel d'Entraînement
-
-permalink: /es/training/
+permalink: /fr/training/
 ---
 
 <h4>Cette page fournit des ressources pour les bureaux nationaux de statistique, les fournisseurs de données et les utilisateurs de données. </h4>
 
 **Faire votre propre plateforme nationale**
-<br/>Vous envisagez de créer votre propre version de cette plate-forme nationale de reporting pour rapporter les statistiques sur les SDG?Ces matériaux peuvent vous aider à démarrer. Le PNR américain est de code source ouvert et libre de copier (ou «fork»).
+<br/>Envisagez-vous de créer votre propre version de cette platforme nationale de rapport (PNR) pour rapporter les statistiques sur les ODD? Ces matériaux peuvent vous aider à démarrer. Le PNR américain est de code source ouvert et libre de copier (ou «fork»).
 
 - <a href="{{ site.baseurl }}/assets/documents/Quick%20Start%20Guide%2004.28.17.pdf" target="_blank">USA Guide de démarrage rapide</a>
 - <a href="{{ site.baseurl }}/assets/documents/FAQ%20National%20Reporting%20Platform%20current.pdf" target="_blank">Questions fréquemment posées</a>
