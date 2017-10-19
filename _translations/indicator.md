@@ -22,4 +22,15 @@ es:
   documentaion : "documentación global de metadatos sobre los indicadores en el Objetivo"
   provided : "es proporcionada por la División de Estadística de las Naciones Unidas."
   available : "Esta tabla presenta metadatos sobre el indicador disponible de las estadísticas de Estados Unidos más cercano al indicador SDG global correspondiente. Tenga en cuenta que incluso cuando el indicador SDG global está totalmente disponible, esta tabla debe consultarse para obtener información sobre la metodología nacional e información relacionada."
+fr:
+  sub-subtitle : "Indicatuer"
+  tab-instructions : "Voir l'onglet de métadonnées pour les sources, les définitions et les informations de méthodologie"
+  data : "Data"
+  metadata : "Métadonnées"
+  us : "Etats-Unis"
+  editing : "Modifier (Nécessite un mot de passe)"
+  this-table : "Cette table fournit des informations sur les métadonnées pour les indicateurs des ODD tels que définis par la Commission de statistique de l'ONU. La documentation complète "
+  documentation : "des métadonnées mondiales sur tous les indicateurs de l'Objectif "
+  provided : ", sauf indication contraire, est fournie par la Division de statistique de l'ONU."
+  available : "Cette table fournit des métadonnées pour l'indicateur réel disponible à partir des statistiques des États-Unis les plus proches de l'indicateur mondial des ODD  correspondant. Veuillez noter que même lorsque l'indicateur mondial des ODD est entièrement disponible à partir des statistiques des États-Unis, cette table devrait être consulté pour obtenir des informations sur la méthodologie nationale et d'autres informations sur les métadonnées spécifiques aux États-Unis."
 ---
