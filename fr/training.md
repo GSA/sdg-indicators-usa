@@ -12,7 +12,7 @@ permalink: /fr/training/
 
 - <a href="{{ site.baseurl }}/assets/documents/Quick%20Start%20Guide%2004.28.17.pdf" target="_blank">USA Guide de démarrage rapide</a>
 - <a href="{{ site.baseurl }}/assets/documents/FAQ%20National%20Reporting%20Platform%20current.pdf" target="_blank">Questions fréquemment posées</a>
-- <a href="{{ site.baseurl }}/assets/documents/NRP%20Quickstart%204.28.17.pptx" target="_blank">Presentation</a> et webinaire d'introduction de la PNR
+- <a href="{{ site.baseurl }}/assets/documents/NRP%20Quickstart%204.28.17.pptx" target="_blank">Presentation</a> d'introduction à la PNR
 - <a href="{{ site.baseurl }}/assets/documents/How.the.UK.have.set.up.their.copy.of.the.US.SDGs.tool.v0_2.pdf" target="_blank">Description</a> et <a href="https://drive.google.com/a/nyu.edu/file/d/0BwiQGA4nFw7teTRUNmNaUEM1UW8/view?usp=drive_web" target="_blank">webinaire</a> de copier la PNR
 
 **Personnalisation de votre platforme**
