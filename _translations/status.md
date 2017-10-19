@@ -21,9 +21,9 @@ es:
   warning-text : "Estadísticas en progreso"
   success-text : "Datos disponibles"
 fr:
-  page-title: "État du rapport"
-  disclaimer-wip: "This site is a work in progress"
-  nav-reporting-status : "Ce site est un travail en cours"
+  page-title: "Statut du rapport"
+  disclaimer-wip: "Ce site est un travail en cours"
+  nav-reporting-status : "Statut du rapport"
   nav-statistics : "Statistiques des États-Unis"
   page-subtitle : "Statut de rapport global"
   default-text : "Mesures possibles à l'étude"
