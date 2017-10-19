@@ -1,43 +1,48 @@
 ---
 layout: page
 lang: es
-title: Instrucción
+title: Matériel d'Entraînement
+
 permalink: /es/training/
 ---
 
-<h4>Esta página proporciona recursos para las Oficinas Nacionales de Estadística, proveedores de datos y usuarios de datos.</h4>
+<h4>Cette page fournit des ressources pour les bureaux nationaux de statistique, les fournisseurs de données et les utilisateurs de données. </h4>
 
-**Desarrollando su propia plataforma nacional**
-<br/>Si esta planeando su propia versión de esta plataforma, estos materiales pueden ayudarle a comenzar. La plataforma nacional (NRP) de Objetivos de Desarrollo Sostenible (ODS o SDG) de USA esta basado en un código abierto y gratuito, disponible para copiar.
+**Faire votre propre plateforme nationale**
+<br/>Vous envisagez de créer votre propre version de cette plate-forme nationale de reporting pour rapporter les statistiques sur les SDG?Ces matériaux peuvent vous aider à démarrer. Le PNR américain est de code source ouvert et libre de copier (ou «fork»).
 
-- <a href="{{ site.baseurl }}/assets/documents/Quick%20Start%20Guide%2004.28.17.pdf" target="_blank">USA Guía de inicio rápido</a>
-- <a href="{{ site.baseurl }}/assets/documents/FAQ%20National%20Reporting%20Platform%20current.pdf" target="_blank">Preguntas frecuentes</a>
-- <a href="{{ site.baseurl }}/assets/documents/NRP%20Quickstart%204.28.17.pptx" target="_blank">Presentación</a> y seminario web de introduction de el NRP
-- <a href="{{ site.baseurl }}/assets/documents/How.the.UK.have.set.up.their.copy.of.the.US.SDGs.tool.v0_2.pdf" target="_blank">Descripción</a> y <a href="https://drive.google.com/a/nyu.edu/file/d/0BwiQGA4nFw7teTRUNmNaUEM1UW8/view?usp=drive_web" target="_blank">seminario web</a> de copiar el NRP
+- <a href="{{ site.baseurl }}/assets/documents/Quick%20Start%20Guide%2004.28.17.pdf" target="_blank">USA Guide de démarrage rapide</a>
+- <a href="{{ site.baseurl }}/assets/documents/FAQ%20National%20Reporting%20Platform%20current.pdf" target="_blank">Questions fréquemment posées</a>
+- <a href="{{ site.baseurl }}/assets/documents/NRP%20Quickstart%204.28.17.pptx" target="_blank">Presentation</a> et webinaire d'introduction de la PNR
+- <a href="{{ site.baseurl }}/assets/documents/How.the.UK.have.set.up.their.copy.of.the.US.SDGs.tool.v0_2.pdf" target="_blank">Description</a> et <a href="https://drive.google.com/a/nyu.edu/file/d/0BwiQGA4nFw7teTRUNmNaUEM1UW8/view?usp=drive_web" target="_blank">webinaire</a> de copier la PNR
 
-**Personalización de la plataforma**
-<br/>Una vez que haya copiado su plataforma, aquí hay algunos consejos para personalizarla y adaptarla a sus necesidades.
+**Personnalisation de votre platforme**
+<br/>Dès que vous avez copié votre platforme, voici quelques conseils pour la personnaliser en fonction de vos besoins.
 
-- Traducir el PNR
-- Cambio de gráficos nacionales en el PNR 
+- Traduire la PNR
+- Modification des graphiques nationaux sur la PNR 
 
-**Evaluando las necesidades de datos**
-<br/>Pensando en cómo identificar algunos datos? Estos materiales pueden ser útiles.
+**Faire une évaluation des besoins en données**
+<br/>Réfléchir à la façon d'identifier les déficits dans les données? Ces matériaux peuvent être utiles.
 
-- <a href="{{ site.baseurl }}/assets/documents/SDG%20Data%20Stocktaking%20Survey%20(SurveyMonkey).pdf" target="_blank">US SDG Encuesta de Necesidades de Datos</a> 
-- UNECE CES Encuesta de necesidades de datos para SDG
+- <a href="{{ site.baseurl }}/assets/documents/SDG%20Data%20Stocktaking%20Survey%20(SurveyMonkey).pdf" target="_blank">US ODD Enquête sur les besoins en données</a> 
+- UNECE CES Enquête sur les besoins en données des ODD
 
-**Capacitando proveedores de datos**
-<br/>La siguiente informacion pueden ayudar a entrenar proveedores de datos y metadatos en su NRP.
+**Entrainement pour les fournisseurs des données**
+<br/>Voici quelques documents qui pourraient aider à former les fournisseurs de données à entrer des statistiques et des métadonnées dans votre PNR.
 
-- <a href="{{ site.baseurl }}/assets/documents/Training_Guide_SDG-NRP_20170201.docx">Guía para proveedor de datos del NRP</a>, <a href="{{ site.baseurl }}/assets/documents/USG%20NRP%20SDG%2020170324.pptx" target="_blank">training deck</a>, y <a href="https://www.youtube.com/watch?v=gPq3jB_sfFw">seminario web</a> 
+- <a href="{{ site.baseurl }}/assets/documents/Training_Guide_SDG-NRP_20170201.docx">PNR Guide pour les fournisseur de données</a>, <a href="{{ site.baseurl }}/assets/documents/USG%20NRP%20SDG%2020170324.pptx" target="_blank">training deck</a>, y <a href="https://www.youtube.com/watch?v=gPq3jB_sfFw">seminario web</a> 
 
-**Planes para generar informes de estadísticas de SDG**
-<br/>¿Pensando en cómo planear para reportar las estadísticas de SDG? Estos enlaces pueden ayudar.
+**Plans pour générer des rapports statistiques sur les ODD**
+<br/>En pensant à la façon de planifier des rapports statistiques des ODD? Ces liens peuvent vous aider.
 
 - Plan de la UNECE CES 
-- <a href="{{ site.baseurl }}/assets/documents/us-sdg-report%20(5).pdf">Plan de el US SDG NRP</a> 
+- <a href="{{ site.baseurl }}/assets/documents/us-sdg-report%20(5).pdf">Plan de la US ODD PNR</a> 
 
-¿Tiene otras preguntas sobre como desarrollar su propio NRP desde nuestro modelo de código abierto (gratuito)? ¿Otras preguntas o sugerencias? Comuníquese con nosotros usando JPark@omb.eop.gov.
-"
+**Collaborations**
+<br/>Nous sommes fiers de collaborer avec d'autres pays sur le développement du PNR. Nous attendons avec intérêt de futures opportunités d'échanger des idées et d'améliorer l'accès aux statistiques nationales officielles. Quelques exemples de nos collaborations à ce jour apparaissent ci-dessous.
 
+- Collaboration avec le Royaume-Uni.
+- <a href="https://drive.google.com/open?id=0BwiQGA4nFw7tMGc0WmV5eE9rLVE" target="_blank">NRP Collaboration Presentation: Ghana, UK and USA (Kenya, July 2017)</a>
+
+Avez-vous d'autres questions sur la construction de votre propre PNR à partir de notre modèle de source ouverte (gratuit)? D'autres questions ou suggestions pour notre site? Contactez-nous à <a href="mailto:JPark@omb.eop.gov">JPark@omb.eop.gov</a>.
