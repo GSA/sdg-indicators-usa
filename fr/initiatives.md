@@ -1,6 +1,6 @@
 ---
 layout: initiatives
-title: Initiatives
+title:  Les Initiatives
 permalink: /initiatives/
 ---
 
