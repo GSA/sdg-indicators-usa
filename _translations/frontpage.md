@@ -8,5 +8,5 @@ es:
   intro-text: "Haga clic en cada objetivo para la estadística nacional de los Estados Unidos para indicadores globales objetivo de desarrollo sostenible."
 fr:
   main-heading: "Statistiques nationales des États-Unis pour les Objectifs de développement durable de la ONU"
-  intro-text: "Cliquez sur chaque objectif pour les statistiques nationales des États-Unis pour les indicateurs globaux des Objectifs de développement durable."
+  intro-text: "Cliquez sur chaque objectif pour les statistiques nationales des États-Unis pour les indicateurs mondiaux des Objectifs de développement durable."
 ---
