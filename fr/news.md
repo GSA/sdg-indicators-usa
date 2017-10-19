@@ -1,8 +1,8 @@
 ---
 layout: page
-lang: es
-title: Noticias y Eventos
-permalink: /es/news/
+lang: fr
+title: Nouvelles et Evènements
+permalink: /fr/news/
 ---
 
 ### Consultez cette page pour des nouvelles concernant le rapport des statistiques des États-Unis pour les indicateurs mondiaux et les opportunités de contribuer à la mesure de la réalisation des Objectifs de développement durable.
