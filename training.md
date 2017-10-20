@@ -44,4 +44,4 @@ permalink: /training/
 - Collaboration with U.K.
 - <a href="https://drive.google.com/open?id=0BwiQGA4nFw7tMGc0WmV5eE9rLVE" target="_blank">NRP Collaboration Presentation: Ghana, UK and USA (Kenya, July 2017)</a>
 
-Have other questions about building your own NRP from our open source (free) model? Other questions or suggestions for our site? Contact us at <a href="mailto:JPark@omb.eop.gov">JPark@omb.eop.gov</a>.
+Have other questions about building your own NRP from our open source (free) model? Other questions or suggestions for our site? Contact us at <a href="mailto:SDGs@omb.eop.gov">SDGs@omb.eop.gov</a>.
