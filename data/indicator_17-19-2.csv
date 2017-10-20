@@ -1,4 +1,11 @@
 year,house_census,100_pct_birthreg,80_pct_deathreg
+2000,yes,yes,yes
+2001,yes,yes,yes
+2002,yes,yes,yes
+2003,yes,yes,yes
+2004,yes,yes,yes
+2005,yes,yes,yes
+2006,yes,yes,yes
 2007,yes,yes,yes
 2008,yes,yes,yes
 2009,yes,yes,yes
@@ -8,3 +15,4 @@ year,house_census,100_pct_birthreg,80_pct_deathreg
 2013,yes,yes,yes
 2014,yes,yes,yes
 2015,yes,yes,yes
+2016,yes,yes,yes
