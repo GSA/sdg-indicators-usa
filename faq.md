@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Frequently Answered Asked Questions
+title: Frequently Asked Questions
 permalink: /faq/
 ---
 
