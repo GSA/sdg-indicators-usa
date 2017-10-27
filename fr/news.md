@@ -1,17 +1,17 @@
 ---
 layout: page
-lang: es
-title: Noticias y Eventos
-permalink: /es/news/
+lang: fr
+title: Nouvelles et Evènements
+permalink: /fr/news/
 ---
 
-### Verifique esta página para noticias futuras relativas a la divulgación de las estadísticas y para oportunidades para contribuir a actividades estadísticas sobre los indicadores de Objetivos de Desarrollo Sostenible de los Estados Unidos de América.
+### Consultez cette page pour des nouvelles concernant le rapport des statistiques des États-Unis pour les indicateurs mondiaux et les opportunités de contribuer à la mesure de la réalisation des Objectifs de développement durable.
 
-**Próximamente.....**
+**Prochainement.....**
 
 
-- Plataforma de Información Nacional de Estados Unidos de América lanza su piloto
+- La Plateforme nationale de rapports des États-Unis lance son projet pilote
 
-- Ciudades de Estados Unidos de América participando en actividades del Objetivo de Desarrollo Sostenible
+- Les villes américaines s'engagent dans des activités des Objectifs de développement durable.
 
-- Oportunidades para contribuir a estadisticas del Objetivo de Desarrollo Sostenible
+- Opportunités de contribuer à la mesure des Objectifs de développement durable.

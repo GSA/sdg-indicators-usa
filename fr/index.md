@@ -1,9 +1,9 @@
 ---
-title: Bienvenido
-lang: es
-permalink: /es/
+title: Bienvenue
+lang: fr
+permalink: /fr/
 layout: frontpage
 ---
 
-Coming Soon.
+Prochainement.
 -------------------

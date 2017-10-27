@@ -1,7 +1,8 @@
 ---
 layout: initiatives
-title: Initiatives
-permalink: /initiatives/
+lang: fr
+title:  Les Initiatives
+permalink: /fr/initiatives/
 ---
 
 &nbsp;

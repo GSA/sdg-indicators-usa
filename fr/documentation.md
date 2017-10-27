@@ -1,12 +1,12 @@
 ---
 layout: page
-lang: es
-title: Documentación
-permalink: /es/documentation/
+lang: fr
+title: Documentation
+permalink: /fr/documentation/
 ---
 
 
-# Sitios web de las Naciones Unidas que contienen detalles sobre el desarrollo e implementación de la iniciativa Objetivos de Desarrollo Sostenible (ODS) (Sustainable Development Goals SDG)
+# Sites Web des Nations Unies contenant des détails sur le développement et la mise en œuvre de l'initiative des ODD
 
 
 - [UN Homepage](https://sustainabledevelopment.un.org)

@@ -1,12 +1,12 @@
 ---
 layout: page
-title: Preguntas frecuentes
-permalink: /es/faq/
+title: FAQ
+permalink: /fr/faq/
 ---
 
-### Consulte esta página para obtener noticias sobre la presentación de informes de las estadísticas de los Estados Unidos sobre los indicadores mundiales y las oportunidades para contribuir a medir el logro de los objetivos de desarrollo sostenible
+### Consultez cette page pour les questions les plus fréquemment posées concernant la déclaration des statistiques des États-Unis concernant les indicateurs mondiaux et les possibilités de contribuer à la mesure de la réalisation des Objectifs de développement durable
 
-**Próximamente.....**
+**Prochainement.....**
 
 
 - 

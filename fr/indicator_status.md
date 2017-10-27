@@ -1,6 +1,6 @@
 ---
 layout: page
-lang: es
-title: Estatus Indicadores de los Objectivos
-permalink: /es/indicator-status/
+lang: fr
+title: Statut des indicateurs
+permalink: /fr/indicator-status/
 ---
