@@ -1,4 +1,4 @@
-year,i4_2_2_total,i4_2_2_male,i4_2_2_female,i4_2_2_q1_low,i4_2_2_q2_middle_low,i4_2_2_q3_middle,i4_2_2_q4_middle_high,i4_2_2_q5_high
+year,total,male,female,low quintile,middle low quintile,middle quintile,middle high quintile,high quintile
 2000,93.997,93.231,94.813,91.313,89.940,93.941,95.549,97.852
 2001,93.097,92.969,93.228,91.155,90.502,93.171,94.476,95.025
 2002,93.563,94.292,92.797,94.597,93.547,92.508,91.203,96.236
