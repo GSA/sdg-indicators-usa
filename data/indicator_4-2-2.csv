@@ -1,4 +1,4 @@
-year,total,male,female,low quintile,middle low quintile,middle quintile,middle high quintile,high quintile
+year,total,sex:male,sex:female,ses:low quintile,ses:middle low quintile,ses:middle quintile,ses:middle high quintile,ses:high quintile
 2000,93.997,93.231,94.813,91.313,89.940,93.941,95.549,97.852
 2001,93.097,92.969,93.228,91.155,90.502,93.171,94.476,95.025
 2002,93.563,94.292,92.797,94.597,93.547,92.508,91.203,96.236
