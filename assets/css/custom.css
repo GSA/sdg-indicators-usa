@@ -477,7 +477,7 @@ p a, .usa-content-list a {
     font-size: 1.25rem;
 }
 
-.ct-chart-binary .ct-grids line.ct-vertical:nth-child(even) {
+.ct-chart-binary .ct-grids line.ct-vertical:nth-last-of-type(odd) {
      stroke-width: 0; 
 }
 
