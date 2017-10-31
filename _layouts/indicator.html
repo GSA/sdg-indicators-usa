@@ -72,7 +72,7 @@
 
 <h3>{{ t.sub-subtitle }} {{ page.indicator }} - {{ indicator_title }}</h3>
 
-{% if page.graph == 'bar' or page.graph == 'longitudinal' %}
+{% if page.graph == 'bar' or page.graph == 'longitudinal' or page.graph == 'binary' %}
 
 {% assign graph_type = page.graph %}
 
@@ -103,7 +103,7 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="data">
 
-      {% if page.graph == 'bar' or page.graph == 'longitudinal' %}
+      {% if page.graph == 'bar' or page.graph == 'longitudinal' or page.graph == 'binary' %}
 
       <div class="datatable-container">
         <h4>{{ page.graph_title }}</h4>

@@ -477,6 +477,10 @@ p a, .usa-content-list a {
     font-size: 1.25rem;
 }
 
+.ct-chart-binary .ct-grids line.ct-vertical:nth-child(even) {
+     stroke-width: 0; 
+}
+
 .usa-accordion li::before,
 .usa-accordion-bordered li::before {
     padding-right : 0;
