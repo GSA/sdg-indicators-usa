@@ -12,7 +12,7 @@ permalink: /faq/
 <hr/>
 
 **Guidance for UN custodian agencies requesting US data or national metadata for the SDGs**
-<p>Are you a UN custodian agency looking for official US statistics for the SDGs? Do you have a question regarding our national metadata? Are you requesting validation for harmoninzed global statistics? Contact us at <a href="mailto:US_Chief_Statistician@omb.eop.gov?subject=Validation%20for%20harmoninzed%20global%20statistics&body=Indicator%20Number%0A%0AProposed%20response date">US_Chief_Statistician@omb.eop.gov</a> referencing the particular indicator and a proposed response date and we will route your question to our experts.</p>
+<p>Are you a UN custodian agency looking for official US statistics for the SDGs? Do you have a question regarding our national metadata? Are you requesting validation for harmonized global statistics? Contact us at <a href="mailto:US_Chief_Statistician@omb.eop.gov?subject=Validation%20for%20harmoninzed%20global%20statistics&body=Indicator%20Number%0A%0AProposed%20response date">US_Chief_Statistician@omb.eop.gov</a> referencing the particular indicator and a proposed response date and we will route your question to our experts.</p>
 
 <hr/>
 
