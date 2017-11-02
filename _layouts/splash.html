@@ -1,0 +1,41 @@
+{% include head.html %}
+
+{% include header.html %}
+
+<div class="usa-grid splash-container">
+
+    <div class="splash-page">
+
+        <section class="usa-width-one-half splash-text">
+
+            <p class="splash-intro">
+              {{ page.splash-intro-head }}  <br>
+              {{ page.splash-intro }}
+            </p>
+
+            <span class="splash-subheading">
+                {{ page.splash-subhead }}
+            </span>
+
+            <p class="splash-start">
+                {{ page.splash-start }}
+                <a href="./statistics/">
+                    <img src="{{ site.baseurl }}/assets/img/play_button.png" alt="play statistics" />
+                </a>
+            </p>
+
+        </section>
+
+        <section class="usa-width-one-half splash-map">
+
+            <a href="./statistics/">
+                <img class="" src="{{ site.baseurl }}/assets/img/splash_page_map.png" alt="map of United States and territiories with the goal icons enclosed" />
+            </a>
+
+        </section>
+
+    </div>
+
+</div>
+
+{% include footer.html %}
