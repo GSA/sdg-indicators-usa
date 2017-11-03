@@ -1,0 +1,35 @@
+{% capture api_output %}
+
+{% assign slug = page.indicator | replace: '.', '-' %}
+{% assign dataset_name = 'indicator_' | append: slug %}
+
+{% assign sdg_indicator_metadata = site.indicators %}
+{% assign sdg_indicator_seed_metadata = site.data.sdg_indicator_metadata %}
+{% assign sdg_indicator_data = site.data[dataset_name] %}
+
+{% for indicators in sdg_indicator_metadata %}
+{% if indicators.indicator == page.indicator %}
+  {% assign this_sdg_indicator_metadata = indicators %}  
+{% endif %}
+{% endfor %}
+
+{% assign hidden_fields = "sdg_goal,indicator,indicator_variable,graph,graph_title,graph_type_description,graph_status_notes,variable_description,variable_notes,target_id,has_metadata" | split: ',' %}
+
+{% assign managed_fields = site.prose.metadata._indicators %}
+{
+
+{% for hidden_field in hidden_fields %}
+
+{% if not_first == true %},{% endif %}"{{ hidden_field }}":{{ this_sdg_indicator_metadata[hidden_field] | jsonify }}
+{% assign not_first = true %}
+
+{% endfor %}
+
+{% for managed_field in managed_fields %}
+
+,"{{ managed_field.name }}":{{ this_sdg_indicator_metadata[managed_field.name] | jsonify }}
+
+{% endfor %}
+
+}
+{% endcapture %}{{ api_output | strip_newlines }}

@@ -28,6 +28,15 @@ collections:
     output: true
   goals:
     output: true    
+  translations:
+    output: false
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      lang: en
 
 # Prose configuration
 prose: 
@@ -53,7 +62,6 @@ prose:
         field: 
             element: textarea
             label: "Method of computation for global SDG indicator"
-            scope: global
       - name: "un_designated_tier"
         field: 
             element: text

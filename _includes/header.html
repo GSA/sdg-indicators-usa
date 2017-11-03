@@ -1,6 +1,6 @@
             <a class="skipnav" href="#main-content">Skip main navigation</a>
 
-            <header role="banner" class="fixed-header">
+            <header role="banner" class="fixed-header {{ page.layout }}">
                 <div class="usa-disclaimer {{ site.github.environment }} {{ jekyll.environment }}">
                     <div class="usa-grid">
                         <span class="usa-disclaimer-official">
@@ -10,21 +10,32 @@
                             This is an official website of the United States government                          
                           {% endif %}
                         </span>
+                        <span class="language-toggle">
+                        {% if page.lang == 'en' %}
+                          <a class='pull-right lang es' data-lang='es' href='{{site.baseurl}}/es{{page.url | remove: 'index.html'}}'>Español</a>
+                        {% else %}
+                          <a class='pull-right lang'  data-lang='en' href='{{site.baseurl}}{{page.url | replace_first:'/es', ''}}'>English</a>
+                        {% endif %}
+                        </span>
                         {% if site.github.environment == 'dotcom' %}
                           <a href="{{ site.baseurl }}/admin" class="login-link">Login / Logout</a>
                         {% endif %}
-                        <span class="usa-disclaimer-stage">This site is a work in progress</span>
+                        <span class="usa-disclaimer-stage">{{ t.disclaimer-wip }}</span>
                     </div>
                 </div>
-                 
-                 <a href="{{ site.baseurl }}/" class="logo-home-mobile"><h1>Sustainable Development Goals</h1></a>
+                {% if page.layout != 'splash' %}
+                <a href="{{ site.baseurl }}/statistics" class="logo-home-mobile"><h1>Sustainable Development Goals</h1></a>
 
                 <nav class="site-navbar nav-collapse usa-grid">
-                  <a href="{{ site.baseurl }}/" class="logo-home"><h1>Sustainable Development Goals</h1></a>
+                  <a href="{{ site.baseurl }}/statistics" class="logo-home"><h1>Sustainable Development Goals</h1></a>
 
-                          <ul class="usa-unstyled-list"><li class="nav-item"><a href="{{ site.baseurl }}/reporting-status">Reporting Status</a></li>
-                                      <li class="nav-item"><a href="{{ site.baseurl }}/">Statistics</a></li>
-                                      <li class="nav-item"><a href="{{ site.baseurl }}/news">News &amp; Events</a></li>
-                            </ul></nav>
+                  <ul class="usa-unstyled-list">
+                      <li class="nav-item"><a href="{{ site.baseurl }}{{ lang }}/status">{{ t.nav-reporting-status }}</a></li>
+                      <li class="nav-item"><a href="{{ site.baseurl }}{{ lang }}/statistics">{{ t.nav-statistics }}</a></li>
+                      <li class="nav-item"><a href="{{ site.baseurl }}{{ lang }}/training">{{ t.nav-training }}</a></li>
+                      <li class="nav-item"><a href="{{ site.baseurl }}{{ lang }}/faq">{{ t.nav-faq }}</a></li>
+                  </ul>
+                </nav>
+                {% endif %}
 
             </header>

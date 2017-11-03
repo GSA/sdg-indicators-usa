@@ -1,0 +1,61 @@
+{% assign id = page.indicator | slugify %}
+{% assign unit_label = page.variable_unit_label %}
+<div id="linechart-{{ id }}" class="ct-chart ct-major-eleventh"></div>
+<script src="{{ site.baseurl }}/assets/js/vendor/chartist-plugin-legend.js"></script> 
+<script>
+(function () {
+  var container = '#linechart-{{ id }}'
+  var labels = {{ include.labels | jsonify }}
+
+  // Construct array of objects from data using indicators
+  var chartData = {
+    labels: labels,
+    series: [
+            {{ include.row1 | jsonify }},
+            {{ include.row2 | jsonify }},
+            {{ include.row3 | jsonify }}
+            ]
+  }
+  var chartOpts = {
+    showArea: true,
+    scaleMinSpace: 30,
+    axisY: {
+      {% if page.graph_negative != true %}
+      offset: 50,
+      {% endif %}
+      onlyInteger: false,
+      labelInterpolationFnc: function (value) {
+        // do whatever math operation you want here
+        return Chartist.roundWithPrecision(value, 2).toString() + '{{ unit_label }}';
+      }
+    },
+    axisX: {
+      showGrid: false,
+      labelInterpolationFnc: function (value) {
+        return value.toString()
+      }
+    },
+    lineSmooth: Chartist.Interpolation.none({
+      fillHoles: true,
+    }), 
+    plugins: [
+      Chartist.plugins.tooltip({
+        class: 'chartist-tooltip',
+        tooltipFnc: function(_, value) {
+          return value.toString() + '{{ unit_label }}';
+        }
+      }),
+      Chartist.plugins.ctAccessibility({
+        caption: '{{ row.Indicator }}',
+        seriesHeader: 'year',
+        summary: '{{ row.description }}',
+        valueTransform: Chartist.noop
+      }),
+      Chartist.plugins.legend({
+          legendNames: ['Total', 'Gender: Male', 'Gender: Female'],
+      })      
+    ],
+  }
+  new Chartist.Line(container, chartData, chartOpts)
+})()
+</script>
