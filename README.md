@@ -111,8 +111,8 @@ In addition to hosting the NRP, you can use GitHub to collect input from data pr
 ### A) Conduct a Needs Assessment
 
 1. To assess availability of national data for reporting SDG indicators, we convened an Expert Group. This includes:
-  * policy experts who have contributed to the formulation of sustainable development goals, targets, and the specification of indicators
-  * Federal statistical agency experts engaged in the production of official Federal statistics relevant to the SDG indicators or contribute to the specification of SDG indicators.
+    * policy experts who have contributed to the formulation of sustainable development goals, targets, and the specification of indicators
+    * Federal statistical agency experts engaged in the production of official Federal statistics relevant to the SDG indicators or contribute to the specification of SDG indicators.
 2. This is the [web-based survey](https://gsa.github.io/sdg-indicators/training/) (USG SDG Data Needs Survey) we distributed to our Expert Group for our assessment.
 
 ### B) Identify Data Providers
