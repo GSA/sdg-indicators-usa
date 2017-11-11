@@ -98,15 +98,15 @@ There are several places in the code where you may want to tweak the settings fo
 * _includes/footer.html: You can update the Google Analytics section here.
 * assets/img/favicons: You can update these images according to your own branding.
 
-## F) Remove the U.S. statistics and metadata from the repository
+### F) Remove the U.S. statistics and metadata from the repository
 
-Remove the US statistics and metadata from the repository. The US NRP currently files both the platform code and the SDG statistics and metadata in the same repository (or folder). This means that forking the US NRP will copy both the US data and its style sheets. Therefore, countries will want to remove the US statistics and metadata from their copy of the US NRP.
+The US NRP currently houses both the platform code and the SDG statistics and metadata in the same repository (in the `data` folder). This means that forking the US NRP will copy both the functionality of the platform as well as the US data. Therefore, countries will want to remove the US statistics and metadata from their copy of the US NRP and replace it with their own data (see below).
 
-Scripted solutions for this task are planned for future releases.
+Scripted solutions for this task, which will replace the US data with example data, are planned for future releases.
 
 ## How Do We Put Our Own Statistics into the NRP?
 
-In addition to hosting the NRP, we use GitHub to collect input from data providers and maintain version control using five basic steps. You can customize your approach as needed.
+In addition to hosting the NRP, you can use GitHub to collect input from data providers and maintain version control. There are five basic steps, but you can customize your approach as needed.
 
 ### A) Conduct a Needs Assessment
 
