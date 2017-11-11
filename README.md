@@ -83,8 +83,8 @@ In order to turn the code into a website that can be visited in a browser, you s
 2. Click the pencil icon in the upper right.
 3. Under "en" (the English translations) change the "site-title" from "U.S. Indicators For The Sustainable Development Goals" to whatever you would like.
 4. Scroll all the way to the bottom and click "Commit changes".
-5. This triggers of a build of your site in Github Pages.
-6. Visit the built site now in a browser at `https://[your-organization].github.io/sdg-indicators`
+5. This triggers of a build of your platform in Github Pages.
+6. Visit the built platform now in a browser at `https://[your-organization].github.io/sdg-indicators`
 
 ### E) Customize the platform
 
@@ -134,11 +134,12 @@ In addition to hosting the NRP, you can use GitHub to collect input from data pr
 ### E) Report National Statistics
 
 1. After you have approved the submission from your data provider, the statistics and metadata will be viewable to the public.
-2. In the US, we update our NRP through a clearly marked ‘staging’ or testing site before merging with the ‘master,’ or official site that the public can find online. This guide describes how to refresh the master site with content from the staging site.
+2. In the US, we update our NRP through a clearly marked ‘staging’ or testing site before merging with the ‘master,’ or official site that the public can find online.
+3. **TODO**: Instructions for refreshing the master site with content from the staging site are under development, and will be added here.
 
 ## Translations
 
-To translate the content into other languages, there are 3 things to do:
+To translate the content into other languages, there are a few areas of the codebase to look at:
 
 ### A) Translate the text of includes and layouts
 
@@ -162,14 +163,14 @@ In any folders that contain Markdown (.md) files, each language can have a subfo
 
 ## Local development
 
-In order to run the site locally, you'll need to [install Ruby](https://www.ruby-lang.org/en/documentation/installation/).
+In order to run the platform locally, you'll need to [install Ruby](https://www.ruby-lang.org/en/documentation/installation/).
 
 Then, from on a Bash-like terminal, install the "Gem" for Github Pages:
 
 `gem install gh-pages`
 
-Finally, launch the site with:
+Finally, launch the platform with:
 
 `jekyll serve`
 
-You can then visit the site in the browser at [http://127.0.0.1:4000/sdg-indicators/](http://127.0.0.1:4000/sdg-indicators/).
+You can then visit the platform in the browser at [http://127.0.0.1:4000/sdg-indicators/](http://127.0.0.1:4000/sdg-indicators/).
