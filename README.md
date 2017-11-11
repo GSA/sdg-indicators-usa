@@ -54,8 +54,7 @@ There are four basic steps.
 1. Create a GitHub account. Go to github.com and create an account.
 2. Learn the basics of GitHub. Try this [introductory webinar](https://www.youtube.com/watch?v=uNa9GOtM6NE) and these [resources](https://www.digitalgov.gov/2014/06/11/the-api-briefing-quick-guide-to-using-github-fdas-openfda-research-project/).
 3. Set up your GitHub organization and identify relevant users of your IT team. [Register](https://help.github.com/articles/creating-a-new-organization-from-scratch/) your organization with GitHub if not already registered. IT team members should set up their own GitHub accounts.
-
-**Tip**: Within a GitHub organization, you can define ‘teams.’ This can be a useful way to identify users who are part of the project, improve communication among team members, and set specific permissions. See this [guide](https://help.github.com/articles/creating-a-team/) to learn more.
+  **Tip**: Within a GitHub organization, you can define ‘teams.’ This can be a useful way to identify users who are part of the project, improve communication among team members, and set specific permissions. See this [guide](https://help.github.com/articles/creating-a-team/) to learn more.
 
 ### B) Decide which platform to start with
 
@@ -81,7 +80,7 @@ In order to turn the code into a website that can be visited in a browser, you s
 
 1. In the list of files, click on `_translations` and then `header.md`.
 2. Click the pencil icon in the upper right.
-3. Under "en" (the English translations) check the "site-title" from "U.S. Indicators For The Sustainable Development Goals" to whatever you would like.
+3. Under "en" (the English translations) change the "site-title" from "U.S. Indicators For The Sustainable Development Goals" to whatever you would like.
 4. Scroll all the way to the bottom and click "Commit changes".
 5. This triggers of a build of your site in Github Pages.
 6. Visit the built site now in a browser at `https://[your-organization].github.io/sdg-indicators`
