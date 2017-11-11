@@ -66,11 +66,11 @@
                         {% assign indicator_status = "Exploring Data" %}
                         {% assign status_label = "danger" %}
 
-                        {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                        {% if indicator.source_url != nil and indicator.source_url != "" %}
                           {% assign indicator_status = "Compiling Statistics" %}
                           {% assign status_label = "warning" %}
 
-                          {% if indicator.graph != nil AND indicator.graph != "" %}
+                          {% if indicator.graph != nil and indicator.graph != "" %}
                             {% assign indicator_status = "Reported Online" %}
                             {% assign status_label = "success" %}
                           {% endif %}
