@@ -22,7 +22,7 @@
 ================================================== -->
         <title>{% if page.title %}{{ page.title | escape }} - {{ t.site-title | escape }}{% else %}{{ t.site-title | escape }}{% endif %}</title>
 
-        <meta property="og:title" content="U.S. Data Federation">
+        <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ t.site-title | escape }}{% endif %}">
         <meta name="description" content="">
         <meta property="og:description" content="">
         <link rel="canonical" href="/"><!--[if lt IE 9]>
