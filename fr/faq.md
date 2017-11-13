@@ -1,5 +1,6 @@
 ---
 layout: page
+lang: fr
 title: FAQ
 permalink: /fr/faq/
 ---

@@ -1,5 +1,6 @@
 ---
 layout: page
+lang: es
 title: Preguntas frecuentes
 permalink: /es/faq/
 ---
