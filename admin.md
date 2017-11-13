@@ -12,4 +12,4 @@ The National Reporting Platform is managed through GitHub. To submit updates for
 
 #### Intitialize Your Account
 
-If you've never authorized your GitHub account to make edits on this website, please go to the [account page](http://prose.io/#GSA/sdg-indicators/edit/gh-pages/account.md) and click the green button in the bottom right corner of the screen and follow the next prompt. 
+If you've never authorized your GitHub account to make edits on this website, please go to the [account page](http://prose.io/#{{ site.org_name }}/sdg-indicators/edit/gh-pages/account.md) and click the green button in the bottom right corner of the screen and follow the next prompt.
