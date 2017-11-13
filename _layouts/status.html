@@ -39,11 +39,11 @@
                     {% if indicator.un_designated_tier != '3' %}
                         {% assign unsourced_data = unsourced_data | plus:1 %}
 
-                        {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                        {% if indicator.source_url != nil and indicator.source_url != "" %}
                           {% assign unsourced_data = unsourced_data | minus:1 %}
                           {% assign compiling_statistic = compiling_statistic | plus:1 %}
 
-                          {% if indicator.graph != nil AND indicator.graph != "" %}
+                          {% if indicator.graph != nil and indicator.graph != "" %}
                             {% assign compiling_statistic = compiling_statistic | minus:1 %}
                             {% assign finalized_reporting = finalized_reporting | plus:1 %}
                           {% endif %}
@@ -134,11 +134,11 @@
                             {% if indicator.un_designated_tier != '3' %}
                                 {% assign unsourced_data = unsourced_data | plus:1 %}
 
-                                {% if indicator.source_url != nil AND indicator.source_url != "" %}
+                                {% if indicator.source_url != nil and indicator.source_url != "" %}
                                   {% assign unsourced_data = unsourced_data | minus:1 %}
                                   {% assign compiling_statistic = compiling_statistic | plus:1 %}
 
-                                  {% if indicator.graph != nil AND indicator.graph != "" %}
+                                  {% if indicator.graph != nil and indicator.graph != "" %}
                                     {% assign compiling_statistic = compiling_statistic | minus:1 %}
                                     {% assign finalized_reporting = finalized_reporting | plus:1 %}
                                   {% endif %}
