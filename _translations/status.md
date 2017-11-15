@@ -10,6 +10,7 @@ en:
   danger-text : "Exploring data"
   warning-text : "Statistics in progress"
   success-text : "Reported online"
+  indicators: "Indicators"
 es:
   page-title: "Estatus de Datos Disponibles"
   disclaimer-wip: "Este sitio web es un trabajo en progreso"
@@ -20,6 +21,7 @@ es:
   danger-text : "Explorando feuntes de datos"
   warning-text : "Estadísticas en progreso"
   success-text : "Datos disponibles"
+  indicators: "Indicadores"
 fr:
   page-title: "Statut du rapport"
   disclaimer-wip: "Ce site est un travail en cours"
@@ -30,4 +32,5 @@ fr:
   danger-text : "Exploration des données"
   warning-text : "Statistiques en cours"
   success-text : "Données disponibles"
+  indicators: "Indicateurs"
 ---
