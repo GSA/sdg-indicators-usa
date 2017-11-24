@@ -2,6 +2,13 @@
 
 {% include header.html %}
 
+{% assign t = site.translations | where:"translation_id", "goal"  | first %}
+{% assign t = t[page.lang] %}
+
+{% assign t_status = site.translations | where:"translation_id", "status"  | first %}
+{% assign t_status = t_status[page.lang] %}
+
+
       <div id="main" class="main-content initiative-content">
 
 
@@ -43,7 +50,7 @@
               {% assign sdg_indicators = site.data[page.lang].sdg_indicator_metadata %}
           {% endif %}
 
-         <img src="{{ site.baseurl }}/assets/img/Artboard_2.png" alt="star"/><span>= Updated!/!Actualizado</span>
+         <img src="{{ site.baseurl }}/assets/img/Artboard_2.png" alt="star"/><span>= {{ t.updated }}</span>
           <table class="indicator-status-table">
             <thead hidden>
               <tr>
@@ -63,21 +70,21 @@
                     {% assign indicator = indicator | where:"lang", site.defaults[0].values.lang | first %}
 
                     {% if indicator.un_designated_tier != '3' %}
-                        {% assign indicator_status = "Exploring Data" %}
+                        {% assign indicator_status = t_status.danger-text %}
                         {% assign status_label = "danger" %}
 
                         {% if indicator.source_url != nil and indicator.source_url != "" %}
-                          {% assign indicator_status = "Compiling Statistics" %}
+                          {% assign indicator_status = t_status.warning-text %}
                           {% assign status_label = "warning" %}
 
                           {% if indicator.graph != nil and indicator.graph != "" %}
-                            {% assign indicator_status = "Reported Online" %}
+                            {% assign indicator_status = t_status.success-text %}
                             {% assign status_label = "success" %}
                           {% endif %}
 
                         {% endif %}
                     {% else %}
-                        {% assign indicator_status = "Improving Measures" %}
+                        {% assign indicator_status = t_status.default-text %}
                         {% assign status_label = "default" %}
                     {% endif %}
 
