@@ -7,6 +7,10 @@ en:
   nav-statistics : "U.S. Statistics"
   nav-training : "Training Materials"
   nav-faq : "FAQs"
+  disclaimer-staging: "This is a staging site used to update and preview indicator data"
+  government-site: "This is an official website of the United States government"
+  login: "Login"
+  logout: "Logout"
 es:
   site-title: "Estadísticas Nacionales de USA para los Objetivos de Desarrollo Sostenible de la ONU"
   disclaimer-wip: "Este sitio web es un trabajo en progreso"
@@ -14,6 +18,10 @@ es:
   nav-statistics : "Estadística EE.UU"
   nav-training : "Instrucción"
   nav-faq : "Preguntas frecuentes"
+  disclaimer-staging: "Este es un sitio de ensayo utilizado para actualizar y obtener una vista previa de los datos del indicador"
+  government-site: "Este es un sitio web oficial del gobierno de los Estados Unidos"
+  login: "Iniciar sesión"
+  logout: "Cerrar sesión"
 fr:
   site-title: "Indicateurs des États-Unis pour les Objectifs de développement durable"
   disclaimer-wip: "Ce site est un travail en cours"
@@ -21,4 +29,8 @@ fr:
   nav-statistics : "Statistiques des États-Unis"
   nav-training : "Instruction"
   nav-faq : "FAQ"
+  disclaimer-staging: "C'est un site intermédiaire utilisé pour mettre à jour et prévisualiser les données des indicateurs"
+  government-site: "Ceci est un site officiel du gouvernement des États-Unis"
+  login: "S'identifier"
+  logout: "Déconnexion"
 ---
