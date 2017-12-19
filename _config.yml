@@ -140,6 +140,7 @@ prose:
         field:
             element: checkbox
             label: "Is update complete?"
+            value: false
       - name: "source_agency_staff_name"
         field: 
             element: text
