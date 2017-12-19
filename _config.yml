@@ -136,6 +136,10 @@ prose:
             element: text
             label: "Scheduled Update by SDG Team"  
             placeholder: "MONTH/YEAR (NRP Database)"
+      - name: "update_complete"
+        field:
+            element: checkbox
+            label: "Is update complete?"
       - name: "source_agency_staff_name"
         field: 
             element: text
