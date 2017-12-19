@@ -183,7 +183,7 @@
 
         {% for indicator_metadata in site.prose.metadata._indicators %}
 
-          {% if indicator_metadata.field.scope != "global" %}
+          {% if indicator_metadata.field.scope != "global" and indicator_metadata.field.hidden_on_indicator_pages != true %}
         <tr>
           <th>  {{ indicator_metadata.field.label }} </th>
           <td>  {{ page[indicator_metadata.name] }} </td>
