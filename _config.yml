@@ -141,6 +141,7 @@ prose:
             element: checkbox
             label: "Is update complete?"
             value: false
+            hidden: true
       - name: "source_agency_staff_name"
         field: 
             element: text
