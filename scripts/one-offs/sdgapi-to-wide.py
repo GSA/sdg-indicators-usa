@@ -6,6 +6,12 @@ importing data from an external source, rather than maintaining it
 through Prose.io and Github. The SDGAPI (https://unstats.un.org/SDGAPI/swagger/)
 is currently a test version, and does not contain accurate data.
 
+To run this script, go into the repository's root and run:
+python scripts/one-offs/sdgapi-to-wide.py
+
+Note that this requires Python 3, as well as the Pandas library:
+https://pandas.pydata.org/pandas-docs/stable/install.html
+
 This script goes to some lengths to save the data as "wide" CSV format, but
 with a minimum of columns. A further improvement would probably be some way to
 identify which column should represent the aggregate "all" values. This would
@@ -106,5 +112,7 @@ def main():
             df.to_csv(csv_path, index_label='year', float_format='%g')
             print('Saved ' + csv_path + '...')
 
+
+# Boilerplace syntax for running the main function.
 if __name__ == '__main__':
     main()
