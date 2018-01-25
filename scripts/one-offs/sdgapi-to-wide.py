@@ -14,17 +14,6 @@ import pandas as pd
 
 REQUEST_URL = 'https://unstats.un.org/SDGAPI/v1/sdg/Indicator/Data'
 
-# TODO: This is not actually reliable. Need to figure it out from data.
-def concept_code_variation(concepts):
-    concepts_with_variation = {}
-    for concept in concepts:
-        if len(concept['codes']) > 1:
-            concept_codes = []
-            for code_object in concept['codes']:
-                concept_codes.append(code_object['code'])
-            concepts_with_variation[concept['id']] = concept_codes
-    return concepts_with_variation
-
 indicator_files = glob.glob(os.path.join('_indicators', '*.md'))
 for indicator in indicator_files:
 
@@ -32,9 +21,6 @@ for indicator in indicator_files:
     indicator = indicator.replace('_indicators' + os.sep, '')
     indicator = indicator.replace('.md', '')
     indicator = indicator.replace('-', '.')
-
-    if indicator != '2.1.2':
-        continue
 
     # Request and parse the response from the API.
     parameters = {
@@ -45,39 +31,42 @@ for indicator in indicator_files:
     response = requests.get(REQUEST_URL, params=parameters)
     data = response.json()
 
-    # First see if there is any variation in attributes/dimensions.
-    attributes_with_variation = concept_code_variation(data['attributes'])
-    dimensions_with_variation = concept_code_variation(data['dimensions'])
-    all_concepts_with_variation = {}
-    all_concepts_with_variation.update(attributes_with_variation)
-    all_concepts_with_variation.update(dimensions_with_variation)
+    # First see if there is any variation in attributes/dimensions by
+    # generating a count of the attributes/dimensions used in the data.
+    concept_codes_in_use = {}
+    for row in data['data']:
+        for concept_type in ['attributes', 'dimensions']:
+            for concept_id in row[concept_type]:
+                if concept_id not in concept_codes_in_use:
+                    concept_codes_in_use[concept_id] = {}
+                concept_code = row[concept_type][concept_id]
+                if concept_code not in concept_codes_in_use[concept_id]:
+                    concept_codes_in_use[concept_id][concept_code] = True
 
-    # To generate our output, we'll construct a table row-by-row. This
-    # is not typical Pandas practice, but works fine in this case. We'll
-    # start with a blank table with a column (int) for years.
-    df = pd.DataFrame({'year': []})
-    df['year'] = df['year'].astype('int')
+    # Filter the concept_codes_in_use to the concept IDs that use more than one
+    # concept code, because we only care about the ones with some variation.
+    concepts_with_variation = {k: v for k, v in concept_codes_in_use.items() if len(v) > 1}
 
     # Loop through the rows of data populating a dict of years.
     years = dict()
     for row in data['data']:
         # Construct the column name from dimension/attribute values.
         column_segments = []
+        # Lump together the attributes and dimensions to find all of concepts
+        # that we care about (ie, the ones with variation).
         row_concepts = {}
         row_concepts.update(row['attributes'])
         row_concepts.update(row['dimensions'])
         for concept_id in row_concepts:
-            if concept_id in all_concepts_with_variation:
+            if concept_id in concepts_with_variation:
                 column_segments.append(concept_id + ':' + row_concepts[concept_id])
         # Sort the segments in order to normalize the column names.
         column_segments.sort()
         # Make sure the column name is at least 'all', if nothing else.
         if not column_segments:
             column_segments.append('all')
-        # Create the column name and add to DataFrame if needed.
+        # Create the column name.
         column_name = '|'.join(column_segments)
-        if column_name not in df.columns:
-            df[column_name] = ''
         # Make sure the year is in the years dict.
         year = row['timePeriodStart']
         if year not in years:
@@ -85,7 +74,9 @@ for indicator in indicator_files:
         # Add the value.
         years[year][column_name] = row['value']
 
+    # Convert the dict into a DataFrame indexed by year.
     df = pd.DataFrame.from_dict(years, orient='index')
+    # The year column ends up as a float unless we convert it here.
     df.index = df.index.astype(int)
 
     # Write the results to the CSV file.
