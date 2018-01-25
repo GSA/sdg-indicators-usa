@@ -49,6 +49,8 @@ for indicator in indicator_files:
 
     # Loop through the rows of data populating a dict of years.
     years = dict()
+    # We also need to track with columns are floats.
+    columns_that_are_floats = dict()
     for row in data['data']:
         # Construct the column name from dimension/attribute values.
         column_segments = []
@@ -73,14 +75,20 @@ for indicator in indicator_files:
             years[year] = {}
         # Add the value.
         years[year][column_name] = row['value']
+        # Track whether the value was a float.
+        if row['valueType'] == 'Float':
+            columns_that_are_floats[column_name] = True
 
     # Convert the dict into a DataFrame indexed by year.
     df = pd.DataFrame.from_dict(years, orient='index')
     # The year column ends up as a float unless we convert it here.
     df.index = df.index.astype(int)
+    # Also convert some other columns to floats.
+    for column_name in columns_that_are_floats:
+        df[column_name] = df[column_name].astype(float)
 
     # Write the results to the CSV file.
     if not df.empty:
         csv_path = os.path.join('data', 'indicator_' + indicator.replace('.', '-') + '.csv')
-        df.to_csv(csv_path, index_label='year', float_format='%.2f')
+        df.to_csv(csv_path, index_label='year', float_format='%g')
         print('Saved ' + csv_path + '...')
