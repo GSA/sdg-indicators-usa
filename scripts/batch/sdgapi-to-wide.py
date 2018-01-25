@@ -7,7 +7,7 @@ through Prose.io and Github. The SDGAPI (https://unstats.un.org/SDGAPI/swagger/)
 is currently a test version, and does not contain accurate data.
 
 To run this script, go into the repository's root and run:
-python scripts/one-offs/sdgapi-to-wide.py
+python scripts/batch/sdgapi-to-wide.py
 
 Note that this requires Python 3, as well as the Pandas library:
 https://pandas.pydata.org/pandas-docs/stable/install.html
