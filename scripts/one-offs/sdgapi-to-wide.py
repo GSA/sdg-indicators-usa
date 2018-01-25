@@ -14,6 +14,7 @@ import pandas as pd
 
 REQUEST_URL = 'https://unstats.un.org/SDGAPI/v1/sdg/Indicator/Data'
 
+# TODO: This is not actually reliable. Need to figure it out from data.
 def concept_code_variation(concepts):
     concepts_with_variation = {}
     for concept in concepts:
@@ -31,6 +32,9 @@ for indicator in indicator_files:
     indicator = indicator.replace('_indicators' + os.sep, '')
     indicator = indicator.replace('.md', '')
     indicator = indicator.replace('-', '.')
+
+    if indicator != '2.1.2':
+        continue
 
     # Request and parse the response from the API.
     parameters = {
@@ -85,6 +89,7 @@ for indicator in indicator_files:
     df.index = df.index.astype(int)
 
     # Write the results to the CSV file.
-    csv_path = os.path.join('data', 'indicator_' + indicator.replace('.', '-') + '.csv')
-    df.to_csv(csv_path, index_label='year', float_format='%.2f')
-    print('Saved ' + csv_path + '...')
+    if not df.empty:
+        csv_path = os.path.join('data', 'indicator_' + indicator.replace('.', '-') + '.csv')
+        df.to_csv(csv_path, index_label='year', float_format='%.2f')
+        print('Saved ' + csv_path + '...')
