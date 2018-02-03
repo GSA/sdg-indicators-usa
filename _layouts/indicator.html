@@ -215,6 +215,12 @@
   </div>
     <!-- / Tab panes -->
 
+{% capture six_months_ago %}{{'now' | date: '%s' | minus:15770000}}{% endcapture %}
+{% capture last_update %}{{page.date_metadata_updated | date: '%s'}}{% endcapture %}
+{% if last_update > six_months_ago %}
+  This was updated within the last six months (on {{page.date_metadata_updated | date: '%B %e, %Y'}})
+{% endif %}
+
 </div>
 
 
