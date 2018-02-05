@@ -1,0 +1,116 @@
+{% include head.html %}
+
+{% include header.html %}
+
+{% assign t_status = site.translations | where:"translation_id", "status"  | first %}
+{% assign t_status = t_status[page.lang] %}
+
+    <div id="main" class="main-content initiative-content status-dashboard">
+
+        <section class="usa-banner banner-small">
+            <div class="usa-grid">
+                <div class="usa-banner-content">
+                  <h1>{{ t_status.page-title }}</h1>
+                </div>
+            </div>
+        </section>
+
+        <div class="usa-grid">
+            {{ content }}
+
+    
+        <div class="usa-grid initiative-description">
+
+            <table class="goal-list">
+
+            {% if page.lang == 'en' %}
+              {% assign goals = site.data.sdg_goals %}
+            {% else %}
+              {% assign goals = site.data[page.lang].sdg_goals %}
+            {% endif %}
+
+            {% for goal in goals %}
+
+                {% assign this_goal = goal.goal | plus:0 %}
+
+
+                {% if this_goal < 10 %}
+                    {% assign img_path = 0  %}
+                {% else %}
+                    {% assign img_path = ''  %}
+                {% endif %}
+
+                <!-- start goal -->
+                  
+                {% for indicator in site.indicators %}
+
+                    {% assign indicator_status = '' %}
+
+                    {% if indicator.lang == site.defaults[0].values.lang %}
+                        {% if indicator.sdg_goal == this_goal %}
+
+                            <tr>
+                              <td><a href="{{ site.baseurl }}{{ indicator.permalink }}">{{ indicator.indicator }}</a></td>
+                              <td>
+                                <!-- recently updated -->
+                                {% if indicator.indicator == "1.2.1" or indicator.indicator == "1.3.1" or indicator.indicator == "1.5.1" or indicator.indicator == "1.5.2" or indicator.indicator == "2.1.2" or indicator.indicator == "3.1.2" or indicator.indicator == "3.2.1" or indicator.indicator == "3.2.2" or indicator.indicator == "3.3.1" or indicator.indicator == "3.3.2" or indicator.indicator == "3.3.4" or indicator.indicator == "3.4.1" or indicator.indicator == "3.4.2" or indicator.indicator == "3.5.2" or indicator.indicator == "3.6.1" or indicator.indicator == "3.7.1" or indicator.indicator == "3.7.2" or indicator.indicator == "3.9.3" or indicator.indicator == "3.a.1" or indicator.indicator == "3.c.1" or indicator.indicator == "4.1.1" or indicator.indicator == "4.2.2" or indicator.indicator == "4.3.1" or indicator.indicator == "4.4.1" or indicator.indicator == "4.5.1" or indicator.indicator == "4.6.1" or indicator.indicator == "4.a.1" or indicator.indicator == "4.a.1" or indicator.indicator == "4.c.1" or indicator.indicator == "5.2.1" or indicator.indicator == "5.4.1" or indicator.indicator == "5.5.2" or indicator.indicator == "5.b.1" or indicator.indicator == "6.5.1" or indicator.indicator == "6.1.1" or indicator.indicator == "7.1.1" or indicator.indicator == "7.2.1" or indicator.indicator == "7.3.1" or indicator.indicator == "7.7.1" or indicator.indicator == "8.1.1" or indicator.indicator == "8.2.1" or indicator.indicator == "8.4.2" or indicator.indicator == "8.5.1" or indicator.indicator == "8.5.2" or indicator.indicator == "8.6.1" or indicator.indicator == "8.10.1" or indicator.indicator == "8.10.2" or indicator.indicator == "8.a.1" or indicator.indicator == "9.1.2" or indicator.indicator == "9.2.1" or indicator.indicator == "9.4.1" or indicator.indicator == "9.5.1" or indicator.indicator == "9.c.1" or indicator.indicator == "10.1.1" or indicator.indicator == "10.4.1" or indicator.indicator == "11.1.1" or indicator.indicator == "11.5.1" or indicator.indicator == "11.5.2" or indicator.indicator == "11.6.2" or indicator.indicator == "12.2.2" or indicator.indicator == "13.1.1" or indicator.indicator == "14.4.1" or indicator.indicator == "14.5.1" or indicator.indicator == "15.1.1" or indicator.indicator == "16.1.1" or indicator.indicator == "16.2.2" or indicator.indicator == "17.1.1" or indicator.indicator == "17.3.2" or indicator.indicator == "17.4.1" or indicator.indicator == "17.6.2" or indicator.indicator == "17.8.1" or indicator.indicator == "17.18.3" or indicator.indicator == "17.9.2" or indicator.indicator == "17.18.2" or indicator.indicator == "17.18.3" or indicator.indicator == "17.19.2"  %}
+                                  <img src="{{ site.baseurl }}/assets/img/Artboard_2.png" />
+                                {% endif %}
+
+                                {% capture six_months_ago %}{{'now' | date: '%s' | minus:15770000}}{% endcapture %}
+                                {% capture last_update %}{{indicator.date_metadata_updated | date: '%s'}}{% endcapture %}
+                                {% if last_update > six_months_ago %}
+                                  STAR
+                                {% endif %}
+                              </td>
+                              <td>
+                                {{indicator.date_metadata_updated | date: '%Y-%m-%d'}}
+                                
+                                {% assign permalink_length = indicator.permalink | size | minus:2 %}
+                                {% assign permalink_clean = indicator.permalink | slice: 1, permalink_length %}
+
+                                  <a href="https://github.com/GSA/sdg-indicators/commits/gh-pages/data/indicator_{{permalink_clean}}.csv">CSV</a>
+                                   / 
+                                  <a href="https://github.com/GSA/sdg-indicators/commits/gh-pages/_indicators/{{permalink_clean}}.md">MD</a>
+
+                              </td> 
+                              <td>
+                                {% if indicator.un_designated_tier != '3' %}
+                                    {% assign indicator_status = t_status.danger-text %}
+                                    {% assign status_label = "danger" %}
+
+                                    {% if indicator.source_url != nil and indicator.source_url != "" %}
+                                      {% assign indicator_status = t_status.warning-text %}
+                                      {% assign status_label = "warning" %}
+
+                                      {% if indicator.graph != nil and indicator.graph != "" %}
+                                        {% assign indicator_status = t_status.success-text %}
+                                        {% assign status_label = "success" %}
+                                      {% endif %}
+
+                                    {% endif %}
+                                {% else %}
+                                  {% assign indicator_status = t_status.default-text %}
+                                  {% assign status_label = "default" %}
+                                {% endif %}
+
+                                <span class="label label-{{ status_label }}">{{ indicator_status }}</span>
+                              </td>
+                              <td>{{ indicator.title }}</td>
+                            </tr>
+
+                        {% endif %}
+                    {% endif %}
+
+                {% endfor %}
+
+
+
+                  <!-- end goal -->
+            {% endfor %}
+
+        </table>
+      
+    </div>
+    
+{% include footer.html %}
