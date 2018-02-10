@@ -1,2 +1,2 @@
-frontmatter
+python-frontmatter
 jsonschema
