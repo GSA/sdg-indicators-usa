@@ -3,11 +3,6 @@
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
 version: 2
-# For now, only build a certain branch for testing CircleCI.
-general:
-  branches:
-    only:
-      - circleci
 jobs:
   build:
     docker:
