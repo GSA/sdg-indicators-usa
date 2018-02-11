@@ -31,27 +31,27 @@ var sdg_indicators = sdg_indicators || {};
   {% when 'line' %}
   // Implement the indicatorGraphLineAdapter method.
   sdg_indicators.indicatorGraphLineAdapter = function(e) {
-      sdg_indicators.indicatorGraphLine(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphLine(e.detail.labels, e.detail.row);
   };
   {% when 'line-rate' %}
   // Implement the indicatorGraphLineRateAdapter method.
   sdg_indicators.indicatorGraphLineRateAdapter = function(e) {
-      sdg_indicators.indicatorGraphLineRate(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphLineRate(e.detail.labels, e.detail.row);
   };
   {% when 'bar' %}
   // Implement the indicatorGraphBarAdapter method.
   sdg_indicators.indicatorGraphBarAdapter = function(e) {
-      sdg_indicators.indicatorGraphBar(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphBar(e.detail.labels, e.detail.row);
   };
   {% when 'bar-rate' %}
   // Implement the indicatorGraphBarRateAdapter method.
   sdg_indicators.indicatorGraphBarRateAdapter = function(e) {
-      sdg_indicators.indicatorGraphBarRate(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphBarRate(e.detail.labels, e.detail.row);
   };
   {% when 'binary' %}
   // Implement the indicatorGraphBinaryAdapter method.
   sdg_indicators.indicatorGraphBinaryAdapter = function(e) {
-      sdg_indicators.indicatorGraphBinary(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphBinary(e.detail.labels, e.detail.row);
   };
   {% endcase %}
 
