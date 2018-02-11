@@ -15,6 +15,12 @@ var sdg_indicators = sdg_indicators || {};
       csv_options: {separator: ',', delimiter: '"'},
       datatables_options: {"paging": false, "bInfo" : false, "searching": false}
     });
+    // Add the download button.
+    var $button = $('<a/>')
+      .addClass('usa-button usa-button-big')
+      .attr('href', e.detail.csv_path)
+      .text('Download CSV');
+    $('.datatable-container .button_wrapper').append($button);
   };
 
   // Override the indicatorGraphLineAdapter method.
