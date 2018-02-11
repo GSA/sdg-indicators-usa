@@ -1,9 +1,12 @@
 {% assign id = include.row.Indicator | slugify %}
 {% if page.title == 'Top 10 Cities' %} 
-  <div id="chart-{{ id }}" class="ct-chart ct-major-seventh"></div>{% else %}  
-  <div id="chart-{{ id }}" class="ct-chart ct-major-eleventh"></div>
+  <div id="chart-{{ id }}" class="ct-chart ct-major-seventh">
+    <div class="spin"></div>
+  </div>{% else %}
+  <div id="chart-{{ id }}" class="ct-chart ct-major-eleventh">
+    <div class="spin"></div>
+  </div>
 {% endif %}
-
 <script>
   var sdg_indicators = sdg_indicators || {};
   sdg_indicators.indicatorGraphBarRate = function(labels, row) {

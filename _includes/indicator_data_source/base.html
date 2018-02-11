@@ -2,23 +2,23 @@
 
 var sdg_indicators = sdg_indicators || {};
 
-// Stub functions for each type of data visualization. Each of these should be
-// overridden for any implementation of an indicator data source.
-sdg_indicators.indicatorTableAdapter = function(e) { throw "indicatorTableAdapter not implemented." };
-sdg_indicators.indicatorGraphLineAdapter = function(e) { throw "indicatorGraphLineAdapter not implemented." };
-sdg_indicators.indicatorGraphLineRateAdapter = function(e) { throw "indicatorGraphLineRateAdapter not implemented." };
-sdg_indicators.indicatorGraphBarAdapter = function(e) { throw "indicatorGraphBarAdapter not implemented." };
-sdg_indicators.indicatorGraphBarRateAdapter = function(e) { throw "indicatorGraphBarRateAdapter not implemented." };
-sdg_indicators.indicatorGraphBinaryAdapter = function(e) { throw "indicatorGraphBinaryAdapter not implemented." };
+// Turn on spinners in case the data source takes a long time.
+$('.spin').show();
 
-// Event listener for whenever the data comes back.
+// Event listener for whenever the data comes back. The following methods should
+// be overridden by any data source implementation.
 document.addEventListener('IndicatorDataReady', function(e) {
   sdg_indicators.indicatorTableAdapter(e);
-  sdg_indicators.indicatorGraphLineAdapter(e);
-  sdg_indicators.indicatorGraphLineRateAdapter(e);
-  sdg_indicators.indicatorGraphBarAdapter(e);
-  sdg_indicators.indicatorGraphBarRateAdapter(e);
-  sdg_indicators.indicatorGraphBinaryAdapter(e);
+  {% case include.graph_type %}
+    {% when 'line' %} sdg_indicators.indicatorGraphLineAdapter(e);
+    {% when 'line-rate' %} sdg_indicators.indicatorGraphLineRateAdapter(e);
+    {% when 'bar' %} sdg_indicators.indicatorGraphBarAdapter(e);
+    {% when 'bar-rate' %} sdg_indicators.indicatorGraphBarRateAdapter(e);
+    {% when 'binary' %} sdg_indicators.indicatorGraphBinaryAdapter(e);
+  {% endcase %}
+
+  // Turn off spinners now that the data source has responded.
+  $('.spin').hide();
 }, false);
 
 </script>

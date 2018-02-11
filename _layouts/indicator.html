@@ -96,6 +96,7 @@
 
       <div class="datatable-container">
         <h4>{{ page.graph_title }}</h4>
+        <div class="spin"></div>
         <div id="datatable"></div>
         <div class="button_wrapper"></div>
       </div>
@@ -216,7 +217,7 @@
 
 {% include scripts.html %}
 
-{% include indicator_data_source/base.html %}
-{% include indicator_data_source/{{ page.indicator_data_source }}.html metadata=this_sdg_indicator_metadata %}
+{% include indicator_data_source/base.html graph_type=graph_type %}
+{% include indicator_data_source/{{ page.indicator_data_source }}.html graph_type=graph_type %}
     
 {% include footer.html %}

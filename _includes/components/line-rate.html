@@ -1,5 +1,7 @@
 {% assign id = include.row.Indicator | slugify %}
-<div id="chart-{{ id }}" class="ct-chart ct-major-eleventh"></div>
+<div id="chart-{{ id }}" class="ct-chart ct-major-eleventh">
+  <div class="spin"></div>
+</div>
 <script>
 var sdg_indicators = sdg_indicators || {};
 sdg_indicators.indicatorGraphLineRate = function(labels, row) {

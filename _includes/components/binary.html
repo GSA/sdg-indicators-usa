@@ -14,7 +14,9 @@
   {% endcase %}
 {% endfor %}
 
-<div id="binary-chart-{{ id }}" class="ct-chart ct-chart-binary ct-major-eleventh"></div>
+<div id="binary-chart-{{ id }}" class="ct-chart ct-chart-binary ct-major-eleventh">
+  <div class="spin"></div>
+</div>
 <script>
 var sdg_indicators = sdg_indicators || {};
 sdg_indicators.indicatorGraphBinary = function(labels, row) {

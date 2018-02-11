@@ -4,7 +4,7 @@ var sdg_indicators = sdg_indicators || {};
 
 (function() {
 
-  // Override the indicatorTableAdapter method.
+  // Implement the indicatorTableAdapter method.
   sdg_indicators.indicatorTableAdapter = function(e) {
     // Use the assets/js/vendor/csv_to_html_table.js library to render the CSV
     // as an HTML table.
@@ -23,40 +23,33 @@ var sdg_indicators = sdg_indicators || {};
     $('.datatable-container .button_wrapper').append($button);
   };
 
-  // Override the indicatorGraphLineAdapter method.
+  {% case include.graph_type %}
+    {% when 'line' %}
+    // Implement the indicatorGraphLineAdapter method.
   sdg_indicators.indicatorGraphLineAdapter = function(e) {
-    if (sdg_indicators.indicatorGraphLine) {
       sdg_indicators.indicatorGraphLine(e.detail.labels, e.detail.row);
-    }
   };
-
-  // Override the indicatorGraphLineRateAdapter method.
+    {% when 'line-rate' %}
+    // Implement the indicatorGraphLineRateAdapter method.
   sdg_indicators.indicatorGraphLineRateAdapter = function(e) {
-    if (sdg_indicators.indicatorGraphLineRate) {
       sdg_indicators.indicatorGraphLineRate(e.detail.labels, e.detail.row);
-    }
   };
-
-  // Override the indicatorGraphBarAdapter method.
+    {% when 'bar' %}
+    // Implement the indicatorGraphBarAdapter method.
   sdg_indicators.indicatorGraphBarAdapter = function(e) {
-    if (sdg_indicators.indicatorGraphBar) {
       sdg_indicators.indicatorGraphBar(e.detail.labels, e.detail.row);
-    }
   };
-
-  // Override the indicatorGraphBarRateAdapter method.
+    {% when 'bar-rate' %}
+    // Implement the indicatorGraphBarRateAdapter method.
   sdg_indicators.indicatorGraphBarRateAdapter = function(e) {
-    if (sdg_indicators.indicatorGraphBarRate) {
       sdg_indicators.indicatorGraphBarRate(e.detail.labels, e.detail.row);
-    }
   };
-
-  // Override the indicatorGraphBinaryAdapter method.
+    {% when 'binary' %}
+    // Implement the indicatorGraphBinaryAdapter method.
   sdg_indicators.indicatorGraphBinaryAdapter = function(e) {
-    if (sdg_indicators.indicatorGraphBinary) {
       sdg_indicators.indicatorGraphBinary(e.detail.labels, e.detail.row);
-    }
   };
+  {% endcase %}
 
   // Now that all the methods are overridden, prepare some Jekyll data to pass
   // into the custom event.
