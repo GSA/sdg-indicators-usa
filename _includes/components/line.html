@@ -2,10 +2,8 @@
 {% assign unit_label = page.variable_unit_label %}
 <div id="linechart-{{ id }}" class="ct-chart ct-major-eleventh"></div>
 <script>
-(function () {
+function indicatorGraphLine(labels, row) {
   var container = '#linechart-{{ id }}'
-  var labels = {{ include.labels | jsonify }}
-  var row = {{ include.row | jsonify }}
 
   // Construct array of objects from data using indicators
   var series = row
@@ -52,5 +50,5 @@
     ],
   }
   new Chartist.Line(container, chartData, chartOpts)
-})()
+};
 </script>

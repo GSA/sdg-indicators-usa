@@ -16,10 +16,8 @@
 
 <div id="binary-chart-{{ id }}" class="ct-chart ct-chart-binary ct-major-eleventh"></div>
 <script>
-(function () {
+function indicatorGraphBinary(labels, row) {
   var container = '#binary-chart-{{ id }}'
-  var labels = {{ include.labels | jsonify }}
-  var series = {{ row_transform | jsonify }}
 
   // Construct array of objects from data using indicators
   var chartData = {
@@ -51,5 +49,5 @@
     }
   new Chartist.Bar(container, chartData, chartOpts).on('draw', function(data) {});
 
-  })()
+  };
 </script>

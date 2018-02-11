@@ -5,10 +5,8 @@
 {% endif %}
 
 <script>
-  (function () {
+  function indicatorGraphBarRate(labels, row) {
     var container = '#chart-{{ id }}'
-    var labels = {{ include.labels | jsonify }}
-    var row = {{ include.row | jsonify }}
 
     // Construct array of objects from data using indicators
     var series = labels.map(function (col) {
@@ -51,5 +49,5 @@
       ]
     }
     new Chartist.Bar(container, chartData, chartOpts)
-  })()
+  };
 </script>
