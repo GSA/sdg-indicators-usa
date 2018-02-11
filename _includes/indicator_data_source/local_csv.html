@@ -55,8 +55,7 @@ var sdg_indicators = sdg_indicators || {};
   };
   {% endcase %}
 
-  // Now that all the methods are overridden, prepare some Jekyll data to pass
-  // into the custom event.
+  // Prepare some Jekyll data to pass into the custom event.
   {% assign slug = page.indicator | replace: '.', '-' %}
   {% assign dataset_name = 'indicator_' | append: slug %}
 
