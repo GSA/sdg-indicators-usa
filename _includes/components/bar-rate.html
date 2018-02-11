@@ -5,7 +5,8 @@
 {% endif %}
 
 <script>
-  function indicatorGraphBarRate(labels, row) {
+  var sdg_indicators = sdg_indicators || {};
+  sdg_indicators.indicatorGraphBarRate = function(labels, row) {
     var container = '#chart-{{ id }}'
 
     // Construct array of objects from data using indicators

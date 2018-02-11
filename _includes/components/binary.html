@@ -16,7 +16,8 @@
 
 <div id="binary-chart-{{ id }}" class="ct-chart ct-chart-binary ct-major-eleventh"></div>
 <script>
-function indicatorGraphBinary(labels, row) {
+var sdg_indicators = sdg_indicators || {};
+sdg_indicators.indicatorGraphBinary = function(labels, row) {
   var container = '#binary-chart-{{ id }}'
 
   // Construct array of objects from data using indicators

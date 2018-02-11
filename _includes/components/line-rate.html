@@ -1,7 +1,8 @@
 {% assign id = include.row.Indicator | slugify %}
 <div id="chart-{{ id }}" class="ct-chart ct-major-eleventh"></div>
 <script>
-function indicatorGraphLineRate(labels, row) {
+var sdg_indicators = sdg_indicators || {};
+sdg_indicators.indicatorGraphLineRate = function(labels, row) {
   var container = '#chart-{{ id }}'
 
   // Construct array of objects from data using indicators
