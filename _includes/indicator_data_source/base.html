@@ -1,0 +1,24 @@
+<script type="text/javascript">
+
+var sdg_indicators = sdg_indicators || {};
+
+// Stub functions for each type of data visualization. Each of these should be
+// overridden for any implementation of an indicator data source.
+sdg_indicators.renderTable = function(e) { throw "renderTable not implemented." };
+sdg_indicators.renderLine = function(e) { throw "renderLine not implemented." };
+sdg_indicators.renderLineRate = function(e) { throw "renderLineRate not implemented." };
+sdg_indicators.renderBar = function(e) { throw "renderBar not implemented." };
+sdg_indicators.renderBarRate = function(e) { throw "renderBarRate not implemented." };
+sdg_indicators.renderBinary = function(e) { throw "renderBinary not implemented." };
+
+// Event listener for whenever the data comes back.
+document.addEventListener('IndicatorDataReady', function(e) {
+  sdg_indicators.renderTable(e);
+  sdg_indicators.renderLine(e);
+  sdg_indicators.renderLineRate(e);
+  sdg_indicators.renderBar(e);
+  sdg_indicators.renderBarRate(e);
+  sdg_indicators.renderBinary(e);
+}, false);
+
+</script>

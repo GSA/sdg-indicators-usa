@@ -1,0 +1,83 @@
+<script type="text/javascript">
+
+var sdg_indicators = sdg_indicators || {};
+
+(function() {
+
+  // Override the renderTable method.
+  sdg_indicators.renderTable = function(e) {
+    // Use the assets/js/vendor/csv_to_html_table.js library to render the CSV
+    // as an HTML table.
+    init_table({
+      csv_path: e.detail.csv_path,
+      element: 'datatable',
+      allow_download: false,
+      csv_options: {separator: ',', delimiter: '"'},
+      datatables_options: {"paging": false, "bInfo" : false, "searching": false}
+    });
+  };
+
+  // Override the renderLine method.
+  sdg_indicators.renderLine = function(e) {
+    if (typeof indicatorGraphLine === 'function') {
+      indicatorGraphLine(e.detail.labels, e.detail.row);
+    }
+  };
+
+  // Override the renderLineRate method.
+  sdg_indicators.renderLineRate = function(e) {
+    if (typeof indicatorGraphLineRate === 'function') {
+      indicatorGraphLineRate(e.detail.labels, e.detail.row);
+    }
+  };
+
+  // Override the renderBar method.
+  sdg_indicators.renderBar = function(e) {
+    if (typeof indicatorGraphBar === 'function') {
+      indicatorGraphBar(e.detail.labels, e.detail.row);
+    }
+  };
+
+  // Override the renderBarRate method.
+  sdg_indicators.renderBarRate = function(e) {
+    if (typeof indicatorBarRate === 'function') {
+      indicatorGraphBarRate(e.detail.labels, e.detail.row);
+    }
+  };
+
+  // Override the renderBinary method.
+  sdg_indicators.renderBinary = function(e) {
+    if (typeof indicatorGraphBinary === 'function') {
+      indicatorGraphBinary(e.detail.labels, e.detail.row);
+    }
+  };
+
+  // Now that all the methods are overridden, prepare some data and then emit
+  // the custom "IndicatorDataReady" event.
+  {% assign slug = page.indicator | replace: '.', '-' %}
+  {% assign dataset_name = 'indicator_' | append: slug %}
+
+  {% assign array = "" | split: ""  %}
+  {% assign row = array %}
+  {% assign labels = array %}
+
+  {% for indicator in site.data[dataset_name] %}
+    {% assign row = row | push: indicator[page.indicator_variable] %}
+    {% assign labels = labels | push: indicator.year %}
+  {% endfor %}
+
+  var row = {{ row | jsonify }};
+  var labels = {{ labels | jsonify }};
+
+  var csv_path =  '{{ site.baseurl }}/data/{{ dataset_name }}.csv';
+  var event = new CustomEvent('IndicatorDataReady', {
+    detail: {
+      row: row,
+      labels: labels,
+      csv_path: csv_path
+    }
+  });
+  document.dispatchEvent(event);
+})();
+
+</script>
