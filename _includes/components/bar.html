@@ -1,11 +1,12 @@
 {% assign id = page.indicator | slugify %}
 {% assign unit_label = page.variable_unit_label %}
-<div id="barchart-{{ id }}" class="ct-chart ct-major-eleventh"></div>
+<div id="barchart-{{ id }}" class="ct-chart ct-major-eleventh">
+  <div class="spin"></div>
+</div>
 <script>
-(function () {
+var sdg_indicators = sdg_indicators || {};
+sdg_indicators.indicatorGraphBar = function(labels, row) {
   var container = '#barchart-{{ id }}'
-  var labels = {{ include.labels | jsonify }}
-  var row = {{ include.row | jsonify }}
 
   // Construct array of objects from data using indicators
   var series = row
@@ -58,5 +59,5 @@
   }
 });
 
-  })()
+};
 </script>

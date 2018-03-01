@@ -14,12 +14,13 @@
   {% endcase %}
 {% endfor %}
 
-<div id="binary-chart-{{ id }}" class="ct-chart ct-chart-binary ct-major-eleventh"></div>
+<div id="binary-chart-{{ id }}" class="ct-chart ct-chart-binary ct-major-eleventh">
+  <div class="spin"></div>
+</div>
 <script>
-(function () {
+var sdg_indicators = sdg_indicators || {};
+sdg_indicators.indicatorGraphBinary = function(labels, row) {
   var container = '#binary-chart-{{ id }}'
-  var labels = {{ include.labels | jsonify }}
-  var series = {{ row_transform | jsonify }}
 
   // Construct array of objects from data using indicators
   var chartData = {
@@ -51,5 +52,5 @@
     }
   new Chartist.Bar(container, chartData, chartOpts).on('draw', function(data) {});
 
-  })()
+  };
 </script>

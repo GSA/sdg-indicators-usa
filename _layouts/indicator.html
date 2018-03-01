@@ -51,8 +51,6 @@
     {% assign page = site.indicators | where:"indicator", page.indicator  | first %}
 {% endif %}
 
-{% assign sdg_indicator = site.data[dataset_name] %}
-
 {% for indicators in sdg_indicators %}
 {% if indicators.indicator_id == page.indicator %}
   {% assign this_sdg_indicator_metadata = indicators %}  
@@ -60,16 +58,6 @@
 {% endfor %}
 
 {% assign indicator_title = this_sdg_indicator_metadata.indicator %}
-
-{% assign array = "" | split: ""  %}
-{% assign row = array %}
-{% assign labels = array %}
-
-{% for indicator in sdg_indicator %}
-  {% assign row = row | push: indicator[page.indicator_variable] %}
-  {% assign labels = labels | push: indicator.year %}
-{% endfor %}
-
 
 <h3>{{ t.sub-subtitle }} {{ page.indicator }} - {{ indicator_title }}</h3>
 
@@ -84,7 +72,7 @@
 {% assign graph_template = 'components/' | append: graph_type | append: '.html' %}
 
   <h4>{{ page.graph_title }}</h4>
-  {% include {{graph_template}} row=row labels=labels %}
+  {% include {{graph_template}} %}
 {% endif %}
 
 {{ page.content }}
@@ -108,15 +96,9 @@
 
       <div class="datatable-container">
         <h4>{{ page.graph_title }}</h4>
+        <div class="spin"></div>
         <div id="datatable"></div>
-
-
-          <div class="button_wrapper">
-              <a class="usa-button usa-button-big" href="{{ site.baseurl }}/data/{{ dataset_name }}.csv">Download CSV</a>
-          </div>
-        
-
-
+        <div class="button_wrapper"></div>
       </div>
       {% else %}
 
@@ -235,14 +217,7 @@
 
 {% include scripts.html %}
 
-<script>
-  init_table({
-    csv_path: '{{ site.baseurl }}/data/{{ dataset_name }}.csv', 
-    element: 'datatable', 
-    allow_download: false,
-    csv_options: {separator: ',', delimiter: '"'},
-    datatables_options: {"paging": false, "bInfo" : false, "searching": false}
-  });
-</script>
+{% include indicator_data_source/base.html graph_type=graph_type %}
+{% include indicator_data_source/{{ page.indicator_data_source }}.html graph_type=graph_type %}
     
 {% include footer.html %}

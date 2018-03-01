@@ -1,0 +1,81 @@
+<script type="text/javascript">
+
+/**
+ * An implementation of a data source for indicator data using local CSV files.
+ */
+
+var sdg_indicators = sdg_indicators || {};
+
+(function() {
+
+  // Implement the indicatorTableAdapter method.
+  sdg_indicators.indicatorTableAdapter = function(e) {
+    // Use the assets/js/vendor/csv_to_html_table.js library to render the CSV
+    // as an HTML table.
+    init_table({
+      csv_path: e.detail.csv_path,
+      element: 'datatable',
+      allow_download: false,
+      csv_options: {separator: ',', delimiter: '"'},
+      datatables_options: {"paging": false, "bInfo" : false, "searching": false}
+    });
+    // Add the download button.
+    var $button = $('<a/>')
+      .addClass('usa-button usa-button-big')
+      .attr('href', e.detail.csv_path)
+      .text('Download CSV');
+    $('.datatable-container .button_wrapper').append($button);
+  };
+
+  {% case include.graph_type %}
+  {% when 'line' %}
+  // Implement the indicatorGraphLineAdapter method.
+  sdg_indicators.indicatorGraphLineAdapter = function(e) {
+    sdg_indicators.indicatorGraphLine(e.detail.labels, e.detail.row);
+  };
+  {% when 'line-rate' %}
+  // Implement the indicatorGraphLineRateAdapter method.
+  sdg_indicators.indicatorGraphLineRateAdapter = function(e) {
+    sdg_indicators.indicatorGraphLineRate(e.detail.labels, e.detail.row);
+  };
+  {% when 'bar' %}
+  // Implement the indicatorGraphBarAdapter method.
+  sdg_indicators.indicatorGraphBarAdapter = function(e) {
+    sdg_indicators.indicatorGraphBar(e.detail.labels, e.detail.row);
+  };
+  {% when 'bar-rate' %}
+  // Implement the indicatorGraphBarRateAdapter method.
+  sdg_indicators.indicatorGraphBarRateAdapter = function(e) {
+    sdg_indicators.indicatorGraphBarRate(e.detail.labels, e.detail.row);
+  };
+  {% when 'binary' %}
+  // Implement the indicatorGraphBinaryAdapter method.
+  sdg_indicators.indicatorGraphBinaryAdapter = function(e) {
+    sdg_indicators.indicatorGraphBinary(e.detail.labels, e.detail.row);
+  };
+  {% endcase %}
+
+  // Prepare some Jekyll data to pass into the custom event.
+  {% assign slug = page.indicator | replace: '.', '-' %}
+  {% assign dataset_name = 'indicator_' | append: slug %}
+
+  {% assign array = "" | split: ""  %}
+  {% assign row = array %}
+  {% assign labels = array %}
+
+  {% for indicator in site.data[dataset_name] %}
+    {% assign row = row | push: indicator[page.indicator_variable] %}
+    {% assign labels = labels | push: indicator.year %}
+  {% endfor %}
+
+  // Finally emit the custom event.
+  document.dispatchEvent(new CustomEvent('IndicatorDataReady', {
+    detail: {
+      row: {{ row | jsonify }},
+      labels: {{ labels | jsonify }},
+      csv_path: '{{ site.baseurl }}/data/{{ dataset_name }}.csv'
+    }
+  }));
+})();
+
+</script>
