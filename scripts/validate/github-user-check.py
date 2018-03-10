@@ -44,9 +44,8 @@ for index, line in enumerate(proc.stdout.readlines()):
   change = line.decode('utf-8').strip()
   if index == 0:
     # The first line is the commit ID, which we use to get the Github user.
-    commit_id = change
     github_api_request = "https://api.github.com/repos/%s/%s/commits/%s" \
-      % (site['org_name'], site['repo_name'], commit_id)
+      % (site['org_name'], site['repo_name'], change)
     try:
       response = requests.get(github_api_request).json()
     except requests.exceptions.RequestException as e:
@@ -60,6 +59,7 @@ for index, line in enumerate(proc.stdout.readlines()):
       sys.exit(0)
 
   else:
+    # The rest of the lines of output are files that were changed.
     # We only care about certain folders, so skip all others.
     is_protected_folder = False
     for protected_folder in PROTECTED_FOLDERS:
@@ -68,7 +68,7 @@ for index, line in enumerate(proc.stdout.readlines()):
 
     # Test the changed files against the allowed indicators for the user.
     if is_protected_folder:
-      indicator_listed = 'indicators' in users[user]
+      indicator_listed = user in users and 'indicators' in users[user]
       indicator_matched = False
       if indicator_listed:
         for indicator in users[user]['indicators']:
