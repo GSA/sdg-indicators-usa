@@ -65,19 +65,18 @@ for index, line in enumerate(proc.stdout.readlines()):
     for protected_folder in PROTECTED_FOLDERS:
       if change.startswith(protected_folder):
         is_protected_folder = True
-    if not is_protected_folder:
-      continue
 
     # Test the changed files against the allowed indicators for the user.
-    indicator_listed = 'indicators' in users[user]
-    indicator_matched = False
-    if indicator_listed:
-      for indicator in users[user]['indicators']:
-        if fnmatch.fnmatch(change, '*' + indicator + '*'):
-          indicator_matched = True
+    if is_protected_folder:
+      indicator_listed = 'indicators' in users[user]
+      indicator_matched = False
+      if indicator_listed:
+        for indicator in users[user]['indicators']:
+          if fnmatch.fnmatch(change, '*' + indicator + '*'):
+            indicator_matched = True
 
-    if not indicator_listed or not indicator_matched:
-      raise RuntimeError("Changed file '%s' is not in list of allowed indicators for user '%s'." % (change, user))
+      if not indicator_listed or not indicator_matched:
+        raise RuntimeError("Changed file '%s' is not in list of allowed indicators for user '%s'." % (change, user))
 
     # If still here, give feedback.
     print("-- change permitted: %s" % change)
