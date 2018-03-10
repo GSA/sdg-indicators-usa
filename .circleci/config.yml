@@ -40,6 +40,12 @@ jobs:
           key: v1-dependencies-{{ checksum "scripts/requirements.txt" }}
 
       - run:
+          name: check user permissions
+          command: |
+            . venv/bin/activate
+            python3 scripts/validate/github-user-check.py
+
+      - run:
           name: check metadata
           command: |
             . venv/bin/activate
