@@ -52,11 +52,11 @@ for index, line in enumerate(proc.stdout.readlines()):
     # Exit now if the author is not in our list.
     user = response['author']['login']
     if user not in users:
-      raise RuntimeError("User %s is not in approved list of users." % user)
+      raise RuntimeError("User '%s' is not in approved list of users." % user)
 
     # Also exit now if the author is an administrator.
     if 'administrator' == users[user]:
-      print("-- User %s is an administrator: skipping Github user check." % user)
+      print("-- User '%s' is an administrator: skipping Github user check." % user)
       sys.exit(0)
 
   else:
