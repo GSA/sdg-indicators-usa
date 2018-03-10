@@ -26,19 +26,9 @@
 
 philipashlock: administrator
 Kali2017SDG: administrator
+SmithersA: administrator
 JenPark9: administrator
 brockfanning: administrator
-
-raichoudhary-r:
-  indicators:
-    - 5-4-1
-    - 8-2-1
-    - 8-5-1
-    - 8-5-2
-    - 8-6-1
-    - 8-8-1
-    - 8-9-1
-    - 9-2-2
 
 ambranu:
   indicators:
@@ -56,6 +46,130 @@ ambranu:
     - 3-9-3
     - 3-a-1
 
+andrew-craig-bea:
+  indicators:
+    - 10-4-1
+    - 11-5-2
+    - 12-2-2
+    - 1-5-2
+    - 17-1-1
+    - 17-3-2
+    - 17-4-1
+    - 8-1-1
+    - 8-4-2
+    - 9-2-1
+
+Becka1:
+  indicators:
+    - 16-1-4
+    - 16-3-1
+    - 16-3-2
+
+bglassman15910:
+  indicators:
+    - 10-1-1
+    - 10-4-1
+    - 1-1-1
+    - 1-2-1
+    - 1-2-2
+
+BTruman:
+  indicators:
+    - 3-3-1
+    - 3-3-2
+    - 3-3-4
+
+cbnewman:
+  indicators:
+    - 2-1-2
+
+cheridanc:
+  indicators:
+    - 5-5-2
+
+cyveenis:
+  indicators:
+    - 1-3-1
+
+Davanden:
+  indicators:
+    - 11-1-1
+    - 7-1-1
+
+dmintzepa:
+  indicators:
+    - 11-6-2
+
+DonnaChristianson:
+  indicators:
+    - 17-6-2
+
+eggle005:
+  indicators:
+    - 8-10-2
+
+henningsh:
+  paths:
+    - fr/
+    - _translations/
+
+IB-FCC:
+  indicators:
+    - 9-c-1
+
+jacob2479:
+  indicators:
+    - 8-10-1
+
+Jones-Puthoff:
+  indicators:
+    5-5-2
+
+jyoon1:
+  indicators:
+    - 3-c-1
+
+KarenEGreene:
+  indicators:
+    - 14-4-1
+
+lasimmons:
+  indicators:
+    - 16-1-1
+    - 16-2-2
+    - 5-2-1
+    - 5-2-2
+
+lewis410:
+  indicators:
+    - 17-8-1
+    - 5-b-1
+    - 8-10-1
+    - 8-10-2
+
+maggiewoodward:
+  indicators:
+    - 7-2-1
+    - 7-3-1
+    - 9-4-1
+
+mboroush:
+  indicators:
+    - 9-5-1
+
+mimidiorio:
+  indicators:
+    - 14-5-1
+
+Moris-OMB:
+  indicators:
+    - 1-1-1
+
+mwdumas:
+  indicators:
+    - 8-5-1
+    - 8-5-2
+
 nicolenorris:
   indicators:
     - 15-1-1
@@ -66,3 +180,52 @@ nicolenorris:
     - 15-b-1
     - 15-c-1
     - 6-5-1
+
+OGWDW2115:
+  indicators:
+    - 6-1-1
+
+proct001:
+  indicators:
+    - 1-2-1
+
+ptice45:
+  indicators:
+    - 3-5-2
+
+raichoudhary-r:
+  indicators:
+    - 5-4-1
+    - 8-2-1
+    - 8-5-1
+    - 8-5-2
+    - 8-6-1
+    - 8-8-1
+    - 8-9-1
+    - 9-2-2
+
+sbeningo:
+  indicators:
+    - 9-1-2
+
+smith165GITHUB:
+  indicators:
+    - 5-5-2
+
+smithkimberj:
+  indicators:
+    - 8-a-1
+
+Snyder1789:
+  indicators:
+    - 4-1-1
+    - 4-2-1
+    - 4-2-2
+    - 4-3-1
+    - 4-4-1
+    - 4-5-1
+    - 4-6-1
+    - 4-7-1
+    - 4-a-1
+    - 4-b-1
+    - 4-c-1
