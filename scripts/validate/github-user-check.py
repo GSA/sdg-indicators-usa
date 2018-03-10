@@ -13,7 +13,7 @@ import requests
 
 print('Checking user permissions...')
 
-# Get the github-users.yml file data.
+# Get the github-user-list.yml file data.
 file_path = os.path.join('scripts', 'validate', 'github-user-list.yml')
 with open(file_path, 'r') as stream:
     try:
