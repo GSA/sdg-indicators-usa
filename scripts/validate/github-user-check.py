@@ -41,5 +41,6 @@ for line in proc.stdout.readlines():
     for folder in users[user]['folders']:
       if folder not in change:
         raise RuntimeError('Changed file "' + change + '" is outside list of folders for user "' + user + '".')
+  print('-- change permitted: ' + change)
 
 print('Success')
