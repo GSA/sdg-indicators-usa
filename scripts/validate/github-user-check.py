@@ -60,16 +60,39 @@ for index, line in enumerate(proc.stdout.readlines()):
       sys.exit(0)
 
   else:
+    # Rather complex logic to parse the indicator/paths criteria:
+    indicator_listed = 'indicators' in users[user]
+    indicator_matched = False
+    path_listed = 'paths' in users[user]
+    path_matched = False
+
     # Validate the list of indicators if specified.
-    if 'indicators' in users[user]:
+    if indicator_listed:
       for indicator in users[user]['indicators']:
-        if indicator not in change:
-          raise RuntimeError("Changed file '%s' is outside list of indicators for user '%s'." % (change, user))
-    # Validate the list of folders if specified.
-    if 'folders' in users[user]:
-      for folder in users[user]['folders']:
-        if folder not in change:
-          raise RuntimeError("Changed file '%s' is outside list of folders for user '%s'." % (change, user))
+        if indicator in change:
+          indicator_matched = True
+
+    # Validate the list of paths if specified.
+    if path_listed:
+      for path in users[user]['paths']:
+        if path in change:
+          path_matched = True
+
+    indicator_mismatch_found = indicator_listed and not indicator_matched
+    path_mismatch_found = path_listed and not path_matched
+
+    # Special case for where both indicators and paths are listed for a user:
+    # allow indicator mismatches if there are no path mismatches.
+    if indicator_listed and path_listed:
+      if indicator_mismatch_found and not path_mismatch_found:
+        indicator_mismatch_found = False
+
+    # Report errors if mismatches were found.
+    if path_mismatch_found:
+      raise RuntimeError("Changed file '%s' is outside list of paths for user '%s'." % (change, user))
+
+    if indicator_mismatch_found:
+      raise RuntimeError("Changed file '%s' is outside list of indicators for user '%s'." % (change, user))
 
     # If still here, give feedback.
     print("-- change permitted: %s" % change)

@@ -20,7 +20,7 @@
 #
 # email@example.com:
 #   paths:
-#     - scripts/validate/github-users.yml
+#     - scripts/validate/github-user-list.yml
 #     - data/regions/california
 #     - data
 
