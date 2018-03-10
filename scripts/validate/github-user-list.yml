@@ -1,28 +1,19 @@
 # This file list the Github emails that are allowed to create pull-requests.
 # In combination with the github-user-check.py script and CircleCI, this can be
-# used to approximate a more fine-grained user permissions system.
+# used to approximate a simple automated user permissions system.
 #
 # Any "administrator" is allowed to change any file.
 # Example:
 # email@example.com: administrator
 #
 # If the "indicators" array is given, only those indicators can be changed.
-# Partial indicators can be given. For example:
+# Asterisks can be used as "wildcards". For example:
 #
 # email@example.com:
 #   indicators:
 #     - 3-3-1
-#     - 3-4
-#     - 4
-#
-# If the "paths" array is given, only files in those paths can be changed.
-# Partial paths can be given. For example:
-#
-# email@example.com:
-#   paths:
-#     - scripts/validate/github-user-list.yml
-#     - data/regions/california
-#     - data
+#     - 3-4-*
+#     - 4-*-*
 
 philipashlock: administrator
 Kali2017SDG: administrator
@@ -108,11 +99,6 @@ eggle005:
   indicators:
     - 8-10-2
 
-henningsh:
-  paths:
-    - fr/
-    - _translations/
-
 IB-FCC:
   indicators:
     - 9-c-1
@@ -123,7 +109,7 @@ jacob2479:
 
 Jones-Puthoff:
   indicators:
-    5-5-2
+    - 5-5-2
 
 jyoon1:
   indicators:

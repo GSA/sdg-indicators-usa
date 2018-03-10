@@ -10,6 +10,10 @@ import sys
 import yaml
 import subprocess
 import requests
+import fnmatch
+
+# We only need to protect certain folders that contain data and/or metadata.
+PROTECTED_FOLDERS = ['data/', '_indicators/']
 
 print('Checking user permissions...')
 
@@ -49,50 +53,31 @@ for index, line in enumerate(proc.stdout.readlines()):
       print(e)
       sys.exit(1)
 
-    # Exit now if the author is not in our list.
+    # Exit now if the author is an administrator.
     user = response['author']['login']
-    if user not in users:
-      raise RuntimeError("User '%s' is not in approved list of users." % user)
-
-    # Also exit now if the author is an administrator.
-    if 'administrator' == users[user]:
+    if user in users and 'administrator' == users[user]:
       print("-- User '%s' is an administrator: skipping Github user check." % user)
       sys.exit(0)
 
   else:
-    # Rather complex logic to parse the indicator/paths criteria:
+    # We only care about certain folders, so skip all others.
+    is_protected_folder = False
+    for protected_folder in PROTECTED_FOLDERS:
+      if change.startswith(protected_folder):
+        is_protected_folder = True
+    if not is_protected_folder:
+      continue
+
+    # Test the changed files against the allowed indicators for the user.
     indicator_listed = 'indicators' in users[user]
     indicator_matched = False
-    path_listed = 'paths' in users[user]
-    path_matched = False
-
-    # Validate the list of indicators if specified.
     if indicator_listed:
       for indicator in users[user]['indicators']:
-        if indicator in change:
+        if fnmatch.fnmatch(change, '*' + indicator + '*'):
           indicator_matched = True
 
-    # Validate the list of paths if specified.
-    if path_listed:
-      for path in users[user]['paths']:
-        if path in change:
-          path_matched = True
-
-    indicator_mismatch_found = indicator_listed and not indicator_matched
-    path_mismatch_found = path_listed and not path_matched
-
-    # Special case for where both indicators and paths are listed for a user:
-    # allow indicator mismatches if there are no path mismatches.
-    if indicator_listed and path_listed:
-      if indicator_mismatch_found and not path_mismatch_found:
-        indicator_mismatch_found = False
-
-    # Report errors if mismatches were found.
-    if path_mismatch_found:
-      raise RuntimeError("Changed file '%s' is outside list of paths for user '%s'." % (change, user))
-
-    if indicator_mismatch_found:
-      raise RuntimeError("Changed file '%s' is outside list of indicators for user '%s'." % (change, user))
+    if not indicator_listed or not indicator_matched:
+      raise RuntimeError("Changed file '%s' is not in list of allowed indicators for user '%s'." % (change, user))
 
     # If still here, give feedback.
     print("-- change permitted: %s" % change)
