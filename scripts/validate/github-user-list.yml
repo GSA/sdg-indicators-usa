@@ -4,12 +4,12 @@
 #
 # Any "administrator" is allowed to change any file.
 # Example:
-# email@example.com: administrator
+# my-username: administrator
 #
 # If the "indicators" array is given, only those indicators can be changed.
 # Asterisks can be used as "wildcards". For example:
 #
-# email@example.com:
+# my-username:
 #   indicators:
 #     - 3-3-1
 #     - 3-4-*
