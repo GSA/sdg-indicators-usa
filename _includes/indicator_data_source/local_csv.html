@@ -12,7 +12,7 @@ var sdg_indicators = sdg_indicators || {};
   sdg_indicators.indicatorTableAdapter = function(e) {
     // Use the assets/js/vendor/csv_to_html_table.js library to render the CSV
     // as an HTML table.
-    init_table({
+    CsvToHtmlTable.init({
       csv_path: e.detail.csv_path,
       element: 'datatable',
       allow_download: false,
