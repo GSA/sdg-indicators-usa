@@ -1,0 +1,82 @@
+<script type="text/javascript">
+
+/**
+ * An implementation of a data source for indicator data using the CKAN API.
+ */
+
+var sdg_indicators = sdg_indicators || {};
+
+(function() {
+
+  var endpoint = '{{ site.ckan_endpoint }}?resource_id={{ page.ckan_resource_id }}';
+
+  // Implement the indicatorTableAdapter method.
+  sdg_indicators.indicatorTableAdapter = function(e) {
+
+    $("#datatable").html("<table class='table table-striped table-condensed'></table>");
+
+    var table_outer = "   \
+      <thead>             \
+        <tr>              \
+          <th>year</th>   \
+          <th>total</th>  \
+        </tr>             \
+      </thead>            \
+      <tbody></tbody>     \
+    ";
+    $('#datatable table').append(table_outer);
+
+    for (var i in e.detail.row) {
+      var year = e.detail.labels[i] || '';
+      var total = e.detail.row[i] || '';
+      var row_html = "<tr><td>" + year + "</td><td>" + total + "</td></tr>";
+      $('#datatable table tbody').append(row_html);
+    }
+
+    $("#datatable table").DataTable({
+      "paging": false,
+      "bInfo" : false,
+      "searching": false
+    });
+  };
+
+  {% case include.graph_type %}
+  {% when 'line' %}
+  // Implement the indicatorGraphLineAdapter method.
+  sdg_indicators.indicatorGraphLineAdapter = function(e) {
+    sdg_indicators.indicatorGraphLine(e.detail.labels, e.detail.row);
+  };
+  {% when 'line-rate' %}
+  // Implement the indicatorGraphLineRateAdapter method.
+  sdg_indicators.indicatorGraphLineRateAdapter = function(e) {
+    sdg_indicators.indicatorGraphLineRate(e.detail.labels, e.detail.row);
+  };
+  {% when 'bar' %}
+  // Implement the indicatorGraphBarAdapter method.
+  sdg_indicators.indicatorGraphBarAdapter = function(e) {
+    sdg_indicators.indicatorGraphBar(e.detail.labels, e.detail.row);
+  };
+  {% when 'bar-rate' %}
+  // Implement the indicatorGraphBarRateAdapter method.
+  sdg_indicators.indicatorGraphBarRateAdapter = function(e) {
+    sdg_indicators.indicatorGraphBarRate(e.detail.labels, e.detail.row);
+  };
+  {% when 'binary' %}
+  // Implement the indicatorGraphBinaryAdapter method.
+  sdg_indicators.indicatorGraphBinaryAdapter = function(e) {
+    sdg_indicators.indicatorGraphBinary(e.detail.labels, e.detail.row);
+  };
+  {% endcase %}
+
+  // Fetch the data and pass it into the custom event.
+  $.getJSON(endpoint, function(data) {
+    document.dispatchEvent(new CustomEvent('IndicatorDataReady', {
+      detail: {
+        row: data.result.records.map(function(x) { return x.total; }),
+        labels: data.result.records.map(function(x) { return x.year; })
+      }
+    }));
+  });
+})();
+
+</script>
