@@ -24,7 +24,7 @@
     "disaggregation_geography": { "type": ["string", "null"] },
     "date_of_national_source_publication": { "type": ["string", "null"] },
     "date_metadata_updated": {
-      "type": ["string"],
+      "type": ["string", "null"],
       "format": "date"
     },
     "scheduled_update_by_national_source": { "type": ["string", "null"] },
