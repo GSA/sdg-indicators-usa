@@ -3,8 +3,7 @@
   "description": "A representation of the metadata for an SDG indicator.",
   "type": "object",
   "required": [
-    "indicator_name",
-    "date_metadata_updated"
+    "indicator_name"
   ],
   "properties": {
     "indicator_name": { "type": "string" },
