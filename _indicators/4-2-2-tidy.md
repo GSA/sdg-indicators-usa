@@ -40,7 +40,7 @@ periodicity: Annual
 comments_and_limitations: Samples are based on CPS and are relatively small.
 us_method_of_computation: Weighted number of 5-year-olds enrolled divided by 5-year-old population
 date_of_national_source_publication: 'October Current Population Survey, 2007 through 2015'
-date_metadata_updated: October 2016
+date_metadata_updated: 2016-10-01
 source_agency_staff_name: Tom Snyder
 source_agency_staff_email: tom.snyder@ed.gov
 source_url: 'http://nces.ed.gov/programs/digest/d15/tables/dt15_202.20.asp?current=yes'
