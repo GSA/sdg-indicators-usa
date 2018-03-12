@@ -18,30 +18,7 @@ var sdg_indicators = sdg_indicators || {};
       .filter(function(x) { return x.id != '_id'; })
       .map(function(x) { return x.id });
 
-    // Create the HTML for the table without rows.
-    var table_html = '<table id="my-table" class="table table-striped table-condensed"><thead><tr>';
-    for (var i in columns) {
-      table_html += '<th>' + columns[i] + '</th>';
-    }
-    table_html += '</thead></tr><tbody></tbody></table>'
-    $('#datatable').html(table_html);
-
-    // Loop through the records and add rows to the table.
-    for (var i in e.detail.data.records) {
-      var row_html = '<tr>';
-      for (var col in columns) {
-        var val = e.detail.data.records[i][columns[col]] || '';
-        row_html += '<td>' + val + '</td>';
-      }
-      row_html += '</tr>';
-      $('#my-table tbody').append(row_html);
-    }
-
-    $("#my-table").DataTable({
-      "paging": false,
-      "bInfo" : false,
-      "searching": false
-    });
+    sdg_indicators.indicatorTable(columns, e.detail.data.records);
   };
 
   {% case include.graph_type %}

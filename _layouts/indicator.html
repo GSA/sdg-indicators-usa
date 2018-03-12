@@ -94,12 +94,8 @@
 
       {% if page.graph == 'bar' or page.graph == 'longitudinal' or page.graph == 'binary' %}
 
-      <div class="datatable-container">
-        <h4>{{ page.graph_title }}</h4>
-        <div class="spin"></div>
-        <div id="datatable"></div>
-        <div class="button_wrapper"></div>
-      </div>
+        {% include components/table.html %}
+
       {% else %}
 
         <p style="text-align: center;">When data sources are populated, the table will appear here</p>
@@ -220,6 +216,4 @@
 {% include indicator_data_source/base.html graph_type=graph_type %}
 {% include indicator_data_source/{{ page.indicator_data_source }}.html graph_type=graph_type %}
     
-{% include components/download-button.html %}
-
 {% include footer.html %}

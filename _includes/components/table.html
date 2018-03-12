@@ -1,0 +1,54 @@
+<div class="datatable-container">
+  <h4>{{ page.graph_title }}</h4>
+  <div class="spin"></div>
+  <table id="datatable" class="table table-striped table-condensed">
+      <thead></thead>
+      <tbody></tbody>
+  </table>
+  <div class="button_wrapper">
+    <a class="usa-button usa-button-big" download="data.csv" href="#" onclick="return ExcellentExport.csv(this, 'datatable');">Download CSV</a>
+  </div>
+</div>
+
+<script>
+var sdg_indicators = sdg_indicators || {};
+
+/**
+ * @param columns
+ *   Array of column names, corresponding to properties of objects from rows.
+ * @param rows
+ *   Array of objects, each with a property for every item in columns.
+ */
+sdg_indicators.indicatorTable = function(columns, rows) {
+
+  // Table headers.
+  var header_html = '<tr>';
+  for (var i in columns) {
+    header_html += '<th>' + columns[i] + '</th>';
+  }
+  header_html += '</tr>'
+  $('#datatable thead').append(header_html);
+
+  // Table rows.
+  var rows_html = '';
+  for (var i in rows) {
+    rows_html += '<tr>';
+    for (var col in columns) {
+      var val = rows[i][columns[col]] || '';
+      rows_html += '<td>' + val + '</td>';
+    }
+    rows_html += '</tr>';
+  }
+  $('#datatable tbody').append(rows_html);
+
+  // Click-sorting behavior.
+  $('#datatable').DataTable({
+    "paging": false,
+    "bInfo" : false,
+    "searching": false
+  });
+
+  // Set the name of the downloaded CSV file according to this indicator.
+  $('.datatable-container .button_wrapper a').attr('download', '{{ page.indicator }}.csv');
+};
+</script>
