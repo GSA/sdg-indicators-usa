@@ -393,11 +393,11 @@ p.metadata-notes {
     border-top : 1px solid #666 !important;
 }
 
-#my-table_filter input {
+#datatable_filter input {
     margin-left : 1em;
 }
 
-#my-table {
+#datatable {
     margin-top : .5em;
 }
 
