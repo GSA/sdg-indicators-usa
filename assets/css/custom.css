@@ -367,7 +367,7 @@ aside.related {
     padding : .5em;
 }
 
-.datatable-container #my-table_wrapper:nth-child(1) div.col-sm-12  {
+.datatable-container #datatable_wrapper div.col-sm-12  {
     overflow-x: auto;
 }
 
