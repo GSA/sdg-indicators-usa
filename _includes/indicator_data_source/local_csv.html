@@ -10,63 +10,57 @@ var sdg_indicators = sdg_indicators || {};
 
   // Implement the indicatorTableAdapter method.
   sdg_indicators.indicatorTableAdapter = function(e) {
-
-    $.when($.get(e.detail.csv_path)).then(function(data) {
-      var rows = $.csv.toObjects(data);
-      var columns = Object.keys(rows[0]);
-      sdg_indicators.indicatorTable(columns, rows);
-    });
+    var columns = Object.keys(e.detail.rows[0]);
+    sdg_indicators.indicatorTable(columns, e.detail.rows);
   };
 
   {% case include.graph_type %}
   {% when 'line' %}
   // Implement the indicatorGraphLineAdapter method.
   sdg_indicators.indicatorGraphLineAdapter = function(e) {
-    sdg_indicators.indicatorGraphLine(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphLine(e.detail.years, e.detail.values);
   };
   {% when 'line-rate' %}
   // Implement the indicatorGraphLineRateAdapter method.
   sdg_indicators.indicatorGraphLineRateAdapter = function(e) {
-    sdg_indicators.indicatorGraphLineRate(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphLineRate(e.detail.years, e.detail.values);
   };
   {% when 'bar' %}
   // Implement the indicatorGraphBarAdapter method.
   sdg_indicators.indicatorGraphBarAdapter = function(e) {
-    sdg_indicators.indicatorGraphBar(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphBar(e.detail.years, e.detail.values);
   };
   {% when 'bar-rate' %}
   // Implement the indicatorGraphBarRateAdapter method.
   sdg_indicators.indicatorGraphBarRateAdapter = function(e) {
-    sdg_indicators.indicatorGraphBarRate(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphBarRate(e.detail.years, e.detail.values);
   };
   {% when 'binary' %}
   // Implement the indicatorGraphBinaryAdapter method.
   sdg_indicators.indicatorGraphBinaryAdapter = function(e) {
-    sdg_indicators.indicatorGraphBinary(e.detail.labels, e.detail.row);
+    sdg_indicators.indicatorGraphBinary(e.detail.years, e.detail.values);
   };
   {% endcase %}
 
-  // Prepare some Jekyll data to pass into the custom event.
+  // Guess the CSV file name.
   {% assign slug = page.indicator | replace: '.', '-' %}
   {% assign dataset_name = 'indicator_' | append: slug %}
+  var csv_path = '{{ site.baseurl }}/data/{{ dataset_name }}.csv';
 
-  {% assign array = "" | split: ""  %}
-  {% assign row = array %}
-  {% assign labels = array %}
+  // Grab the CSV data.
+  $.when($.get(csv_path)).then(function(data) {
 
-  {% for indicator in site.data[dataset_name] %}
-    {% assign row = row | push: indicator[page.indicator_variable] %}
-    {% assign labels = labels | push: indicator.year %}
-  {% endfor %}
-
-  // Finally emit the custom event.
-  document.dispatchEvent(new CustomEvent('IndicatorDataReady', {
-    detail: {
-      row: {{ row | jsonify }},
-      labels: {{ labels | jsonify }},
-      csv_path: '{{ site.baseurl }}/data/{{ dataset_name }}.csv'
-    }
-  }));
+    var rows = $.csv.toObjects(data);
+    document.dispatchEvent(new CustomEvent('IndicatorDataReady', {
+      detail: {
+        // A single series for the visualizations.
+        years: rows.map(function(x) { return x.year; }),
+        values: rows.map(function(x) { return x.{{ page.indicator_variable }}; }),
+        // All of the data for the data table.
+        rows: rows
+      }
+    }));
+  });
 })();
 
 </script>
