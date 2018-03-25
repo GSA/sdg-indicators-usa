@@ -2,10 +2,12 @@
 title: >-
   Participation rate in organized learning (one year before the official primary
   entry age), by sex
-permalink: /4-2-2/
+permalink: /4-2-2-ckan/
 sdg_goal: 4
 layout: indicator
 indicator: 4.2.2
+indicator_data_source: ckan
+ckan_resource_id: f78445b3-e017-43b2-857f-b39d2004546b
 indicator_variable: total
 graph: longitudinal
 graph_type_description: Line graph
