@@ -18,7 +18,7 @@ var sdg_indicators = sdg_indicators || {};
       .filter(function(x) { return x.id != '_id'; })
       .map(function(x) { return x.id });
 
-    sdg_indicators.indicatorTable(columns, e.detail.data.records);
+    sdg_indicators.indicatorTable(columns, e.detail.data.records, e.detail.indicator_name + '.csv');
   };
 
   {% case include.graph_type %}
@@ -49,13 +49,18 @@ var sdg_indicators = sdg_indicators || {};
   };
   {% endcase %}
 
+  {% assign slug = page.indicator | replace: '.', '-' %}
+  {% assign dataset_name = 'indicator_' | append: slug %}
+
   // Fetch the data and pass it into the custom event.
   $.getJSON(endpoint, function(data) {
     document.dispatchEvent(new CustomEvent('IndicatorDataReady', {
       detail: {
         totals: data.result.records.map(function(x) { return x.total; }),
         years: data.result.records.map(function(x) { return x.year; }),
-        data: data.result
+        data: data.result,
+        // The name of the indicator.
+        indicator_name: '{{ dataset_name }}'
       }
     }));
   });
