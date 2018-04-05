@@ -1,0 +1,46 @@
+<div id="datatable-container">
+  <h4>{{ page.graph_title }}</h4>
+  <div class="spin"></div>
+</div>
+
+<script>
+var sdg_indicators = sdg_indicators || {};
+
+/**
+ * @param columns
+ *   Array of column names, corresponding to properties of objects from rows.
+ * @param rows
+ *   Array of objects, each with a property for every item in columns.
+ * @param filename
+ *   The name of the downloadable version.
+ * @param container
+ *   Optional - The id of a container element. Defaults to 'datatable-container'.
+ */
+sdg_indicators.indicatorTable = function(columns, rows, filename, container) {
+
+  if (!container) {
+    container = 'datatable-container';
+  }
+
+  var id = container + '-table';
+
+  $('<table>')
+    .attr('id', id)
+    .attr('class', 'table table-striped table-condensed')
+    .appendTo('#' + container)
+    .DataTable({
+      paging: false,
+      bInfo : false,
+      searching: false,
+      data: rows,
+      columns: columns.map(function(x) { return {data: x, title: x}; })
+    });
+
+  $('<a>')
+    .attr('class', 'usa-button usa-button-big')
+    .attr('download', filename)
+    .text('Download CSV')
+    .appendTo('#' + container)
+    .click(function() { return ExcellentExport.csv(this, id); });
+}
+</script>

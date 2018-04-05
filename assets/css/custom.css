@@ -367,12 +367,12 @@ aside.related {
     padding : .5em;
 }
 
-.datatable-container #my-table_wrapper:nth-child(1) div.col-sm-12  {
+.dataTables_wrapper .col-sm-12  {
     overflow-x: auto;
 }
 
 .metadata-table,
-.datatable-container {
+.dataTable {
     padding-top : 1em;
 }
 
@@ -380,7 +380,7 @@ p.metadata-notes {
     font-size : .8em;
 }
 
-.datatable-container h3,
+.dataTable h3,
 .metadata-table h3 {
     margin-top : 3em;
 }
@@ -389,15 +389,15 @@ p.metadata-notes {
     margin-top : 1em !important;
 }
 
-.datatable-container th {
+.dataTable th {
     border-top : 1px solid #666 !important;
 }
 
-#my-table_filter input {
+.dataTable input {
     margin-left : 1em;
 }
 
-#my-table {
+.dataTable {
     margin-top : .5em;
 }
 
