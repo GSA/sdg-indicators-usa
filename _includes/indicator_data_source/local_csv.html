@@ -45,7 +45,7 @@ var sdg_indicators = sdg_indicators || {};
   // Guess the CSV file name.
   {% assign slug = page.indicator | replace: '.', '-' %}
   {% assign dataset_name = 'indicator_' | append: slug %}
-  var csv_path = '{{ site.baseurl }}/data/{{ dataset_name }}.csv';
+  var csv_path = '{{ site.baseurl }}/{{ site.data_dir }}/{{ dataset_name }}.csv';
 
   // Grab the CSV data.
   $.when($.get(csv_path)).then(function(data) {
