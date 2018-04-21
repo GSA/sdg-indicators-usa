@@ -1,50 +1,85 @@
-# Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
+# CircleCI 2.0 configuration file
 version: 2
 jobs:
-  build:
+  test:
+    # The validation scripts are all written in Python so far, so
+    # we can use the provided CircleCI image.
     docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: circleci/python:3.6.1
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
     working_directory: ~/repo
-
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "scripts/requirements.txt" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
+          key: test-dependencies-{{ checksum "scripts/requirements.txt" }}
       - run:
-          name: install dependencies
+          name: Install Python dependencies
           command: |
             python3 -m venv venv
             . venv/bin/activate
             pip install -r scripts/requirements.txt
-
       - save_cache:
+          key: test-dependencies-{{ checksum "scripts/requirements.txt" }}
           paths:
             - ./venv
-          key: v1-dependencies-{{ checksum "scripts/requirements.txt" }}
-
       - run:
           name: check metadata
           command: |
             . venv/bin/activate
             python3 scripts/validate/indicator-metadata.py
-
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
+  build:
+    # The build job does compile the Jekyll site, so Ruby is needed.
+    docker:
+      - image: circleci/ruby:2.5.1
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          key: test-dependencies-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install Ruby dependencies
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle
+      - save_cache:
+          key: test-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Build the Jekyll site
+          command: bundle exec jekyll build
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - _site
+  deploy:
+    docker:
+      - image: circleci/python:3.6.1
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "ce:c2:72:ff:31:3f:1d:3f:4f:34:d4:35:d9:29:16:f2"
+      - attach_workspace:
+          at: /tmp/build
+      - run:
+          name: Deploy to Github
+          command: bash scripts/deploy/github-pages.sh
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore: gh-pages
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: gh-pages
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: develop
