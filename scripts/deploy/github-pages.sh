@@ -8,7 +8,7 @@ then
 
   cd out
   git checkout gh-pages || git checkout --orphan gh-pages
-  git rm -rf .
+  git rm -rfq .
   cd ..
 
   # The fully built site is already available at /tmp/build.
