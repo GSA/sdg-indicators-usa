@@ -1,0 +1,6 @@
+{% assign slug = metadata.indicator | replace: '.', '-' %}
+{% assign dataset_name = 'indicator_' | append: slug %}
+{% capture datapackage_source_path %}{{ site.baseurl }}/{{ site.data_dir }}/{{ dataset_name}}.csv{% endcapture %}
+
+{% assign datapackage_format = 'csv' %}
+{% assign datapackage_mediatype = 'text/csv' %}

@@ -31,6 +31,9 @@ collections:
     output: true
   translations:
     output: false
+  datapackages:
+    output: true
+    permalink: /:slug/datapackage.json
 
 defaults:
   -
