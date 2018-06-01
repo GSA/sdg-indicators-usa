@@ -1,0 +1,37 @@
+{%- assign slug = page.indicator | replace: '.', '-' -%}
+{%- assign dataset_name = 'indicator_' | append: slug -%}
+{%- assign data = site.data[dataset_name] -%}
+{%- assign metadata = site.indicators -%}
+{%- for indicator in metadata -%}
+  {%- if indicator.indicator == page.indicator and indicator.lang == 'en' -%}
+    {%- assign metadata = indicator -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- include datapackage_source/{{ metadata.indicator_data_source }}.liquid metadata=metadata -%}
+{
+  "profile": "tabular-data-package",
+  "name": {{ metadata.title | jsonify }},
+  "resources": [
+    {
+      "name": {{ dataset_name | jsonify }},
+      "title": {{ metadata.title | jsonify }},
+      "description": {{ metadata.indicator_definition | jsonify }},
+      "path": {{ datapackage_source_path | jsonify }},
+      "profile": "tabular-data-resource",
+      "format": {{ datapackage_format | jsonify }},
+      "mediatype": {{ datapackage_mediatype | jsonify }},
+      "schema": {
+        "fields": [
+          {
+            "name": "year",
+            "type": "string"
+          },
+          {
+            "name": "value",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
