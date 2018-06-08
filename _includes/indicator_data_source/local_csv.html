@@ -55,7 +55,7 @@ var sdg_indicators = sdg_indicators || {};
       detail: {
         // A single series for the visualizations.
         years: rows.map(function(x) { return x.year; }),
-        values: rows.map(function(x) { return x.{{ page.indicator_variable }}; }),
+        values: rows.map(function(x) { return x['{{ page.indicator_variable }}']; }),
         // All of the data for the data table.
         rows: rows,
         // The name of the indicator.
