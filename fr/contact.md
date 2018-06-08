@@ -11,6 +11,6 @@ permalink: /fr/contact/
 
 - Si vous avez des suggestions concernant le contenu, ou des sources de données supplémentaires, veuillez contacter [US_Chief_Statistician@omb.eop.gov](mailto:US_Chief_Statistician@omb.eop.gov)  
 
-- Si vous avez des suggestions pour améliorer la fonctionnalité de ce site, y compris l'accessibilité des données, veuillez contacter [datagov@gsa.gov](mailto:datagov@gsa.gov)"
+- Si vous avez des suggestions pour améliorer la fonctionnalité de ce site, y compris l'accessibilité des données, veuillez contacter [datagov@gsa.gov](mailto:datagov@gsa.gov)
 
 ---
