@@ -8,4 +8,4 @@ For any guidance on how to use the website, or develop it further for your own c
 
 This project is managed by the Office of the U.S. Chief Statistician with technical support from the Data & Analytics team in GSA's Technology Transformation Services division.
 
-The open source code leverages work originally developed by the [City of Philadelphia](https://beta.phila.gov/posts/open-data-digital-transformation/2016-08-10-citys-new-digital-resource-on-public-health/). 
+The open source code leverages work originally developed by the [City of Philadelphia](https://beta.phila.gov/posts/open-data-digital-transformation/2016-08-10-citys-new-digital-resource-on-public-health/) and advancements made by the [UK Office of National Statistics](https://github.com/ONSdigital/sdg-indicators). 
