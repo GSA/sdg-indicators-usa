@@ -38,6 +38,6 @@ permalink: /es/training/
 - Plan de la UNECE CES 
 - <a href="{{ site.baseurl }}/assets/documents/us-sdg-report%20(5).pdf">Plan de el US SDG NRP</a> 
 
-¿Tiene otras preguntas sobre como desarrollar su propio NRP desde nuestro modelo de código abierto (gratuito)? ¿Otras preguntas o sugerencias? Comuníquese con nosotros usando JPark@omb.eop.gov.
+¿Tiene otras preguntas sobre como desarrollar su propio NRP desde nuestro modelo de código abierto (gratuito)? ¿Otras preguntas o sugerencias? Comuníquese con nosotros usando mbx.omb.oirasdgs@omb.eop.gov.
 "
 
