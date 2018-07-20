@@ -213,7 +213,9 @@
 
 {% include scripts.html %}
 
+{%- if page.graph -%}
 {% include indicator_data_source/base.html graph_type=graph_type %}
 {% include indicator_data_source/{{ page.indicator_data_source }}.html graph_type=graph_type %}
+{%- endif -%}
     
 {% include footer.html %}
