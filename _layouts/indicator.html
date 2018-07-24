@@ -61,6 +61,38 @@
 
 <h3>{{ t.sub-subtitle }} {{ page.indicator }} - {{ indicator_title }}</h3>
 
+
+{% assign sdg_data_notices = site.data.sdg_data_notices %}
+{% capture site_generated_timestamp %}{{'now' | date: '%s'}}{% endcapture %}
+
+{% for sdg_data_notice in sdg_data_notices %}
+
+  {% if sdg_data_notice.indicator_id == page.indicator %}
+    {% capture data_notice_start %}{{sdg_data_notice.start_date | date: '%s'}}{% endcapture %}
+    {% capture data_notice_end %}{{sdg_data_notice.end_date | date: '%s'}}{% endcapture %}
+
+    {% if site_generated_timestamp > data_notice_start %}
+    {% if data_notice_end > site_generated_timestamp %}
+
+      <div class="usa-alert usa-alert-info" >
+        <div class="usa-alert-body">
+          <h3 class="usa-alert-heading">Data Notice</h3>
+          <p class="usa-alert-text">
+            {{ sdg_data_notice.notice }}
+          </p>
+        </div>
+      </div>
+
+    {% endif %}
+    {% endif %}
+
+  {% endif %}
+{% endfor %}
+
+<!-- Main content -->
+{{ page.content }}
+<!-- / Main content -->
+
 {% if page.graph == 'bar' or page.graph == 'longitudinal' or page.graph == 'binary' %}
 
 {% assign graph_type = page.graph %}
@@ -74,8 +106,6 @@
   <h4>{{ page.graph_title }}</h4>
   {% include {{graph_template}} %}
 {% endif %}
-
-{{ page.content }}
 
 <div>
       <aside id="secondary" class="related plm-mu"><h4>{{ t.tab-instructions }}</h4></aside>
