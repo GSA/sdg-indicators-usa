@@ -1,0 +1,49 @@
+<script type="text/javascript">
+
+/**
+ * Polyfill needed for CustomEvent support in IE.
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
+ */
+(function () {
+
+  if ( typeof window.CustomEvent === "function" ) return false;
+
+  function CustomEvent ( event, params ) {
+    params = params || { bubbles: false, cancelable: false, detail: undefined };
+    var evt = document.createEvent( 'CustomEvent' );
+    evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+    return evt;
+   }
+
+  CustomEvent.prototype = window.Event.prototype;
+
+  window.CustomEvent = CustomEvent;
+})();
+
+/**
+ * Base code needed for all implementations of indicator data sources.
+ */
+
+var sdg_indicators = sdg_indicators || {};
+
+// Turn on spinners in case the data source takes a long time.
+$('.spin').show();
+
+// Event listener for whenever the data comes back. The following methods should
+// be overridden by any data source implementation.
+document.addEventListener('IndicatorDataReady', function(e) {
+  sdg_indicators.indicatorTableAdapter(e);
+
+  {% case include.graph_type %}
+  {% when 'line' %} sdg_indicators.indicatorGraphLineAdapter(e);
+  {% when 'line-rate' %} sdg_indicators.indicatorGraphLineRateAdapter(e);
+  {% when 'bar' %} sdg_indicators.indicatorGraphBarAdapter(e);
+  {% when 'bar-rate' %} sdg_indicators.indicatorGraphBarRateAdapter(e);
+  {% when 'binary' %} sdg_indicators.indicatorGraphBinaryAdapter(e);
+  {% endcase %}
+
+  // Turn off spinners now that the data source has responded.
+  $('.spin').hide();
+}, false);
+
+</script>

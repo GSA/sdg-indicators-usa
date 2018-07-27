@@ -367,12 +367,12 @@ aside.related {
     padding : .5em;
 }
 
-.datatable-container #my-table_wrapper:nth-child(1) div.col-sm-12  {
+.dataTables_wrapper .col-sm-12  {
     overflow-x: auto;
 }
 
 .metadata-table,
-.datatable-container {
+.dataTable {
     padding-top : 1em;
 }
 
@@ -380,7 +380,7 @@ p.metadata-notes {
     font-size : .8em;
 }
 
-.datatable-container h3,
+.dataTable h3,
 .metadata-table h3 {
     margin-top : 3em;
 }
@@ -389,15 +389,15 @@ p.metadata-notes {
     margin-top : 1em !important;
 }
 
-.datatable-container th {
+.dataTable th {
     border-top : 1px solid #666 !important;
 }
 
-#my-table_filter input {
+.dataTable input {
     margin-left : 1em;
 }
 
-#my-table {
+.dataTable {
     margin-top : .5em;
 }
 
@@ -572,6 +572,10 @@ p a, .usa-content-list a {
     margin-top : 2em;
 }
 
+table.goal-list {
+    font-size : .8em;
+}
+
 .goal-progress, .goal-progress:visited {
     color : #000;
 }
@@ -592,4 +596,20 @@ margin-bottom : 1em;
 
 .status-dashboard .goal-progress .usa-grid-full .media-object {
     max-width: 155px;
+}
+
+.spin {
+    margin: 0 auto;
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

@@ -4,7 +4,7 @@ title: Training Materials
 permalink: /training/
 ---
 
-<h4>This page provides resources for National Statistical Offices, data providers, and data users. </h4>
+<h4>This page provides resources for national statistical offices, data providers, and data users. </h4>
 
 **Making Your Own National Reporting Platform**
 <br/>Thinking about making your own version of this national reporting platform to report SDG statistics? These materials can help you get started. The US NRP is open source and free to copy (or “fork”).
@@ -44,4 +44,4 @@ permalink: /training/
 - Collaboration with U.K.
 - <a href="https://drive.google.com/open?id=0BwiQGA4nFw7tMGc0WmV5eE9rLVE" target="_blank">NRP Collaboration Presentation: Ghana, UK and USA (Kenya, July 2017)</a>
 
-Have other questions about building your own NRP from our open source (free) model? Other questions or suggestions for our site? Contact us at <a href="mailto:SDGs@omb.eop.gov">SDGs@omb.eop.gov</a>.
+Have other questions about building your own NRP from our open-source (free) model? Other questions or suggestions for our site? Contact us at <a href="mailto:mbx.omb.oirasdgs@omb.eop.gov">mbx.omb.oirasdgs@omb.eop.gov</a>.

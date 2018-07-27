@@ -1,54 +1,50 @@
 {% assign id = page.indicator | slugify %}
 {% assign unit_label = page.variable_unit_label %}
 
-{% assign row_transform = array %}
-
-{% for row in include.row %}
-  {% case row %}
-    {% when 'yes' %}
-       {% assign row_transform = row_transform | push: 1 %}
-    {% when 'no' %}
-        {% assign row_transform = row_transform | push: -1 %}
-    {% else %}
-       {% assign row_transform = row_transform | push: null %}
-  {% endcase %}
-{% endfor %}
-
-<div id="binary-chart-{{ id }}" class="ct-chart ct-chart-binary ct-major-eleventh"></div>
+<div id="binary-chart-{{ id }}" class="ct-chart ct-chart-binary ct-major-eleventh">
+  <div class="spin"></div>
+</div>
 <script>
-(function () {
-  var container = '#binary-chart-{{ id }}'
-  var labels = {{ include.labels | jsonify }}
-  var series = {{ row_transform | jsonify }}
+var sdg_indicators = sdg_indicators || {};
+sdg_indicators.indicatorGraphBinary = function(labels, row) {
+  var container = '#binary-chart-{{ id }}';
+  var row_transform = row.map(function(x) {
+    if (x == 'yes') {
+      return 1;
+    }
+    if (x == 'no') {
+      return -1;
+    }
+    return null;
+  });
 
   // Construct array of objects from data using indicators
   var chartData = {
-      labels: labels,
-      series: [series]
+    labels: labels,
+    series: [row_transform]
   }
-    var chartOpts = {
-      showLine: false,
-      fullWidth: true,
-      chartPadding: {
-          right: 40
-      },  
-      axisY: {
-          low: -1,
-          labelInterpolationFnc: function(value){
-              if (value == -1) {
-                return 'No';
-              }
-              if (value == 0) {
-                return '';
-              }
-              if (value == 1) {
-                return 'Yes';
-              }
-              
-          }
+  var chartOpts = {
+    showLine: false,
+    fullWidth: true,
+    chartPadding: {
+      right: 40
+    },
+    axisY: {
+      low: -1,
+      high: 1,
+      labelInterpolationFnc: function(value){
+        if (value == -1) {
+          return 'No';
+        }
+        if (value == 0) {
+          return '';
+        }
+        if (value == 1) {
+          return 'Yes';
+        }
       }
     }
+  }
   new Chartist.Bar(container, chartData, chartOpts).on('draw', function(data) {});
-
-  })()
+};
 </script>

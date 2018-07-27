@@ -1,0 +1,69 @@
+<script type="text/javascript">
+
+/**
+ * An implementation of a data source for indicator data using the CKAN API.
+ */
+
+var sdg_indicators = sdg_indicators || {};
+
+(function() {
+
+  var endpoint = '{{ site.ckan_endpoint }}?resource_id={{ page.ckan_resource_id }}';
+
+  // Implement the indicatorTableAdapter method.
+  sdg_indicators.indicatorTableAdapter = function(e) {
+
+    // Get the columns, ignoring the "_id" column that CKAN adds.
+    var columns = e.detail.data.fields
+      .filter(function(x) { return x.id != '_id'; })
+      .map(function(x) { return x.id });
+
+    sdg_indicators.indicatorTable(columns, e.detail.data.records, e.detail.indicator_name + '.csv');
+  };
+
+  {% case include.graph_type %}
+  {% when 'line' %}
+  // Implement the indicatorGraphLineAdapter method.
+  sdg_indicators.indicatorGraphLineAdapter = function(e) {
+    sdg_indicators.indicatorGraphLine(e.detail.years, e.detail.totals);
+  };
+  {% when 'line-rate' %}
+  // Implement the indicatorGraphLineRateAdapter method.
+  sdg_indicators.indicatorGraphLineRateAdapter = function(e) {
+    sdg_indicators.indicatorGraphLineRate(e.detail.years, e.detail.totals);
+  };
+  {% when 'bar' %}
+  // Implement the indicatorGraphBarAdapter method.
+  sdg_indicators.indicatorGraphBarAdapter = function(e) {
+    sdg_indicators.indicatorGraphBar(e.detail.years, e.detail.totals);
+  };
+  {% when 'bar-rate' %}
+  // Implement the indicatorGraphBarRateAdapter method.
+  sdg_indicators.indicatorGraphBarRateAdapter = function(e) {
+    sdg_indicators.indicatorGraphBarRate(e.detail.years, e.detail.totals);
+  };
+  {% when 'binary' %}
+  // Implement the indicatorGraphBinaryAdapter method.
+  sdg_indicators.indicatorGraphBinaryAdapter = function(e) {
+    sdg_indicators.indicatorGraphBinary(e.detail.years, e.detail.totals);
+  };
+  {% endcase %}
+
+  {% assign slug = page.indicator | replace: '.', '-' %}
+  {% assign dataset_name = 'indicator_' | append: slug %}
+
+  // Fetch the data and pass it into the custom event.
+  $.getJSON(endpoint, function(data) {
+    document.dispatchEvent(new CustomEvent('IndicatorDataReady', {
+      detail: {
+        totals: data.result.records.map(function(x) { return x.total; }),
+        years: data.result.records.map(function(x) { return x.year; }),
+        data: data.result,
+        // The name of the indicator.
+        indicator_name: '{{ dataset_name }}'
+      }
+    }));
+  });
+})();
+
+</script>

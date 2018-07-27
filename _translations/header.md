@@ -29,7 +29,7 @@ fr:
   nav-statistics : "Statistiques des États-Unis"
   nav-training : "Instruction"
   nav-faq : "FAQ"
-  disclaimer-staging: "C'est un site intermédiaire utilisé pour mettre à jour et prévisualiser les données des indicateurs"
+  disclaimer-staging: "C'est un site utilisé pour prévisualiser les données des indicateurs"
   government-site: "Ceci est un site officiel du gouvernement des États-Unis"
   login: "S'identifier"
   logout: "Déconnexion"

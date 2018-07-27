@@ -44,4 +44,4 @@ permalink: /fr/training/
 - Collaboration avec le Royaume-Uni.
 - <a href="https://drive.google.com/open?id=0BwiQGA4nFw7tMGc0WmV5eE9rLVE" target="_blank">NRP Collaboration Presentation: Ghana, UK and USA (Kenya, July 2017)</a>
 
-Avez-vous d'autres questions sur la construction de votre propre PNR à partir de notre modèle de source ouverte (gratuit)? D'autres questions ou suggestions pour notre site? Contactez-nous à <a href="mailto:JPark@omb.eop.gov">JPark@omb.eop.gov</a>.
+Avez-vous d'autres questions sur la construction de votre propre PNR à partir de notre modèle de source ouverte (gratuit)? D'autres questions ou suggestions pour notre site? Contactez-nous à <a href="mailto:mbx.omb.oirasdgs@omb.eop.gov">mbx.omb.oirasdgs@omb.eop.gov</a>.

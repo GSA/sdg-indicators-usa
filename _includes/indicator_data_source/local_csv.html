@@ -1,0 +1,68 @@
+<script type="text/javascript">
+
+/**
+ * An implementation of a data source for indicator data using local CSV files.
+ */
+
+var sdg_indicators = sdg_indicators || {};
+
+(function() {
+
+  // Implement the indicatorTableAdapter method.
+  sdg_indicators.indicatorTableAdapter = function(e) {
+    var columns = Object.keys(e.detail.rows[0]);
+    sdg_indicators.indicatorTable(columns, e.detail.rows, e.detail.indicator_name + '.csv');
+  };
+
+  {% case include.graph_type %}
+  {% when 'line' %}
+  // Implement the indicatorGraphLineAdapter method.
+  sdg_indicators.indicatorGraphLineAdapter = function(e) {
+    sdg_indicators.indicatorGraphLine(e.detail.years, e.detail.values);
+  };
+  {% when 'line-rate' %}
+  // Implement the indicatorGraphLineRateAdapter method.
+  sdg_indicators.indicatorGraphLineRateAdapter = function(e) {
+    sdg_indicators.indicatorGraphLineRate(e.detail.years, e.detail.values);
+  };
+  {% when 'bar' %}
+  // Implement the indicatorGraphBarAdapter method.
+  sdg_indicators.indicatorGraphBarAdapter = function(e) {
+    sdg_indicators.indicatorGraphBar(e.detail.years, e.detail.values);
+  };
+  {% when 'bar-rate' %}
+  // Implement the indicatorGraphBarRateAdapter method.
+  sdg_indicators.indicatorGraphBarRateAdapter = function(e) {
+    sdg_indicators.indicatorGraphBarRate(e.detail.years, e.detail.values);
+  };
+  {% when 'binary' %}
+  // Implement the indicatorGraphBinaryAdapter method.
+  sdg_indicators.indicatorGraphBinaryAdapter = function(e) {
+    sdg_indicators.indicatorGraphBinary(e.detail.years, e.detail.values);
+  };
+  {% endcase %}
+
+  // Guess the CSV file name.
+  {% assign slug = page.indicator | replace: '.', '-' %}
+  {% assign dataset_name = 'indicator_' | append: slug %}
+  var csv_path = '{{ site.baseurl }}/{{ site.data_dir }}/{{ dataset_name }}.csv';
+
+  // Grab the CSV data.
+  $.when($.get(csv_path)).then(function(data) {
+
+    var rows = $.csv.toObjects(data);
+    document.dispatchEvent(new CustomEvent('IndicatorDataReady', {
+      detail: {
+        // A single series for the visualizations.
+        years: rows.map(function(x) { return x.year; }),
+        values: rows.map(function(x) { return x['{{ page.indicator_variable }}']; }),
+        // All of the data for the data table.
+        rows: rows,
+        // The name of the indicator.
+        indicator_name: '{{ dataset_name }}'
+      }
+    }));
+  });
+})();
+
+</script>

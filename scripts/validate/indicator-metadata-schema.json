@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "A representation of the metadata for an SDG indicator.",
+  "type": "object",
+  "required": [
+    "indicator_name"
+  ],
+  "properties": {
+    "indicator_name": { "type": "string" },
+    "target": { "type": ["string", "null"] },
+    "indicator_definition": { "type": ["string", "null"] },
+    "method_of_computation": { "type": ["string", "null"] },
+    "un_designated_tier": { "type": ["string", "null"] },
+    "un_custodial_agency": { "type": ["string", "null"] },
+    "graph_title": { "type": ["string", "null"] },
+    "actual_indicator_available": { "type": ["string", "null"] },
+    "actual_indicator_available_description": { "type": ["string", "null"] },
+    "us_method_of_computation": { "type": ["string", "null"] },
+    "comments_and_limitations": { "type": ["string", "null"] },
+    "periodicity": { "type": ["string", "null"] },
+    "time_period": { "type": ["string", "null"] },
+    "unit_of_measure": { "type": ["string", "null"] },
+    "disaggregation_categories": { "type": ["string", "null"] },
+    "disaggregation_geography": { "type": ["string", "null"] },
+    "date_of_national_source_publication": { "type": ["string", "null"] },
+    "date_metadata_updated": {
+      "type": ["string", "null"],
+      "$comment": "If this becomes required, remove null type, and add 'format: date'"
+    },
+    "scheduled_update_by_national_source": { "type": ["string", "null"] },
+    "scheduled_update_by_SDG_team": { "type": ["string", "null"] },
+    "source_agency_staff_name": { "type": ["string", "null"] },
+    "source_agency_staff_email": { "type": ["string", "null"] },
+    "source_agency_survey_dataset": { "type": ["string", "null"] },
+    "source_url": { "type": ["string", "null"] },
+    "international_and_national_references": { "type": ["string", "null"] }
+  }
+}

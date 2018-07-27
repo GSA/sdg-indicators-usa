@@ -13,6 +13,7 @@
 
       <div id="main" class="main-content initiative-content">
 
+        <a id="main-content" tabindex="-1"></a>
         <section class="usa-banner">
             <div class="usa-grid">
                 <div class="usa-banner-content">
@@ -50,8 +51,6 @@
     {% assign page = site.indicators | where:"indicator", page.indicator  | first %}
 {% endif %}
 
-{% assign sdg_indicator = site.data[dataset_name] %}
-
 {% for indicators in sdg_indicators %}
 {% if indicators.indicator_id == page.indicator %}
   {% assign this_sdg_indicator_metadata = indicators %}  
@@ -60,17 +59,39 @@
 
 {% assign indicator_title = this_sdg_indicator_metadata.indicator %}
 
-{% assign array = "" | split: ""  %}
-{% assign row = array %}
-{% assign labels = array %}
+<h3>{{ t.sub-subtitle }} {{ page.indicator }} - {{ indicator_title }}</h3>
 
-{% for indicator in sdg_indicator %}
-  {% assign row = row | push: indicator[page.indicator_variable] %}
-  {% assign labels = labels | push: indicator.year %}
+
+{% assign sdg_data_notices = site.data.sdg_data_notices %}
+{% capture site_generated_timestamp %}{{'now' | date: '%s'}}{% endcapture %}
+
+{% for sdg_data_notice in sdg_data_notices %}
+
+  {% if sdg_data_notice.indicator_id == page.indicator %}
+    {% capture data_notice_start %}{{sdg_data_notice.start_date | date: '%s'}}{% endcapture %}
+    {% capture data_notice_end %}{{sdg_data_notice.end_date | date: '%s'}}{% endcapture %}
+
+    {% if site_generated_timestamp > data_notice_start %}
+    {% if data_notice_end > site_generated_timestamp %}
+
+      <div class="usa-alert usa-alert-info" >
+        <div class="usa-alert-body">
+          <h3 class="usa-alert-heading">Data Notice</h3>
+          <p class="usa-alert-text">
+            {{ sdg_data_notice.notice }}
+          </p>
+        </div>
+      </div>
+
+    {% endif %}
+    {% endif %}
+
+  {% endif %}
 {% endfor %}
 
-
-<h3>{{ t.sub-subtitle }} {{ page.indicator }} - {{ indicator_title }}</h3>
+<!-- Main content -->
+{{ page.content }}
+<!-- / Main content -->
 
 {% if page.graph == 'bar' or page.graph == 'longitudinal' or page.graph == 'binary' %}
 
@@ -83,10 +104,8 @@
 {% assign graph_template = 'components/' | append: graph_type | append: '.html' %}
 
   <h4>{{ page.graph_title }}</h4>
-  {% include {{graph_template}} row=row labels=labels %}
+  {% include {{graph_template}} %}
 {% endif %}
-
-{{ page.content }}
 
 <div>
       <aside id="secondary" class="related plm-mu"><h4>{{ t.tab-instructions }}</h4></aside>
@@ -105,18 +124,8 @@
 
       {% if page.graph == 'bar' or page.graph == 'longitudinal' or page.graph == 'binary' %}
 
-      <div class="datatable-container">
-        <h4>{{ page.graph_title }}</h4>
-        <div id="datatable"></div>
+        {% include components/table.html %}
 
-
-          <div class="button_wrapper">
-              <a class="usa-button usa-button-big" href="{{ site.baseurl }}/data/{{ dataset_name }}.csv">Download CSV</a>
-          </div>
-        
-
-
-      </div>
       {% else %}
 
         <p style="text-align: center;">When data sources are populated, the table will appear here</p>
@@ -176,7 +185,7 @@
       <p class="metadata-notes">
         This table provides metadata for the actual indicator available from {{ t.country }} statistics closest to the corresponding global
         SDG indicator. Please note that even when the global SDG indicator is fully available from {{ t.country }} statistics, this table
-        should be consulted for information on national methodology and other {{ t.country }}-specific metadata information
+        should be consulted for information on national methodology and other {{ t.country }}-specific metadata information.
       </p>
 
       <table>
@@ -215,6 +224,12 @@
   </div>
     <!-- / Tab panes -->
 
+{% capture six_months_ago %}{{'now' | date: '%s' | minus:15770000}}{% endcapture %}
+{% capture last_update %}{{page.date_metadata_updated | date: '%s'}}{% endcapture %}
+{% if last_update > six_months_ago %}
+  This was updated within the last six months (on {{page.date_metadata_updated | date: '%B %e, %Y'}})
+{% endif %}
+
 </div>
 
 
@@ -228,14 +243,9 @@
 
 {% include scripts.html %}
 
-<script>
-  init_table({
-    csv_path: '{{ site.baseurl }}/data/{{ dataset_name }}.csv', 
-    element: 'datatable', 
-    allow_download: false,
-    csv_options: {separator: ',', delimiter: '"'},
-    datatables_options: {"paging": false, "bInfo" : false, "searching": false}
-  });
-</script>
+{%- if page.graph -%}
+{% include indicator_data_source/base.html graph_type=graph_type %}
+{% include indicator_data_source/{{ page.indicator_data_source }}.html graph_type=graph_type %}
+{%- endif -%}
     
 {% include footer.html %}

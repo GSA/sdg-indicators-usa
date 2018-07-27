@@ -1,0 +1,19 @@
+goal,title,short,colorInfo/hex,colorInfo/rgb/0,colorInfo/rgb/1,colorInfo/rgb/2
+1,Éliminer la pauvreté sous toutes ses formes et partout dans le monde,Pas de pauvreté,#e5243b,229,36,59
+2,"Éliminer la faim, assurer la sécurité alimentaire, améliorer la nutrition et promouvoir l’agriculture durable","Faim ""zéro""",#e5b735,229,183,53
+3,Permettre à tous de vivre en bonne santé et promouvoir le bien-être de tous à tout âge,Bonne santé et bien-être,#4c9f38,76,159,56
+4,"Assurer à tous une éducation équitable, inclusive et de qualité et des possibilités d’apprentissage tout au long de la vie",Éducation de qualité,#c5192d,197,25,45
+5,Parvenir à l’égalité des sexes et autonomiser toutes les femmes et les filles,Égalité entre les sexes,#ff3a21,255,58,33
+6,Garantir l’accès de tous à des services d’alimentation en eau et d’assainissement gérés de façon durable,Eau propre et assainissement,#26bde2,38,189,226
+7,"Garantir l’accès de tous à des services énergétiques fiables, durables et modernes, à un coût abordable",Energies propres et d'un coût abordable,#fcc30b,252,195,11
+8,"Promouvoir une croissance économique soutenue, partagée et durable, le plein emploi productif et un travail décent pour tous",Travaux décent et croissance économique,#a21942,162,25,66
+9,"Bâtir une infrastructure résiliente, promouvoir une industrialisation durable qui profite à tous et encourager l’innovation"," Industrie, innovation et infrastructure",#fd6925,253,105,37
+10,Réduire les inégalités dans les pays et d’un pays à l’autre,Inégalités réduites,#dd1367,221,19,103
+11,"Faire en sorte que les villes et les établissements humains soient ouverts à tous, sûrs, résilients et durables",Villes et communautés durables,#fd9d24,253,157,36
+12,Établir des modes de consommation et de production durables,Consommation et production responsables,#c9992d,201,153,45
+13,Prendre d’urgence des mesures pour lutter contre les changements climatiques et leurs répercussions,Mesures relatives à la lutte contre les changements climatiques,#3f7e44,63,126,68
+14,"Conserver et exploiter de manière durable les océans, les mers et les ressources marines aux fins du développement durable",Vie aquatique,#0a97d9,10,151,217
+15,"Préserver et restaurer les écosystèmes terrestres, en veillant à les exploiter de façon durable, gérer durablement les forêts, lutter contre la désertification, enrayer et inverser le processus de
+dégradation des terres et mettre fin à l’appauvrissement de la biodiversité",Vie terrestre,#56c02b,86,192,43
+16,"Promouvoir l’avènement de sociétés pacifiques et inclusives aux fins du développement durable, assurer l’accès de tous à la justice et mettre en place, à tous les niveaux, des institutions efficaces, responsables et ouvertes à tous","Paix, justice et institutions efficaces",#00689d,0,104,157
+17,Renforcer les moyens de mettre en œuvre le Partenariat mondial pour le développement durable et le revitaliser,Partenariats pour la réalisation des objectifs,#19486a,25,72,106

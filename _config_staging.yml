@@ -37,6 +37,14 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       lang: en
+  -
+    scope:
+      layout: "indicator"
+    values:
+      # This value corresponds to a file in _includes/indicator_data_source/.
+      indicator_data_source: local_csv
+
+ckan_endpoint: https://inventory.data.gov/api/action/datastore_search
 
 # Prose configuration
 prose: 

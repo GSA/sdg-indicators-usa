@@ -1,14 +1,16 @@
 {% assign id = include.row.Indicator | slugify %}
 {% if page.title == 'Top 10 Cities' %} 
-  <div id="chart-{{ id }}" class="ct-chart ct-major-seventh"></div>{% else %}  
-  <div id="chart-{{ id }}" class="ct-chart ct-major-eleventh"></div>
+  <div id="chart-{{ id }}" class="ct-chart ct-major-seventh">
+    <div class="spin"></div>
+  </div>{% else %}
+  <div id="chart-{{ id }}" class="ct-chart ct-major-eleventh">
+    <div class="spin"></div>
+  </div>
 {% endif %}
-
 <script>
-  (function () {
+  var sdg_indicators = sdg_indicators || {};
+  sdg_indicators.indicatorGraphBarRate = function(labels, row) {
     var container = '#chart-{{ id }}'
-    var labels = {{ include.labels | jsonify }}
-    var row = {{ include.row | jsonify }}
 
     // Construct array of objects from data using indicators
     var series = labels.map(function (col) {
@@ -51,5 +53,5 @@
       ]
     }
     new Chartist.Bar(container, chartData, chartOpts)
-  })()
+  };
 </script>

@@ -15,9 +15,13 @@
                         </span>
                         <span class="language-toggle">
                         {% if page.lang == 'en' %}
-                          <a class='pull-right lang es' data-lang='es' href='{{site.baseurl}}/es{{page.url | remove: 'index.html'}}'>Español</a>
+                          <a class='pull-right lang es' data-lang='es' href='{{site.baseurl}}/es{{page.url | remove: 'index.html'}}'>Español</a> 
+                          <!--
+                          <a class='pull-right lang fr' data-lang='fr' href='{{site.baseurl}}/fr{{page.url | remove: 'index.html'}}'>Français</a>
+                          -->
                         {% else %}
-                          <a class='pull-right lang'  data-lang='en' href='{{site.baseurl}}{{page.url | replace_first:'/es', ''}}'>English</a>
+                          {% assign language_path_part = '/' | append: page.lang %}
+                          <a class='pull-right lang'  data-lang='en' href='{{site.baseurl}}{{page.url | replace_first:language_path_part, ''}}'>English</a>
                         {% endif %}
                         </span>
                         {% if site.github.environment == 'dotcom' %}

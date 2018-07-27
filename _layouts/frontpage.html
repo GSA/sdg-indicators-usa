@@ -7,6 +7,7 @@
 
         <div id="main" class="main-content" role="main">
 
+            <a id="main-content" tabindex="-1"></a>
             <section class="usa-banner">
                 <div class="usa-grid">
 
@@ -36,6 +37,15 @@
 
                     {% for goals in sdg_goals %}
 
+                    {% assign english_goal = goals %}
+                    {% if page.lang != 'en' %}
+                        {% for untranslated_goal in site.data.sdg_goals %}
+                            {% if untranslated_goal.goal == goals.goal %}
+                                {% assign english_goal = untranslated_goal %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
                     {% assign img_path = goals.goal | plus:0 %}
 
                     {% if img_path < 10 %}
@@ -45,7 +55,7 @@
                     {% endif %}
 
 
-                    <a class="usa-width-one-fourth" href="../{{ goals.short | slugify }}/">
+                    <a class="usa-width-one-fourth" href="../{{ english_goal.short | slugify }}/">
                     <img class="goal-icon" src="{{ site.baseurl }}/assets/img/{{ page.lang }}/{{ page.lang }}-sdg-goal-{{ img_path }}{{ goals.goal }}.png" alt="icon for Goal {{ goals.goal }} - {{ goals.title }}" />
                     </a>                    
 
