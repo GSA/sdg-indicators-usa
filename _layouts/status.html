@@ -103,6 +103,8 @@
 
             <div class="goal-list">
 
+            {% assign goal_row = -1 %}
+
             {% if page.lang == 'en' %}
               {% assign goals = site.data.sdg_goals %}
             {% else %}
@@ -111,6 +113,7 @@
 
             {% for goal in goals %}
 
+                {% assign goal_row = goal_row | plus:1 %}
                 {% assign this_goal = goal.goal | plus:0 %}
 
                 {% assign indicators_count = 0 %}
@@ -169,8 +172,9 @@
                     {% assign img_path = ''  %}
                 {% endif %}
 
-                <a class="goal-progress" href="{{ site.baseurl }}{{ lang }}/{{ goal.short | slugify }}/">
-                  
+
+                <a class="goal-progress" href="{{ site.baseurl }}{{ lang }}/{{ site.data.sdg_goals[goal_row].short | slugify }}/">
+
                   <div>
 
                     <div class="media usa-grid-full">
@@ -193,7 +197,7 @@
 
 
                          <div class="media-body">
-<h4>{{ goal.short }} <span class="badge dark-badge">{{ indicators_count }} {{ t.indicators }}</span></h4>
+                            <h4>{{ goal.short }} <span class="badge dark-badge">{{ indicators_count }} {{ t.indicators }}</span></h4>
                             <div class="container-fluid status-traffic-statbox">
                               <div class="col-md-3">
                                 <span class="label label-default">{{ tier3 }}</span> {{ t.default-text }} <br>{{ tier3_percent | round }}%

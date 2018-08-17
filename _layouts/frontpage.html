@@ -35,29 +35,23 @@
                         {% assign sdg_goals = site.data[page.lang].sdg_goals %}
                     {% endif %}
 
+                    {% assign goal_row = -1 %}
+
                     {% for goals in sdg_goals %}
 
-                    {% assign english_goal = goals %}
-                    {% if page.lang != 'en' %}
-                        {% for untranslated_goal in site.data.sdg_goals %}
-                            {% if untranslated_goal.goal == goals.goal %}
-                                {% assign english_goal = untranslated_goal %}
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
+                        {% assign goal_row = goal_row | plus:1 %}
+                        {% assign img_path = goals.goal | plus:0 %}
 
-                    {% assign img_path = goals.goal | plus:0 %}
-
-                    {% if img_path < 10 %}
-                        {% assign img_path = 0  %}
-                    {% else %}
-                        {% assign img_path = ''  %}
-                    {% endif %}
+                        {% if img_path < 10 %}
+                            {% assign img_path = 0  %}
+                        {% else %}
+                            {% assign img_path = ''  %}
+                        {% endif %}
 
 
-                    <a class="usa-width-one-fourth" href="../{{ english_goal.short | slugify }}/">
-                    <img class="goal-icon" src="{{ site.baseurl }}/assets/img/{{ page.lang }}/{{ page.lang }}-sdg-goal-{{ img_path }}{{ goals.goal }}.png" alt="icon for Goal {{ goals.goal }} - {{ goals.title }}" />
-                    </a>                    
+                        <a class="usa-width-one-fourth" href="../{{ site.data.sdg_goals[goal_row].short | slugify }}/">
+                        <img class="goal-icon" src="{{ site.baseurl }}/assets/img/{{ page.lang }}/{{ page.lang }}-sdg-goal-{{ img_path }}{{ goals.goal }}.png" alt="icon for Goal {{ goals.goal }} - {{ goals.title }}" />
+                        </a>                    
 
                     {% endfor %}
 
