@@ -22,14 +22,17 @@
                         {% assign sdg_goals = site.data[page.lang].sdg_goals %}
                     {% endif %}
 
+                    {% assign goal_row = -1 %}
+
                     {% for goals in sdg_goals %}
 
+                      {% assign goal_row = goal_row | plus:1 %}
                       {% assign page_goal_num = page.sdg_goal | plus:0 %}
                       {% assign goals_goal_num = goals.goal | plus:0 %}
 
                       {% if page_goal_num == goals_goal_num %}
 
-                        <a href="{{ site.baseurl }}/{{ goals.short | slugify }}/">
+                        <a href="{{ site.baseurl }}/{{ site.data.sdg_goals[goal_row].short | slugify }}/">
                         Goal {{ goals.goal }} - {{ goals.title }}
                         </a>
 
