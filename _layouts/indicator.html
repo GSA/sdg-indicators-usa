@@ -5,10 +5,26 @@
 {% assign t = site.translations | where:"translation_id", "indicator"  | first %}
 {% assign t = t[page.lang] %}
 
+{% assign page_goal_num = page.sdg_goal | plus:0 %}
+
+{% for goal in site.data.sdg_goals %}
+  {% assign goal_num = goal.goal | plus:0 %}
+  {% if page_goal_num == goal_num %}
+    {% assign goal_english = goal %}
+  {% endif %}
+{% endfor %}
+
 {% if page.lang == 'en' %}
-    {% assign sdg_goals = site.data.sdg_goals %}
+  {% assign goal_prefix = '' %}
+  {% assign goal_translated = goal_english %}
 {% else %}
-    {% assign sdg_goals = site.data[page.lang].sdg_goals %}
+  {% assign goal_prefix = page.lang | append: '/' %}
+  {% for goal in site.data[page.lang].sdg_goals %}
+    {% assign goal_num = goal.goal | plus:0 %}
+    {% if page_goal_num == goal_num %}
+      {% assign goal_translated = goal %}
+    {% endif %}
+  {% endfor %}
 {% endif %}
 
       <div id="main" class="main-content initiative-content">
@@ -18,21 +34,9 @@
             <div class="usa-grid">
                 <div class="usa-banner-content">
                   <h2 class="goal-heading">
-
-                    {% for goals in sdg_goals %}
-
-                      {% assign page_goal_num = page.sdg_goal | plus:0 %}
-                      {% assign goals_goal_num = goals.goal | plus:0 %}
-
-                      {% if page_goal_num == goals_goal_num %}
-
-                        <a href="{{ site.baseurl }}/{{ goals.short | slugify }}">
-                        Goal {{ goals.goal }} - {{ goals.title }}
+                    <a href="{{ site.baseurl }}/{{ goal_prefix }}{{ goal_english.short | slugify }}">
+                      Goal {{ goal_translated.goal }} - {{ goal_translated.title }}
                         </a>
-
-                      {% endif %}
-
-                    {% endfor %}
                   </h2>
                 </div>
             </div>
