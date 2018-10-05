@@ -50,7 +50,7 @@ body {
     text-indent: -99999em;
     overflow : hidden;
     background: url('../../assets/img/E_SDG_logo_No%20UN%20Emblem_horizontal_rgb.png');
-    background-size : cover;
+    background-size : contain;
     background-repeat: no-repeat;
 }
 
