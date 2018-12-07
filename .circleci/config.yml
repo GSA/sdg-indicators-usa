@@ -1,6 +1,27 @@
 # Python CircleCI 2.0 configuration file
 version: 2
 jobs:
+  test:
+    docker:
+      - image: circleci/ruby:2.5.1
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          key: test-dependencies-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install Ruby dependencies
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle
+      - save_cache:
+          key: test-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Build the Jekyll site
+          command: bundle exec jekyll build
+      - run:
+          name: Run HTML Proofer
+          command: bash scripts/test/html_proofer_staging.sh
   deploy_prod:
     docker:
       - image: circleci/ruby:2.5.1
@@ -19,6 +40,9 @@ jobs:
       - run:
           name: Build the Jekyll site
           command: bundle exec jekyll build --config _config_prod.yml
+      - run:
+          name: Run the HTML tests
+          command: bash scripts/test/html_proofer_prod.sh
       - add_ssh_keys:
           fingerprints:
             # Replace this with the fingerprint for gh-stg.
@@ -44,6 +68,9 @@ jobs:
       - run:
           name: Build the Jekyll site
           command: bundle exec jekyll build
+      - run:
+          name: Run the HTML tests
+          command: bash scripts/test/html_proofer_staging.sh
       - add_ssh_keys:
           fingerprints:
             # Replace this with the fingerprint for gh-stg.
@@ -53,6 +80,14 @@ jobs:
           command: bash scripts/deploy/circleci/deploy_staging.sh
 workflows:
   version: 2
+  test:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
   deploy:
     jobs:
       - deploy_prod:
