@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script deploys the built site to the gh-pages branch of the same repo.
-git config --global user.email $GH_EMAIL
-git config --global user.name $GH_NAME
+git config --global user.email "$GH_EMAIL"
+git config --global user.name "$GH_NAME"
 
 # CircleCI will identify the SSH key with a "Host" of gh-stg. In order to tell
 # Git to use this key, we need to hack the SSH key:
