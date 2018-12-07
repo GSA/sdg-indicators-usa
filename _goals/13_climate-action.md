@@ -1,7 +1,7 @@
 ---
-title: Take urgent action to combat climate change and its impacts.
 permalink: /climate-action/
-sdg_goal: 13
+sdg_goal: '13'
+color: '#3f7e44'
 layout: goal
 ---
 

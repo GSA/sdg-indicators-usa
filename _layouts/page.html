@@ -1,24 +1,9 @@
 ---
 layout: default
 ---
-
-        <div id="main" class="main-content" role="main">
-
-            <a id="main-content" tabindex="-1"></a>
-            <section class="usa-banner banner-small">
-                <div class="usa-grid">
-
-                    <div class="usa-banner-content">
-                        <h1>
-                            {{ page.title }}
-                        </h1>
-                    </div>
-
-                </div>
-            </section>
-
-            <div class="usa-grid">
-                {{ content }}
-            </div>
-
-        </div>
+{% include us_heading.html text=page.title %}
+<div id="main-content" class="container" role="main">
+  <div>
+      {{ content }}
+  </div>
+</div>

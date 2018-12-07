@@ -1,73 +1,25 @@
 {% include head.html %}
-
 {% include header.html %}
+{% include us_heading.html text=t.frontpage.heading_us %}
+<div id="main-content" class="container goal-tiles" role="main">
+    <p>{{ t.frontpage.instructions | replace_first: '%before_link', '<span style="display:none" id="jump-to-search"><a href="javascript:void(0)">' | replace_first: '%after_link', '</a></span>' | replace_first: '%country_name', site.country.name }}</p>
+    {%- assign goals = site.goals | where: 'language', current_language -%}
+    {% for goal in goals %}
+        {%- assign goal_number = goal.sdg_goal -%}
+        {%- assign default_goal = site.data.translations[default_language].global_goals[goal_number] -%}
+        {%- assign translated_goal = t.global_goals[goal_number] -%}
 
-{% assign t = site.translations | where:"translation_id", "frontpage"  | first %}
-{% assign t = t[page.lang] %}
-
-        <div id="main" class="main-content" role="main">
-
-            <a id="main-content" tabindex="-1"></a>
-            <section class="usa-banner">
-                <div class="usa-grid">
-
-                    <div class="usa-banner-content">
-                        <h1>
-                            {{ t.main-heading }}
-                        </h1>
-
-                    </div>
-
-                </div>
-            </section>
-
-            <section class="usa-section">
-                <div class="usa-grid">
-                            <div class="usa-font-lead intro-paragraph">
-                               {{ t.intro-text }}
-                            </div>
-                    
-
-                    <section class="goals-list">
-                    {% if page.lang == 'en' %}
-                        {% assign sdg_goals = site.data.sdg_goals %}
-                    {% else %}
-                        {% assign sdg_goals = site.data[page.lang].sdg_goals %}
-                    {% endif %}
-
-                    {% assign goal_row = -1 %}
-
-                    {% for goals in sdg_goals %}
-
-                        {% assign goal_row = goal_row | plus:1 %}
-                        {% assign img_path = goals.goal | plus:0 %}
-
-                        {% if img_path < 10 %}
-                            {% assign img_path = 0  %}
-                        {% else %}
-                            {% assign img_path = ''  %}
-                        {% endif %}
-
-
-                        <a class="usa-width-one-fourth" href="../{{ site.data.sdg_goals[goal_row].short | slugify }}/">
-                        <img class="goal-icon" src="{{ site.baseurl }}/assets/img/{{ page.lang }}/{{ page.lang }}-sdg-goal-{{ img_path }}{{ goals.goal }}.png" alt="icon for Goal {{ goals.goal }} - {{ goals.title }}" />
-                        </a>                    
-
-                    {% endfor %}
-
-                    <div class="usa-width-one-fourth">
-                      <a href="{{ site.baseurl }}">      
-                        <img class="goal-icon" src="{{ site.baseurl }}/assets/img/{{ page.lang }}/{{ page.lang }}-sdg-goals-logo.png" alt="icon for Global Goals" />
-                      </a>
-                    </div>                    
-
-                    </section>
-
-                </div>
-
-            </section>
-
-
+        {% cycle 'add row' : '<div class="row no-gutters">', '', '', '', '', '' %}
+            <div class="col-xs-4 col-md-2">
+                <a href="./{{ default_goal.short | slugify }}/">
+                  <img src="{{ site.baseurl }}/assets/img/goals/{{ current_language }}/{{ goal_number }}.png" id="goal-{{ goal_number }}" alt="{{ translated_goal.short }} - {{ t.general.goal }} {{ goal_number }}" />
+              </a>
+            </div>
+        {% cycle 'end row' : '', '', '', '', '', '</div>' %}
+    {% endfor %}
+        <div class="col-xs-4 col-md-2">
+            <img src="{{ site.baseurl }}/assets/img/goals/{{ current_language }}/18.png" id="goal-18" alt="The Global Goals for Sustainable Development" />
         </div>
-
+    </div>
+</div>
 {% include footer.html %}
