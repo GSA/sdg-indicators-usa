@@ -1,7 +1,7 @@
 ---
-title: Conserver et exploiter de manière durable les océans, les mers et les ressources marines aux fins du développement durable
-lang: fr
-permalink: /fr/life-below-water/
-sdg_goal: 14
+color: '#0a97d9'
+language: fr
 layout: goal
+permalink: /fr/life-below-water/
+sdg_goal: '14'
 ---

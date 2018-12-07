@@ -1,50 +1,74 @@
 # Python CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-python/ for more details
-#
 version: 2
 jobs:
-  build:
+  deploy_prod:
     docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.1
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
+      - image: circleci/ruby:2.5.1
     working_directory: ~/repo
-
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "scripts/requirements.txt" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
+          key: test-dependencies-{{ checksum "Gemfile.lock" }}
       - run:
-          name: install dependencies
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            pip install -r scripts/requirements.txt
-
+          name: Install Ruby dependencies
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle
       - save_cache:
+          key: test-dependencies-{{ checksum "Gemfile.lock" }}
           paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "scripts/requirements.txt" }}
-
+            - vendor/bundle
       - run:
-          name: check metadata
-          command: |
-            . venv/bin/activate
-            python3 scripts/validate/indicator-metadata.py
-
-      - store_artifacts:
-          path: test-reports
-          destination: test-reports
+          name: Build the Jekyll site
+          command: bundle exec jekyll build --config _config_prod.yml
+      - add_ssh_keys:
+          fingerprints:
+            # Replace this with the fingerprint for gh-stg.
+            - "10:e9:26:42:e2:cc:1b:de:b5:db:47:95:f0:37:68:7b"
+      - run:
+          name: Deploy to Github
+          command: bash scripts/deploy/circleci/deploy_prod.sh
+  deploy_staging:
+    docker:
+      - image: circleci/ruby:2.5.1
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          key: test-dependencies-{{ checksum "Gemfile.lock" }}
+      - run:
+          name: Install Ruby dependencies
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle
+      - save_cache:
+          key: test-dependencies-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Build the Jekyll site
+          command: bundle exec jekyll build
+      - add_ssh_keys:
+          fingerprints:
+            # Replace this with the fingerprint for gh-stg.
+            - "10:e9:26:42:e2:cc:1b:de:b5:db:47:95:f0:37:68:7b"
+      - run:
+          name: Deploy to Github
+          command: bash scripts/deploy/circleci/deploy_staging.sh
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy_prod:
+          filters:
+            branches:
+              only: master
+      - deploy_staging:
+          filters:
+            branches:
+              only: develop
+  nightly:
+    triggers:
+      - schedule:
+          cron: "0 0 * * *"
+          filters:
+            branches:
+              only: develop
+    jobs:
+      - deploy_staging

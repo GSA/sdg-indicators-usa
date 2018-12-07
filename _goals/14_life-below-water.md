@@ -1,7 +1,7 @@
 ---
-title: Conserve and sustainably use the oceans, seas and marine resources for sustainable development
 permalink: /life-below-water/
-sdg_goal: 14
+sdg_goal: '14'
+color: '#0a97d9'
 layout: goal
 ---
 

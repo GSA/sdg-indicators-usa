@@ -2,5 +2,14 @@ _site/
 .sass-cache/
 .jekyll-metadata
 .DS_Store
-.editorconfig
-.vscode
+.Rproj.user
+.Rhistory
+.spyproject/
+*__pycache__/
+*.Rproj
+deploy_key*
+deploy_key*.pub
+*.keybase
+data/edges/
+data/headlines/
+data/json/

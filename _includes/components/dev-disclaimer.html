@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row alert" role="alert">
+    {%- if site.environment == 'staging' -%}
+      <div class="col-sm-9 col-md-6">
+        {{ t.header.disclaimer_staging }}
+      </div>
+      <div class="col-md-3 hidden-xs hidden-sm">
+        {{ t.header.work_in_progress }}
+      </div>
+      <div class="col-sm-3 text-right hidden-xs">
+        <a class="btn btn-default btn-xs" href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/admin.md %}">
+          {{ t.header.login_logout }}
+        </a>
+      </div>
+    {%- else -%}
+      <div class="col-md-9">
+        {{ t.header.disclaimer_production }}
+      </div>
+      <div class="col-md-3 hidden-xs hidden-sm text-right">
+        {{ t.header.work_in_progress }}
+      </div>
+    {%- endif -%}
+  </div>
+</div>

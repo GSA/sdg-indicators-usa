@@ -1,8 +1,7 @@
 ---
-title: Conserve and sustainably use the oceans, seas and marine resources for sustainable development
-lang: es
-permalink: /es/life-below-water/
-sdg_goal: 14
+color: '#0a97d9'
+language: es
 layout: goal
+permalink: /es/life-below-water/
+sdg_goal: '14'
 ---
-
