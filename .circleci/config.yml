@@ -22,7 +22,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             # Replace this with the fingerprint for gh-stg.
-            - "10:e9:26:42:e2:cc:1b:de:b5:db:47:95:f0:37:68:7b"
+            - "ed:a1:06:e1:0a:60:05:0d:52:9c:65:d8:fa:2e:95:d4"
       - run:
           name: Deploy to Github
           command: bash scripts/deploy/circleci/deploy_prod.sh
