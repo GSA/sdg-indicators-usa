@@ -12,16 +12,16 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: ""
 data_dir: data
 environment: production
-remotedatabaseurl: "https://gsa.github.io/sdg-data-usa"
+remotedatabaseurl: "https://gsa.github.io/sdg-data-usa/prod"
 # permalink: /news/:year/:month/:day/:title.html
 
 jekyll_get_data:
   - data: meta
-    json: 'https://gsa.github.io/sdg-data-usa/meta/all.json'
+    json: 'https://gsa.github.io/sdg-data-usa/prod/meta/all.json'
   - data: headlines
-    json: 'https://gsa.github.io/sdg-data-usa/headline/all.json'
+    json: 'https://gsa.github.io/sdg-data-usa/prod/headline/all.json'
   - data: schema
-    json: 'https://gsa.github.io/sdg-data-usa/meta/schema.json'
+    json: 'https://gsa.github.io/sdg-data-usa/prod/meta/schema.json'
   - data: translations
     json: 'https://gsa.github.io/sdg-translations/translations-0.3.0.json'
 
