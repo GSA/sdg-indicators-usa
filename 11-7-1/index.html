@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head><script>var translations = {};</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <!-- Basic Page Needs
+        ================================================== -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Mobile Specific Metas
+        ================================================== -->
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
+        ================================================== -->
+        
+        
+        <title>
+        Indicator 11.7.1 - Goal  - 
+        </title>
+        <meta name="description" content="">
+        <meta property="og:description" content="">
+        
+        <link rel="canonical" href="/">
+
+        
+
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+
+        <!-- Favicons ================================================== -->
+        <!-- 128x128 -->
+        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
+        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
+        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
+        -->
+
+        
+
+        
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20181217173532">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"><link rel="stylesheet" href="/assets/css/custom.css?v=20181217173532"></head>
+<body class="language-en">
+<!-- <div class="container"> -->
+
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+<div id="disclaimer">
+  <div class="container">
+  <div class="row alert" role="alert"><div class="col-md-9">
+        This is an official website of the United States government
+      </div>
+      <div class="col-md-3 hidden-xs hidden-sm text-right">
+        This site is a work in progress
+      </div></div>
+</div>
+
+</div>
+
+<header role="banner">
+  <div class="container">
+
+    <a class="navbar-brand" href="/" id="home">
+      <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
+    </a>
+
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
+      <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">English</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+<ul class="language-options language-toggle"><li><a href="/es/11-7-1/">Español</a></li><li><a href="/fr/11-7-1/">Français</a></li></ul>
+
+    </div></div>
+
+    <nav class="navbar navbar-default" id="main-nav">
+
+      <ul class="top-level">
+        <li><span data-target="menu">Menu</span></li>
+        <li><span data-target="search">Search</span></li>
+      </ul>
+
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
+            <a href="/reporting-status">Reporting Status</a>
+          </li><li class="nav-link ">
+            <a href="/about">About</a>
+          </li><li class="nav-link ">
+            <a href="/guidance">Guidance</a>
+          </li><li class="nav-link ">
+            <a href="/faq">FAQ</a>
+          </li><li>
+          <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
+  <i class="fa fa-globe"></i>
+  <span class="language-toggle-text">English</span>
+  <i class="language-toggle fa fa-chevron-down"></i>
+  <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
+</a>
+<ul class="language-options language-toggle"><li><a href="/es/11-7-1/">Español</a></li><li><a href="/fr/11-7-1/">Français</a></li></ul>
+
+        </li></ul>
+
+      <div id="search" class="menu-target">
+  <label for="indicator_search">
+    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
+  </label>
+  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
+</div>
+
+
+    </nav>
+  </div>
+
+</header>
+
+<script type="text/template" id="item_template">
+  <% _.each(series, function(seriesItem) { %>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
+      <div class="bar">
+        <div class="selected"></div>
+      </div>
+      <div class="variable-options">
+        <div>
+          <button data-type="select">Select all</button>
+          <button data-type="clear">Clear all</button>
+        </div>
+        <% _.each(seriesItem.values, function(item) { %>
+          <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
+        <% }); %>
+      </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
+      <% }%>
+
+    </div>
+  <% }); %>
+</script>
+
+<script type="text/template" id="units_template">
+  <% if(units.length) { %>
+    <h5>Units type</h5>
+    <% _.each(units, function(unitsItem, index) { %>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+    <% }); %>
+  <% } %>
+</script>
+
+<script>translations['indicator'] = {"chart":"Chart","clear_all":"Clear all","clear_selections":"Clear selections","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","legend_help":"Click on the legend to remove individual lines from the chart.","loading_map":"Loading map","map":"Map","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country_name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country_adjective statistics, this table should be consulted for information on national methodology and other %country_adjective-specific metadata information.","no_data_hint":"No options available because of filters above","select_all":"Select all","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","sub_categories":"Sub-categories","table":"Table","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="heading indicator goal-11">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <a href="/sustainable-cities-communities" title="View this goal's indicator list">
+          <img src="/assets/img/goals/en/11.png" alt="Sustainable Cities & Communities - Goal 11" />
+        </a>
+      </div>
+      <div class="col-xs-8 col-md-9 col-lg-10">
+        <h1>
+          <a href="/sustainable-cities-communities">
+            <span class="hidden-sm hidden-md hidden-lg">Goal 11: </span>Make cities and human settlements inclusive, safe, resilient and sustainable
+          </a>
+        </h1>
+        <h2>Indicator 11.7.1: Average share of the built-up area of cities that is open space for public use for all, by sex, age and persons with disabilities</h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="main-content" class="container goal-11">
+  <ol class="breadcrumb">
+  <li><a href="/">Home</a></li>
+  
+      <li><a href="/sustainable-cities-communities" title="Make cities and human settlements inclusive, safe, resilient and sustainable">Goal 11</a></li>
+      <li class="active">Indicator 11.7.1</li>
+  
+</ol>
+
+  <div class="row" id="page-content-row">
+    <div class="col-xs-12">
+      <div id="page-content">
+  
+  
+
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+    
+  
+
+  
+
+</div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Average share of the built-up area of cities that is open space for public use for all, by sex, age and persons with disabilities</h2>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatorid='indicator_11-7-1' data-id="11-7-1" data-country="United States"
+  data-charttitle="Average share of the built-up area of cities that is open space for public use for all, by sex, age and persons with disabilities" data-measurementunit="" data-datasource="" data-geographicalarea="United States" data-footnote="" data-showdata="false" data-graphtype="" data-geocoderegex="" data-showmap="">
+    
+    <div class="col-md-12">
+    
+
+      
+
+      <section>
+
+        
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">National Metadata</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#globalmetadata" aria-controls="globalmetadata" role="tab">Global Metadata</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab">Sources</a>
+          </li>
+          
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
+            <!-- National Metadata -->
+            <div > <!-- formerly class="collapsible expanded" -->
+              <!-- <h3 tabindex='0'>National Metadata</h3> -->
+              <article>
+                <p>This table provides metadata for the actual indicator available from US statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from US statistics, this table should be consulted for information on national methodology and other US-specific metadata information.</p>
+                  <table class="table table-hover">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      <tr>
+        <th scope="row">Actual indicator available </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Actual indicator available - description </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Date of national source publication </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Method of computation </th>
+        <td>
+          
+            Proportion of urban area allocated to open public spaces, including street and sidewalks.  Proportion of Total Open Public Space = ( (Total surface of open public space + Total surface of land allocated to streets) / Total surface of built up area of the urban agglomeration ) Unit of Measurement: %  The method to estimate the area of public space is based on three steps: 1) spatial analysis to delimit the built-up area of the city; 2) estimation of the total open public space and; 3) estimation of the total area allocated to streets. 	1. Spatial analysis to delimit the built-up area. Delimit the built-up area of the urban agglomeration and calculate the total area (square kilometers). 		1.1 Satellite imagery: Use of exiting layers of satellite imagery ranging from open sources such as Google Earth and US Geological Survey/NASA imagery Landsat to more sophisticated and higher resolution land cover data sets. Images will be analyzed for the latest available year. 		1.2 Delimitation of built-up area of the urban agglomeration: The delimitation of the urban agglomeration refers to the total area occupied by the built-up area and its urbanized open space. The delimitation of the study area distinguishes urban, suburban and rural areas based on the built-up densities. This indicators includes urban (more than 50% built-up density) and suburban areas (between 50% to 10% built-up density (refer to annex 1 "Measurement of the Street Connectivity Index"). 	2. Open public space: mapping and calculation of total areas of open public space within the defined urban boundaries based on the built-up area. 		2.1 Definition of open public space: An open public space is related to universal access. Open public spaces include only the following types: 			Parks: open spaces inside a municipality that provide free air recreation and contact with nature. Their principal characteristic is the significant proportion of green area. 			Civic parks: open spaces created by building agglomeration around an open area, which was later transformed into a representative, civic area. They are characterised by considerable nature, specifically gardens. They are good place for cultural events and passive recreation. 			Squares: open spaces created by building agglomeration around an open area. Its main characteristics are the significant proportion of architectonic elements and interaction among buildings and the open area. Squares are usually public spaces that are relevant to the city due to their location, territorial development, or cultural importance. 			Recreational green areas: public green areas that contribute to environmental preservation. All recreational green areas must guarantee accessibility and must be linked to urban areas. Their main functions are ornamental and passive recreation. 			Facility public areas: open meeting spaces and recreational facilities that are part of city facilities (defined as places that are elementary to all cities; i.e., public libraries, stadium, public sports centres, etc.). These areas have the following characteristics: public property, free transit and access, and both active and passive recreation. (e.g., the public area outside a stadium). 		2.2 Inventory of open public space. Information can be obtained from legal documents outlining publicly owned land and well defined land use plans. In some cases where this information is lacking, incomplete or outdated, open sources and communitybased maps, which are increasingly recognized as a valid source of information, can be a viable alternative. 		2.3 Computation of total area of open public space. The inventory of open public spaces is digitalized in existing maps and vectorised to allow computation of surfaces. The total of open public area is divided by the total built-up area of the city to obtain the proportion. 	3. Land allocated to streets: calculation of the total area allocated to streets based on sampling techniques as a proportion of the total surface of the built-up area as per definition above. 		3.1 Definition of streets. For this indicator, streets are defined as the space used by pedestrian or vehicles in order to go from one place to another in the city and also in order to interact. More and more, local population recognizes streets as public spaces and as an important 'common' of the city. The area of the streets include the carriageway, the median, the roundabouts, the traffic islands, the sidewalk, the cycle tracks, planting zones and storm drainage; in other words, the right of way limited by private properties and/or natural obstacles such as rivers. In informal settlements or slum areas where sidewalks are missing, the main references for limiting the street area are the physical boundaries used to demarcate the private properties. Unpaved roads are also considered as streets. 		3.2 Sampling technique for the estimation of land allocated to streets. The estimation of the total area of the street is based on the following methodology: 			a. Define the boundary of the built-up area. 			b. Generate the Halton sequence of sample points of the urban area bounding box for an average density of 10 points per Km2. 			c. Extract the sample points that are within the urban area boundary. 			d. Buffer the points to get sample areas (circles) with an area of 10 Ha each (0.1 Km2). 			e. For each sample area in the sequence: i) check the completeness of the street network using 'open street maps' (OSM cartography on streets) within the sample area, and complete it if necessary comparing it with the most recent satellite imagery of the urban area; ii) define and delimit streets as per definition; iii) measure the street widths on the orthophoto (i.e. Bing) and store it in the OSM data base; iv) download the OSM cartography; v) superimpose (clip) the OSM data with the sample areas; vi) calculate the land allocated to street for each sample area. 			f. Repeat the process for the following sample areas until the variations are within a certain margin (95% confidence limits). 		3.3 Computation of total area of land allocated to streets. The average of the sample areas provide the total land allocated to streets.  Benchmark Proportion of Total Open Public Space Min = 0 % Max = 45 % Total Open Public Space (%) Min = 0 % Max = 15 % Land Allocated to Street (%) Min = 0 % Max = 30%  Standardization see report for Standardization details  Example see report for Example
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Scheduled update by national source </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">U.S. method of computation </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+  
+  
+  
+  
+      
+      <tr>
+        <th scope="row">Comments and limitations </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Date metadata updated </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Disaggregation geography </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Unit of measurement </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Disaggregation categories </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">International and national references </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Time period </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Scheduled update by SDG team </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+              </article>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="globalmetadata">
+            <!-- Global Metadata -->
+            <div> <!-- formerly <div class="collapsible expanded"> -->
+              <!-- <h3 tabindex='0'>Global Metadata</h3> -->
+              <article>
+                <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
+                <table class="table table-hover">
+  
+  
+  
+  
+  
+      
+      <tr>
+        <th scope="row">Indicator name </th>
+        <td>
+          
+            Average share of the built-up area of cities that is open space for public use for all, by sex, age and persons with disabilities
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Target name </th>
+        <td>
+          
+            By 2030, provide universal access to safe, inclusive and accessible, green and public spaces, in particular for women and children, older persons and persons with disabilities.
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Global indicator description </th>
+        <td>
+          
+            Public space is publicly owned land and available for public use. Public spaces encompass a range of environments including streets, sidewalks squares, gardens, parks, conservation areas. Each public space has its own spatial, historic, environmental, social and economic features. They can be publically or privately managed.  Public Space: Having sufficient public space allows cities and regions to function efficiently and equitably. Reduced amounts of public space impact negatively on quality of life, social inclusion, infrastructure development, environmental sustainable and productivity. It is documented that well designed and maintained streets and public spaces result in lower crime and violence. Making space for formal and informal economic activities, recovering and maintaining public spaces for a diversity of users in a positive way, and making services and opportunities available to marginalized residents, enhance social cohesion and economic security. Uncontrolled rapid urbanization generally creates settlement patterns with dangerously low proportions of public space. As a result, these places are unable to accommodate safe pedestrian and vehicular rights of way, land for critical infrastructure like water, sewerage and waste collection, recreational spaces, green areas and parks that contribute to social cohesion and protected ecological hotspots and corridors. As new cities also develop they have reduced allocations of land for public space especially streets. On average, at 15% the land allocated to streets in new planned areas is substantially less than the standard and in unplanned areas the situation is considerably worse with an average of 2%. The generally accepted minimum standard for public space in higher density settlements (150 inhabitants or more per/hectare) is 45% (30% for streets and sidewalks and 15% for open public space).Total city space refers to the built-up area of the city. The proportion of urban areas dedicated to streets and public spaces is a crucial feature of the spatial plans of cities. The road network is the integrative and dynamic factor between individuals and socioeconomic activities. It is a structuring component of geographic space and defines the socio-dynamics of an area being conditioned by the spatial pattern, which restricts the location of roads and human settlements. Short and direct pedestrian and cycling routes require highly connected network of paths and streets around small, permeable blocks. These features are primarily important for walking and for transit station accessibility, which can be easily discouraged by detours.A prosperous city seeks a tight network of paths and streets offering multiple routes to many destinations that also make walking and cycling trips varied and enjoyable. In fact, cities that have adequate streets, public spaces and greater connectivity are more liveable and productive. The use of this indicator aims to integrate urban form and spatial analysis in the monitoring of Goal 11 of the Sustainable Development Goals. Spatial indicators are vital tools supporting sustainable urban and regional planning. They are valuable in the generation of spatial data that is critical for priority setting for harmonious and equitable distribution of resources and investments in the territory. This information supports decision-making based on evidence and facilitates effective urban management and the setting of local monitoring mechanisms to assess impact in localized areas. Area of public space as a proportion of total city space, including the land allocated to streets. The indicator is calculated integrating to metrics: a) land allocated to open public space; b) land allocated to streets.
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">UN designated tier </th>
+        <td>
+          
+            3
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">UN custodial agency </th>
+        <td>
+          
+            UN Habitat
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Link to UN metadata </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-11.pdf" target="_blank">
+                Link <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+              </article>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="sources">
+            <!-- Count the non-empty sources (up to 5) -->
+
+
+
+
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      
+      <table class="table table-hover">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+  
+      
+      <tr>
+        <th scope="row">Agency Staff Name </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Agency Survey Dataset </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Notes </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Title </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      <tr>
+        <th scope="row">Link to data source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+
+          
+        </td>
+        </tr>
+        
+      
+  
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</table>
+
+    </div>
+    
+  </div>
+
+
+          </div>
+          
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-9">
+        <a href="/contact/">Contact us</a> |
+        <a href="/about/cookies-and-privacy/">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
+<!-- Google Analytics -->
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '', 'auto');
+// anonymize user IPs (chops off the last IP triplet)
+ga('set', 'anonymizeIp', true);
+// forces SSL even if the page were somehow loaded over http://
+ga('set', 'forceSSL', true);
+ga('send', 'pageview');
+
+</script>
+
+<!-- /.container </div> -->
+<script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script>
+  var remoteDataBaseUrl = 'https://gsa.github.io/sdg-data-usa';
+</script>
+<script src='/assets/js/sdg.js?v=20181217173532'></script>
+<script>
+$(function() {
+    if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+
+      $('.async-loading').each(function(i, obj) {
+          $(obj).append($('<img />').attr('src', $(obj).data('img')));
+      });
+
+      $.ajax({
+        url: 'https://gsa.github.io/sdg-data-usa/comb/' + domData.id + '.json',
+        success: function(res) {
+
+          $('.async-loading').remove();
+          $('.async-loaded').show();
+
+          var model = new indicatorModel({
+            data: res.data,
+            edgesData: res.edges,
+            geoCodeRegEx: domData.geocoderegex,
+            showMap: domData.showmap,
+            country: domData.country,
+            indicatorId: domData.indicatorid,
+            shortIndicatorId: domData.id,
+            chartTitle: domData.charttitle,
+            measurementUnit: domData.measurementunit,
+            dataSource: domData.datasource,
+            geographicalArea: domData.geographicalarea,
+            showData: domData.showdata,
+            footnote: domData.footnote,
+            graphType: domData.graphtype
+          }),
+          view  = new indicatorView(model, {
+            rootElement: '#indicatorData',
+            legendElement: '#plotLegend',
+            maxChartHeight: 600,
+            tableColumnDefs: [
+              { maxCharCount: 25 }, // nowrap
+              { maxCharCount: 35, width: 200 },
+              { maxCharCount: Infinity, width: 250 }
+            ]
+          }),
+          controller = new indicatorController(model, view);
+          controller.initialise();
+        }
+      });
+    }
+
+    var switcher = new accessibilitySwitcher();
+
+
+});
+</script>
+
+</body>
+</html>
+
+

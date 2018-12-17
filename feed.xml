@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>U.S. Indicators For The Sustainable Development Goals</title>
+    <description>Data Platform Prototype</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 17 Dec 2018 17:35:32 +0000</pubDate>
+    <lastBuildDate>Mon, 17 Dec 2018 17:35:32 +0000</lastBuildDate>
+    <generator>Jekyll v3.5.1</generator>
+    
+  </channel>
+</rss>
