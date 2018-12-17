@@ -1,7 +1,7 @@
 ---
-title: Réduire les inégalités dans les pays et d’un pays à l’autre
-lang: fr
-permalink: /fr/reduced-inequalities/
-sdg_goal: 10
+color: '#dd1367'
+language: fr
 layout: goal
+permalink: /fr/reduced-inequalities/
+sdg_goal: '10'
 ---

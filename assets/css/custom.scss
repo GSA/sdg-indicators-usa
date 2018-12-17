@@ -1,0 +1,52 @@
+---
+# custom styles
+---
+#main-content {
+  #map, #infoPanel {
+    width: 710px;
+  }
+}
+
+.navbar-brand {
+  max-width: 375px;
+}
+
+header {
+  background: #fff;
+  border-bottom: solid 2px #CCC;
+}
+
+.us-heading {
+  background-color: #205493;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+body.contrast-high {
+  .us-heading {
+    background-color: black;
+  }
+  #page-content {
+    .alert {
+      p, h4 {
+        color: black;
+      }
+    }
+  }
+  #disclaimer {
+    .alert {
+      color: white;
+    }
+  }
+}
+
+.indicator-cards>div {
+  width: 100%;
+}
+
+#disclaimer {
+  background: #eaeaea;
+  @media only screen and (max-width: 680px) {
+    font-size: 0.75em;
+  }
+}
