@@ -15,7 +15,7 @@ environment: production
 remotedatabaseurl: "https://gsa.github.io/sdg-data-usa/prod"
 # permalink: /news/:year/:month/:day/:title.html
 
-jekyll_get_data:
+jekyll_get_json:
   - data: meta
     json: 'https://gsa.github.io/sdg-data-usa/prod/meta/all.json'
   - data: headlines
@@ -98,6 +98,8 @@ defaults:
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-open-sdg-plugins
+  - jekyll-get-json
 
 remote_theme: open-sdg/open-sdg@0.1.0
 
