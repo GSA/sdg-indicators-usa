@@ -41,7 +41,7 @@ GEM
     jekyll-get-json (0.0.1)
       deep_merge (~> 1.2)
       jekyll (~> 3.0)
-    jekyll-open-sdg-plugins (0.0.1)
+    jekyll-open-sdg-plugins (0.0.2)
       jekyll (~> 3.0)
     jekyll-remote-theme (0.3.1)
       jekyll (~> 3.5)
