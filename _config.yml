@@ -24,7 +24,7 @@ jekyll_get_json:
   - data: schema
     json: 'https://gsa.github.io/sdg-data-usa/staging/meta/schema.json'
   - data: translations
-    json: 'https://gsa.github.io/sdg-translations/translations-0.3.0.json'
+    json: 'https://gsa.github.io/sdg-translations/translations-0.4.0.json'
 
 analytics:
   ga_prod: ''
