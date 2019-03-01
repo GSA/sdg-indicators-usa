@@ -96,6 +96,9 @@ defaults:
     values:
       language: "en"
 
+# Point to remote location of goal images.
+goal_image_base: https://open-sdg.github.io/sdg-translations/assets/img/goals
+
 plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
