@@ -41,8 +41,8 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20181217173532">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"><link rel="stylesheet" href="/assets/css/custom.css?v=20181217173532"></head>
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190325203102">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"><link rel="stylesheet" href="/assets/css/custom.css?v=20190325203102"></head>
 <body class="language-en">
 <!-- <div class="container"> -->
 
@@ -176,7 +176,7 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/quality-education" title="View this goal's indicator list">
-          <img src="/assets/img/goals/en/4.png" alt="Quality Education - Goal 4" />
+          <img src="/assets/img/goals/en/4.png" alt="Quality education - Goal 4" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
@@ -296,9 +296,9 @@
   
   <div id="datatables">
     
-    <a href="https://gsa.github.io/sdg-data-usa/headline/4-3-1.csv" class="btn btn-primary btn-download" download="indicator_4-3-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    <a href="https://gsa.github.io/sdg-data-usa/prod/headline/4-3-1.csv" class="btn btn-primary btn-download" download="indicator_4-3-1.csv" tabindex="0" role="button">Download Headline CSV</a>
     
-    <a href="https://gsa.github.io/sdg-data-usa/data/4-3-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_4-3-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    <a href="https://gsa.github.io/sdg-data-usa/prod/data/4-3-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_4-3-1.csv' tabindex='0' role='button'>Download Source CSV</a>
     
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
@@ -1197,7 +1197,7 @@
 </footer>
 
 <!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script>
 <!-- Google Analytics -->
 
 <script>
@@ -1206,7 +1206,7 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', '', 'auto');
+ga('create', 'UA-42145528-4', 'auto');
 // anonymize user IPs (chops off the last IP triplet)
 ga('set', 'anonymizeIp', true);
 // forces SSL even if the page were somehow loaded over http://
@@ -1229,9 +1229,9 @@ ga('send', 'pageview');
 <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
 <script>
-  var remoteDataBaseUrl = 'https://gsa.github.io/sdg-data-usa';
+  var remoteDataBaseUrl = 'https://gsa.github.io/sdg-data-usa/prod';
 </script>
-<script src='/assets/js/sdg.js?v=20181217173532'></script>
+<script src='/assets/js/sdg.js?v=20190325203102'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -1242,7 +1242,7 @@ $(function() {
       });
 
       $.ajax({
-        url: 'https://gsa.github.io/sdg-data-usa/comb/' + domData.id + '.json',
+        url: 'https://gsa.github.io/sdg-data-usa/prod/comb/' + domData.id + '.json',
         success: function(res) {
 
           $('.async-loading').remove();

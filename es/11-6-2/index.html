@@ -15,7 +15,7 @@
         
         
         <title>
-        Indicador 11.6.2 - Gol  - 
+        Indicador 11.6.2 - Meta  - 
         </title>
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -41,8 +41,8 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20181217173532">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"><link rel="stylesheet" href="/assets/css/custom.css?v=20181217173532"></head>
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190325203102">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"><link rel="stylesheet" href="/assets/css/custom.css?v=20190325203102"></head>
 <body class="language-es">
 <!-- <div class="container"> -->
 
@@ -176,13 +176,13 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/es/sustainable-cities-communities" title="Ver la lista de indicadores de este objetivo">
-          <img src="/assets/img/goals/es/11.png" alt="Cuidades y Comunidades Sostenibles - Gol 11" />
+          <img src="/assets/img/goals/es/11.png" alt="Cuidades y Comunidades Sostenibles - Meta 11" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
           <a href="/es/sustainable-cities-communities">
-            <span class="hidden-sm hidden-md hidden-lg">Gol 11: </span>Lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles
+            <span class="hidden-sm hidden-md hidden-lg">Meta 11: </span>Lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles
           </a>
         </h1>
         <h2>Indicador 11.6.2: Niveles medios anuales de partículas finas en suspensión (por ejemplo, PM2.5 y PM10) en las ciudades (ponderados según la población)</h2>
@@ -193,9 +193,9 @@
 
 <div id="main-content" class="container goal-11">
   <ol class="breadcrumb">
-  <li><a href="/es/">Casa</a></li>
+  <li><a href="/es/">Inicio</a></li>
   
-      <li><a href="/es/sustainable-cities-communities" title="Make cities and human settlements inclusive, safe, resilient and sustainable">Gol 11</a></li>
+      <li><a href="/es/sustainable-cities-communities" title="Make cities and human settlements inclusive, safe, resilient and sustainable">Meta 11</a></li>
       <li class="active">Indicador 11.6.2</li>
   
 </ol>
@@ -296,9 +296,9 @@
   
   <div id="datatables">
     
-    <a href="https://gsa.github.io/sdg-data-usa/headline/11-6-2.csv" class="btn btn-primary btn-download" download="indicator_11-6-2.csv" tabindex="0" role="button">Descargar Headline CSV</a>
+    <a href="https://gsa.github.io/sdg-data-usa/prod/headline/11-6-2.csv" class="btn btn-primary btn-download" download="indicator_11-6-2.csv" tabindex="0" role="button">Descargar Headline CSV</a>
     
-    <a href="https://gsa.github.io/sdg-data-usa/data/11-6-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_11-6-2.csv' tabindex='0' role='button'>Descargar Source CSV</a>
+    <a href="https://gsa.github.io/sdg-data-usa/prod/data/11-6-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_11-6-2.csv' tabindex='0' role='button'>Descargar Source CSV</a>
     
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
@@ -1182,7 +1182,7 @@
 </footer>
 
 <!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script>
 <!-- Google Analytics -->
 
 <script>
@@ -1191,7 +1191,7 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', '', 'auto');
+ga('create', 'UA-42145528-4', 'auto');
 // anonymize user IPs (chops off the last IP triplet)
 ga('set', 'anonymizeIp', true);
 // forces SSL even if the page were somehow loaded over http://
@@ -1214,9 +1214,9 @@ ga('send', 'pageview');
 <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
 <script>
-  var remoteDataBaseUrl = 'https://gsa.github.io/sdg-data-usa';
+  var remoteDataBaseUrl = 'https://gsa.github.io/sdg-data-usa/prod';
 </script>
-<script src='/assets/js/sdg.js?v=20181217173532'></script>
+<script src='/assets/js/sdg.js?v=20190325203102'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -1227,7 +1227,7 @@ $(function() {
       });
 
       $.ajax({
-        url: 'https://gsa.github.io/sdg-data-usa/comb/' + domData.id + '.json',
+        url: 'https://gsa.github.io/sdg-data-usa/prod/comb/' + domData.id + '.json',
         success: function(res) {
 
           $('.async-loading').remove();
