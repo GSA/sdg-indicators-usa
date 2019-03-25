@@ -26,7 +26,7 @@ jekyll_get_json:
     json: 'https://gsa.github.io/sdg-translations/translations-0.4.0.json'
 
 analytics:
-  ga_prod: ''
+  ga_prod: 'UA-42145528-4'
 
 ###################################################################################################
 email_contacts:
