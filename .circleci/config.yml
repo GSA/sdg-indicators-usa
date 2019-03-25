@@ -89,6 +89,7 @@ workflows:
                 - master
                 - develop
                 - gh-pages
+                - prod-pages
   deploy:
     jobs:
       - deploy_prod:
