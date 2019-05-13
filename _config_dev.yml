@@ -8,25 +8,26 @@
 # Site settings
 title: U.S. Indicators For The Sustainable Development Goals
 description: Data Platform Prototype
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/sdg-indicators-usa" # the subpath of your site, e.g. /blog
 url: ""
 data_dir: data
-environment: production
-remotedatabaseurl: "https://gsa.github.io/sdg-data-usa/prod"
+data_dir_for_edits: data-wide
+environment: staging
+remotedatabaseurl: "https://gsa.github.io/sdg-data-usa/staging"
 # permalink: /news/:year/:month/:day/:title.html
 
 jekyll_get_json:
   - data: meta
-    json: 'https://gsa.github.io/sdg-data-usa/prod/meta/all.json'
+    json: 'https://gsa.github.io/sdg-data-usa/staging/meta/all.json'
   - data: headlines
-    json: 'https://gsa.github.io/sdg-data-usa/prod/headline/all.json'
+    json: 'https://gsa.github.io/sdg-data-usa/staging/headline/all.json'
   - data: schema
-    json: 'https://gsa.github.io/sdg-data-usa/prod/meta/schema.json'
+    json: 'https://gsa.github.io/sdg-data-usa/staging/meta/schema.json'
   - data: translations
     json: 'https://gsa.github.io/sdg-translations/translations-0.4.0.json'
 
 analytics:
-  ga_prod: 'UA-42145528-4'
+  ga_prod: ''
 
 ###################################################################################################
 email_contacts:
@@ -44,13 +45,7 @@ org_name: GSA
 markdown: kramdown
 
 # Travis Support
-exclude:
-  - vendor
-  - scripts
-  - remotedata
-  - Gemfile
-  - Gemfile.lock
-  - README.md
+exclude: [vendor, scripts, remotedata]
 
 # International Support
 # Eg name: Australia and adjective: Australian
