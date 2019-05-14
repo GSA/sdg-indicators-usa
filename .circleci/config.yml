@@ -67,7 +67,7 @@ jobs:
             - vendor/bundle
       - run:
           name: Build the Jekyll site
-          command: bundle exec jekyll build
+          command: bundle exec jekyll build --config _config_dev.yml
       - run:
           name: Run the HTML tests
           command: bash scripts/test/html_proofer_staging.sh
