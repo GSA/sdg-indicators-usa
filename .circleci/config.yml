@@ -21,7 +21,7 @@ jobs:
           command: bundle exec jekyll build
       - run:
           name: Run HTML Proofer
-          command: bash scripts/test/html_proofer_staging.sh
+          command: bundle exec htmlproofer --disable-external _site
   deploy_prod:
     docker:
       - image: circleci/ruby:2.5.1
@@ -42,7 +42,7 @@ jobs:
           command: bundle exec jekyll build --config _config_prod.yml
       - run:
           name: Run the HTML tests
-          command: bash scripts/test/html_proofer_prod.sh
+          command: bundle exec htmlproofer --disable-external _site
       - add_ssh_keys:
           fingerprints:
             # Replace this with the fingerprint for gh-stg.
@@ -70,7 +70,7 @@ jobs:
           command: bundle exec jekyll build --config _config_dev.yml
       - run:
           name: Run the HTML tests
-          command: bash scripts/test/html_proofer_staging.sh
+          command: bundle exec htmlproofer --disable-external --url-swap /sdg-indicators-usa/:/ _site
       - add_ssh_keys:
           fingerprints:
             # Replace this with the fingerprint for gh-stg.
@@ -86,8 +86,6 @@ workflows:
           filters:
             branches:
               ignore:
-                - master
-                - develop
                 - gh-pages
   deploy:
     jobs:
