@@ -1,0 +1,30 @@
+#main-content #map, #main-content #infoPanel {
+  width: 710px; }
+
+.navbar-brand {
+  max-width: 375px; }
+
+header {
+  background: #fff;
+  border-bottom: solid 2px #CCC; }
+
+.us-heading {
+  background-color: #205493;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+body.contrast-high .us-heading {
+  background-color: black; }
+body.contrast-high #page-content .alert p, body.contrast-high #page-content .alert h4 {
+  color: black; }
+body.contrast-high #disclaimer .alert {
+  color: white; }
+
+.indicator-cards > div {
+  width: 100%; }
+
+#disclaimer {
+  background: #eaeaea; }
+  @media only screen and (max-width: 680px) {
+    #disclaimer {
+      font-size: 0.75em; } }
