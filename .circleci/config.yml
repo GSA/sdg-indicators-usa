@@ -1,9 +1,8 @@
-# Python CircleCI 2.0 configuration file
 version: 2
 jobs:
   test:
     docker:
-      - image: circleci/ruby:2.5.1
+      - image: circleci/ruby:2.5
     working_directory: ~/repo
     steps:
       - checkout
@@ -22,87 +21,10 @@ jobs:
       - run:
           name: Run HTML Proofer
           command: bundle exec htmlproofer --disable-external _site
-  deploy_prod:
-    docker:
-      - image: circleci/ruby:2.5.1
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - restore_cache:
-          key: test-dependencies-{{ checksum "Gemfile.lock" }}
-      - run:
-          name: Install Ruby dependencies
-          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle
-      - save_cache:
-          key: test-dependencies-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
-      - run:
-          name: Build the Jekyll site
-          command: bundle exec jekyll build --config _config_prod.yml
-      - run:
-          name: Run the HTML tests
-          command: bundle exec htmlproofer --disable-external _site
-      - add_ssh_keys:
-          fingerprints:
-            # Replace this with the fingerprint for gh-stg.
-            - "ed:a1:06:e1:0a:60:05:0d:52:9c:65:d8:fa:2e:95:d4"
-      - run:
-          name: Deploy to Github
-          command: bash scripts/deploy/circleci/deploy_prod.sh
-  deploy_staging:
-    docker:
-      - image: circleci/ruby:2.5.1
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - restore_cache:
-          key: test-dependencies-{{ checksum "Gemfile.lock" }}
-      - run:
-          name: Install Ruby dependencies
-          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle
-      - save_cache:
-          key: test-dependencies-{{ checksum "Gemfile.lock" }}
-          paths:
-            - vendor/bundle
-      - run:
-          name: Build the Jekyll site
-          command: bundle exec jekyll build --config _config_dev.yml
-      - run:
-          name: Run the HTML tests
-          command: bundle exec htmlproofer --disable-external --url-swap '\/sdg-indicators-usa\/:/' _site
-      - add_ssh_keys:
-          fingerprints:
-            # Replace this with the fingerprint for gh-stg.
-            - "ed:a1:06:e1:0a:60:05:0d:52:9c:65:d8:fa:2e:95:d4"
-      - run:
-          name: Deploy to Github
-          command: bash scripts/deploy/circleci/deploy_staging.sh
+
+
 workflows:
   version: 2
-  test:
+  commit:
     jobs:
-      - test:
-          filters:
-            branches:
-              ignore:
-                - gh-pages
-  deploy:
-    jobs:
-      - deploy_prod:
-          filters:
-            branches:
-              only: master
-      - deploy_staging:
-          filters:
-            branches:
-              only: develop
-  nightly:
-    triggers:
-      - schedule:
-          cron: "0 0 * * *"
-          filters:
-            branches:
-              only: develop
-    jobs:
-      - deploy_staging
+      - test
