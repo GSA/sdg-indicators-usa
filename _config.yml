@@ -94,6 +94,10 @@ languages:
 # Point to remote location of goal images.
 goal_image_base: https://open-sdg.github.io/sdg-translations/assets/img/goals
 
+# Configure the text (or "translation key") to be used on the
+# non-global metadata tab.
+non_global_metadata: indicator.national_metadata
+
 plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
