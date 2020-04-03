@@ -79,7 +79,6 @@ goal_image_base: https://open-sdg.github.io/sdg-translations/assets/img/goals
 plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
-  - jekyll-get-json
 
 remote_theme: open-sdg/open-sdg@master
 
