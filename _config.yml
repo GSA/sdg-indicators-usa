@@ -20,6 +20,13 @@ data_edit_url: http://prose.io/#GSA/sdg-data-usa/edit/develop/data-wide/indicato
 # URL for the "Edit Metadata" button on indicators.
 metadata_edit_url: http://prose.io/#GSA/sdg-data-usa/edit/develop/meta/[id].md
 
+# Automatically create indicator pages, goal pages, and other required pages.
+create_indicators:
+  layout: indicator
+create_goals:
+  layout: goal
+create_pages: true
+
 analytics:
   ga_prod: 'UA-42145528-4'
 
