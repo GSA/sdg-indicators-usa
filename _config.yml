@@ -15,6 +15,11 @@ environment: production
 remote_data_prefix: "https://gsa.github.io/sdg-data-usa/prod"
 # permalink: /news/:year/:month/:day/:title.html
 
+# URL for the "Edit Data" button on indicators.
+data_edit_url: http://prose.io/#GSA/sdg-data-usa/edit/develop/data-wide/indicator_[id].csv
+# URL for the "Edit Metadata" button on indicators.
+metadata_edit_url: http://prose.io/#GSA/sdg-data-usa/edit/develop/meta/[id].md
+
 analytics:
   ga_prod: 'UA-42145528-4'
 
