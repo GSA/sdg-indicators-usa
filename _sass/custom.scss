@@ -10,13 +10,15 @@
 
 header {
   background: #fff;
-  border-bottom: solid 2px #CCC;
 }
 
 .us-heading {
   background-color: #205493;
   padding-top: 20px;
   padding-bottom: 20px;
+  h1 {
+    color: white;
+  }
 }
 
 body.contrast-high {
