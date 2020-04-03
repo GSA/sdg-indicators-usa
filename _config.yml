@@ -81,6 +81,3 @@ plugins:
   - jekyll-open-sdg-plugins
 
 remote_theme: open-sdg/open-sdg@master
-
-custom_css:
-  - /assets/css/custom.css
