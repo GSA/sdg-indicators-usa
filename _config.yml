@@ -25,11 +25,6 @@ email_contacts:
   functional: datagov@gsa.gov
 ###################################################################################################
 
-# Github Repo for Data
-repo_name: sdg-data-usa
-branch: develop
-org_name: GSA
-
 # Build settings
 markdown: kramdown
 
