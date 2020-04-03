@@ -15,16 +15,6 @@ environment: production
 remote_data_prefix: "https://gsa.github.io/sdg-data-usa/prod"
 # permalink: /news/:year/:month/:day/:title.html
 
-jekyll_get_json:
-  - data: meta
-    json: 'https://gsa.github.io/sdg-data-usa/prod/meta/all.json'
-  - data: headlines
-    json: 'https://gsa.github.io/sdg-data-usa/prod/headline/all.json'
-  - data: schema
-    json: 'https://gsa.github.io/sdg-data-usa/prod/meta/schema.json'
-  - data: translations
-    json: 'https://gsa.github.io/sdg-translations/translations-0.4.0.json'
-
 analytics:
   ga_prod: 'UA-42145528-4'
 
