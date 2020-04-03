@@ -79,6 +79,12 @@ menu:
   - path: /faq
     translation_key: menu.faq
 
+footer_menu:
+  - path: /contact
+    translation_key: menu.contact_us
+  - path: /about/cookies-and-privacy/
+    translation_key: menu.cookies
+
 # The list of languages that are translated. The first one is the default.
 languages:
   - en
