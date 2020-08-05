@@ -2,22 +2,22 @@
   <div class="row alert" role="alert">
     {%- if site.environment == 'staging' -%}
       <div class="col-sm-9 col-md-6">
-        {{ t.usa.disclaimer_staging }}
+        {{ page.t.usa.disclaimer_staging }}
       </div>
       <div class="col-md-3 hidden-xs hidden-sm">
-        {{ t.usa.work_in_progress }}
+        {{ page.t.usa.work_in_progress }}
       </div>
       <div class="col-sm-3 text-right hidden-xs">
         <a class="btn btn-default btn-xs" href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/admin.md %}">
-          {{ t.usa.login_logout }}
+          {{ page.t.usa.login_logout }}
         </a>
       </div>
     {%- else -%}
       <div class="col-md-9">
-        {{ t.usa.disclaimer_production }}
+        {{ page.t.usa.disclaimer_production }}
       </div>
       <div class="col-md-3 hidden-xs hidden-sm text-right">
-        {{ t.usa.work_in_progress }}
+        {{ page.t.usa.work_in_progress }}
       </div>
     {%- endif -%}
   </div>
