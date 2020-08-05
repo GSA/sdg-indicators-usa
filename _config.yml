@@ -102,4 +102,4 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_theme: open-sdg/open-sdg@master
+remote_theme: open-sdg/open-sdg@1.1.0
