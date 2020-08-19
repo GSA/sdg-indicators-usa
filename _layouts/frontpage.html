@@ -13,7 +13,7 @@
         {% cycle 'add row' : '<div class="row no-gutters">', '', '', '', '', '' %}
             <div class="col-xs-4 col-md-2">
                 <a href="./{{ default_goal.short | slugify }}/">
-                  <img src="{{ site.baseurl }}/assets/img/goals/{{ current_language }}/{{ goal_number }}.png" id="goal-{{ goal_number }}" alt="{{ translated_goal.short }} - {{ t.general.goal }} {{ goal_number }}" />
+                  <img src="{{ site.baseurl }}/assets/img/goals/{{ current_language }}/{{ goal_number }}.png" id="goal-{{ goal_number }}" alt="{{ translated_goal.short | escape }} - {{ t.general.goal }} {{ goal_number }}" />
               </a>
             </div>
         {% cycle 'end row' : '', '', '', '', '', '</div>' %}
