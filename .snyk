@@ -1,0 +1,10 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  SNYK-RUBY-KRAMDOWN-585939:
+    - '*':
+        reason: >-
+          All markdown files are evaluated before being deployed, and cannot upgrade due
+          to current library dependencies
+        expires: 2020-09-18T00:00:00.000Z
