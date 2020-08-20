@@ -1,26 +1,38 @@
 {% include head.html %}
 {% include header.html %}
-{% include us_heading.html text=t.usa.heading_us %}
+{% include us_heading.html text=page.t.usa.heading_us %}
 <div id="main-content" class="container goal-tiles" role="main">
-    {% assign country_name = site.country.name | t %}
-    <p>{{ t.frontpage.instructions | replace_first: '%before_link', '<span style="display:none" id="jump-to-search"><a href="javascript:void(0)">' | replace_first: '%after_link', '</a></span>' | replace_first: '%name', country_name }}</p>
-    {%- assign goals = site.goals | where: 'language', current_language -%}
-    {% for goal in goals %}
-        {%- assign goal_number = goal.sdg_goal -%}
-        {%- assign default_goal = site.data.translations[default_language].global_goals[goal_number] -%}
-        {%- assign translated_goal = t.global_goals[goal_number] -%}
 
+    {% if site.frontpage_introduction_banner %}
+    <div class="site-intro spacer medium">
+        <h1>{{ site.frontpage_introduction_banner.title | t }}</h1>
+        <div class="description">{{ site.frontpage_introduction_banner.description | t }}</div>
+    </div>
+    {% endif %}
+
+    {% assign country_name = site.country.name | t %}
+    {% assign instructions_default = page.t.frontpage.instructions | replace_first: '%before_link', '<span id="jump-to-search"><a>' | replace_first: '%after_link', '</a></span>' | replace_first: '%name', country_name %}
+    <p class="spacer medium">{{ site.frontpage_instructions | default: instructions_default | t }}</p>
+
+    {% for goal in page.goals %}
         {% cycle 'add row' : '<div class="row no-gutters">', '', '', '', '', '' %}
             <div class="col-xs-4 col-md-2">
-                <a href="./{{ default_goal.short | slugify }}/">
-                  <img src="{{ site.baseurl }}/assets/img/goals/{{ current_language }}/{{ goal_number }}.png" id="goal-{{ goal_number }}" alt="{{ translated_goal.short | escape }} - {{ t.general.goal }} {{ goal_number }}" />
+                <a href="./{{ goal.number }}/">
+                  <img src="{{ goal.icon }}" id="goal-{{ goal.number }}" alt="{{ goal.short | escape }} - {{ page.t.general.goal }} {{ goal.number }}" />
               </a>
             </div>
         {% cycle 'end row' : '', '', '', '', '', '</div>' %}
     {% endfor %}
+    {% comment %}
+        If there were exactly 17 goals, "pad" it with 1 more, to make it come
+        out more symmetrically.
+    {% endcomment %}
+    {% if page.goals.size == 17 %}
         <div class="col-xs-4 col-md-2">
-            <img src="{{ site.baseurl }}/assets/img/goals/{{ current_language }}/18.png" id="goal-18" alt="The Global Goals for Sustainable Development" />
+            <img src="{{ site.goal_image_base }}/{{ page.language }}/18.png" id="goal-18" alt="The Global Goals for Sustainable Development" />
         </div>
+    {% endif %}
     </div>
+    {% include components/download-all-data.html %}
 </div>
 {% include footer.html %}

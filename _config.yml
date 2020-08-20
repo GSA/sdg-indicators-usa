@@ -12,18 +12,20 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: ""
 data_dir: data
 environment: production
-remotedatabaseurl: "https://gsa.github.io/sdg-data-usa/prod"
+remote_data_prefix: "https://gsa.github.io/sdg-data-usa/prod"
 # permalink: /news/:year/:month/:day/:title.html
 
-jekyll_get_json:
-  - data: meta
-    json: 'https://gsa.github.io/sdg-data-usa/prod/meta/all.json'
-  - data: headlines
-    json: 'https://gsa.github.io/sdg-data-usa/prod/headline/all.json'
-  - data: schema
-    json: 'https://gsa.github.io/sdg-data-usa/prod/meta/schema.json'
-  - data: translations
-    json: 'https://gsa.github.io/sdg-translations/translations-0.4.0.json'
+# URL for the "Edit Data" button on indicators.
+data_edit_url: http://prose.io/#GSA/sdg-data-usa/edit/develop/data-wide/indicator_[id].csv
+# URL for the "Edit Metadata" button on indicators.
+metadata_edit_url: http://prose.io/#GSA/sdg-data-usa/edit/develop/meta/[id].md
+
+# Automatically create indicator pages, goal pages, and other required pages.
+create_indicators:
+  layout: indicator
+create_goals:
+  layout: goal
+create_pages: true
 
 analytics:
   ga_prod: 'UA-42145528-4'
@@ -34,11 +36,6 @@ email_contacts:
   suggestions: mbx.omb.oirasdgs@omb.eop.gov
   functional: datagov@gsa.gov
 ###################################################################################################
-
-# Github Repo for Data
-repo_name: sdg-data-usa
-branch: develop
-org_name: GSA
 
 # Build settings
 markdown: kramdown
@@ -82,29 +79,27 @@ menu:
   - path: /faq
     translation_key: menu.faq
 
+footer_menu:
+  - path: /contact
+    translation_key: menu.contact_us
+  - path: /about/cookies-and-privacy/
+    translation_key: menu.cookies
+
 # The list of languages that are translated. The first one is the default.
 languages:
   - en
   - es
   - fr
 
-# This makes sure that all pages have a language.
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      language: "en"
-
 # Point to remote location of goal images.
 goal_image_base: https://open-sdg.github.io/sdg-translations/assets/img/goals
+
+# Configure the text (or "translation key") to be used on the
+# non-global metadata tab.
+non_global_metadata: indicator.national_metadata
 
 plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
-  - jekyll-get-json
 
-remote_theme: open-sdg/open-sdg@0.1.0
-
-custom_css:
-  - /assets/css/custom.css
+remote_theme: open-sdg/open-sdg@1.1.0
