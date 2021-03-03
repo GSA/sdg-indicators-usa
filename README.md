@@ -13,10 +13,17 @@ See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
 
 This site is automatically published based on the branch.
 
-Branch    | Environment | URL
-------    | ----------- | ---
-`develop` | staging     | [sdg-staging.data.gov](https://sdg-staging.data.gov/)
-`master`  | production  | [sdg.data.gov](https://sdg.data.gov/)
+Branch    | Environment | URL | Description
+------    | ----------- | --- | -----------
+`develop` | staging     | [sdg-staging.data.gov](https://sdg-staging.data.gov/) | Ad-hoc development and reviewing significant changes with partners.
+`main`  | production  | [sdg.data.gov](https://sdg.data.gov/) | Production instance  of sdg.data.gov.
+
+Federalist automatically builds previews for all branches. Changes to `main` are
+automatically published to [sdg.data.gov](https://sdg.data.gov/).
+Feature branches should be branched from `main`.
+
+`develop` is used ad-hoc in order to preview significant changes with partners
+and is not part of the development workflow.
 
 
 ## Public domain
