@@ -26,18 +26,15 @@ repositories.
 
 All changes should be done in a [pull
 request](https://help.github.com/en/articles/creating-a-pull-request) to the
-`develop` branch. This way suggestions and edits from team members and the
-public can be previewed on the staging site before going live.
+`main` branch. Suggestions and edits from team members and the
+public can be previewed on the preview site before going live.
 
 To view your preview link, at the bottom of the pull request are status checks,
 including one from Federalist with a "details" link to your preview. For more
 information, see the [Federalist
 documentation](https://federalist.18f.gov/documentation/previews/).
 
-When ready to publish, [create a pull request](https://github.com/GSA/sdg-indicators-usa/compare/master...develop?expand=1)
-from `develop` to the `master` branch.
-
-We enforce some additional status checks on the `master` and `develop` branches
+We enforce some additional status checks on the `main` branch
 to minimize the chance of publishing a broken site. Any change should be
 reviewed by at least one team member. If you get stuck, ask a team member for
 help!
