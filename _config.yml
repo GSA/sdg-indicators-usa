@@ -108,3 +108,4 @@ remote_theme: open-sdg/open-sdg@0.1.0
 
 custom_css:
   - /assets/css/custom.css
+  - /assets/css/vendor/uswds.css

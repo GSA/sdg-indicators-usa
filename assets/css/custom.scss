@@ -1,9 +1,6 @@
-/*
+---
 # custom styles
-*/
-
-@import "vendor/uswds_footer";
-
+---
 #main-content {
   #map, #infoPanel {
     width: 710px;
@@ -52,4 +49,8 @@ body.contrast-high {
   @media only screen and (max-width: 680px) {
     font-size: 0.75em;
   }
+}
+
+.usa-footer {
+  height: auto;
 }
