@@ -1,13 +1,32 @@
-<footer role="contentinfo">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-9">
-        <a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/contact.md %}">{{ t.menu.contact_us }}</a> |
-        <a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/cookies.md %}">{{ t.menu.cookies }}</a>
+<footer class="usa-footer site-footer" role="contentinfo">
+  <div class="footer-section-bottom bg-base-lighter">
+    <div class="grid-container">
+      <div class="grid-row padding-3">
+        <div class="tablet:grid-col">
+          <div class="logo-links">
+            <a class="footer-logo media_link" href="https://cloud.gov">
+              <img src="{{ site.baseurl }}/assets/img/logo.svg" class="width-30 height-auto" alt="Agency logo"/>
+            </a>
+          </div>
+        </div>
+        <div class="tablet:grid-col"></div>
+        <div class="tablet:grid-col">
+          <ul class="add-list-reset">
+            <li><a href="/about/">About</a></li>
+            <li><a href="/open-gov/">Open Government</a></li>
+          </ul>
+        </div>
+        <div class="tablet:grid-col">
+          <ul class="add-list-reset">
+            <li><a href="https://twitter.com/usdatagov">Twitter</a></li>
+            <li><a href="https://github.com/GSA/data.gov">Github</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </footer>
+
 
 <!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
 <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA&subagency=TTS"></script>

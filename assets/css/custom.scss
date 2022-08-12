@@ -1,6 +1,9 @@
----
+/*
 # custom styles
----
+*/
+
+@import "vendor/uswds_footer";
+
 #main-content {
   #map, #infoPanel {
     width: 710px;
