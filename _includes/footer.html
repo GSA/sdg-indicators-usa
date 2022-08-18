@@ -1,13 +1,31 @@
-<footer role="contentinfo">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-9">
-        <a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/contact.md %}">{{ t.menu.contact_us }}</a> |
-        <a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/cookies.md %}">{{ t.menu.cookies }}</a>
+<footer class="usa-footer site-footer" role="contentinfo">
+  <div class="footer-section-bottom bg-base-lighter">
+    <div class="container">
+      <div class="grid-row padding-3">
+        <div class="tablet:grid-col">
+          <div class="logo-links">
+            <a class="footer-logo media_link" href="https://sdg.data.gov">
+              <img src="{{ site.baseurl }}/assets/img/SDG_logo.png" class="width-30 height-auto" alt="Sustainable Development Goals - 17 Goals to Transform our World">
+            </a>
+          </div>
+          <ul class="grid-row grid-gap add-list-reset" id="menu-footer">
+            <li><a href="//www.gsa.gov/reference/freedom-of-information-act-foia">{{ t.menu.foia }}</a></li>
+            <li><a href="//www.gsa.gov/website-information/website-policies#privacy">{{ t.menu.privacy }}</a></li>
+            <li><a href="//www.gsa.gov/website-information/website-policies#accessibility">{{ t.menu.accessibility }}</a></li>
+          </ul>
+        </div>
+        <div class="tablet:grid-col"></div>
+        <div class="tablet:grid-col">
+          <ul class="add-list-reset" id="menu-footer2">
+            <li><a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/contact.md %}">{{ t.menu.contact_us }}</a></li>
+            <li><a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/cookies.md %}">{{ t.menu.cookies }}</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </footer>
+
 
 <!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
 <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA&subagency=TTS"></script>

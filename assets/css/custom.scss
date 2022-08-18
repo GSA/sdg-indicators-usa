@@ -11,10 +11,6 @@
   max-width: 375px;
 }
 
-header {
-  background: #fff;
-  border-bottom: solid 2px #CCC;
-}
 
 .us-heading {
   background-color: #205493;
@@ -44,9 +40,43 @@ body.contrast-high {
   width: 100%;
 }
 
+
+body {
+  padding: 0;
+}
+
+header {
+  background: #fff;
+}
+
 #disclaimer {
   background: #eaeaea;
+  position: relative;
+
   @media only screen and (max-width: 680px) {
     font-size: 0.75em;
+  }
+}
+
+.usa-banner {
+  background-color: inherit !important;
+  &__header {
+    background: #eaeaea;
+  }
+  @at-root #{&}__header &__inner {
+    max-width: none;
+  }
+}
+
+footer.usa-footer {
+  height: auto;
+  a {
+    color: #595959;
+  }
+  #menu-footer {
+    padding: .5rem 0 0 0;
+  }
+  #menu-footer2 li {
+    padding-bottom: .5rem;
   }
 }

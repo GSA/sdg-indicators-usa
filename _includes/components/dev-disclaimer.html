@@ -13,12 +13,70 @@
         </a>
       </div>
     {%- else -%}
-      <div class="col-md-9">
+      <!-- <div class="col-md-9">
         {{ t.usa.disclaimer_production }}
       </div>
       <div class="col-md-3 hidden-xs hidden-sm text-right">
         {{ t.usa.work_in_progress }}
-      </div>
+      </div> -->
+      <section class="usa-banner" aria-label="Official government website">
+        <div class="usa-accordion">
+          <header class="usa-banner__header container">
+            <div class="usa-banner__inner">
+              <div class="grid-col-auto">
+                <img class="usa-banner__header-flag"
+                  src="https://s3-us-gov-west-1.amazonaws.com/cg-0817d6e3-93c4-4de8-8b32-da6919464e61/us_flag_small.png"
+                  alt="U.S. flag" />
+              </div>
+              <div class="grid-col-fill tablet:grid-col-auto">
+                <p class="usa-banner__header-text">
+                  {{t.usa.banner_header}}
+                </p>
+                <p class="usa-banner__header-action" aria-hidden="true">
+                  {{t.usa.banner_header_button}}
+                </p>
+              </div>
+              <button type="button" class="usa-accordion__button usa-banner__button" aria-expanded="false"
+                aria-controls="gov-banner-default-default">
+                <span class="usa-banner__button-text">{{t.usa.banner_header_button}}</span>
+              </button>
+            </div>
+          </header>
+          <div class="usa-banner__content usa-accordion__content" id="gov-banner-default-default">
+            <script>document.getElementById('gov-banner-default-default').setAttribute('hidden', '');</script>
+            <div class="grid-row grid-gap-lg">
+              <div class="usa-banner__guidance tablet:grid-col-6">
+                <img class="usa-banner__icon usa-media-block__img"
+                  src="https://s3-us-gov-west-1.amazonaws.com/cg-0817d6e3-93c4-4de8-8b32-da6919464e61/icon-dot-gov.svg"
+                  role="img" alt="" aria-hidden="true" />
+                <div class="usa-media-block__body">
+                  <p>
+                    {{t.usa.banner_media_use_gov}}
+                  </p>
+                </div>
+              </div>
+              <div class="usa-banner__guidance tablet:grid-col-6">
+                <img class="usa-banner__icon usa-media-block__img"
+                  src="https://s3-us-gov-west-1.amazonaws.com/cg-0817d6e3-93c4-4de8-8b32-da6919464e61/icon-https.svg"
+                  role="img" alt="" aria-hidden="true" />
+                <div class="usa-media-block__body">
+                  <p>
+                    {{t.usa.banner_media_use_https_prefix}} (
+                    <span class="icon-lock"><svg xmlns="http://www.w3.org/2000/svg" width="52" height="64" viewBox="0 0 52 64"
+                        class="usa-banner__lock-image" role="img"
+                        aria-labelledby="banner-lock-title-default banner-lock-description-default" focusable="false">
+                        <title id="banner-lock-title-default">Lock</title>
+                        <desc id="banner-lock-description-default">A locked padlock</desc>
+                        <path fill="#000000" fill-rule="evenodd"
+                          d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z" />
+                      </svg> </span>) {{t.usa.banner_media_use_https_suffix}}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     {%- endif -%}
   </div>
 </div>
