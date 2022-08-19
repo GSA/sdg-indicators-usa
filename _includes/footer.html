@@ -1,30 +1,84 @@
-<footer class="usa-footer site-footer" role="contentinfo">
-  <div class="footer-section-bottom bg-base-lighter">
-    <div class="container">
-      <div class="grid-row padding-3">
-        <div class="tablet:grid-col">
-          <div class="logo-links">
-            <a class="footer-logo media_link" href="https://sdg.data.gov">
-              <img src="{{ site.baseurl }}/assets/img/SDG_logo.png" class="width-30 height-auto" alt="Sustainable Development Goals - 17 Goals to Transform our World">
-            </a>
-          </div>
-          <ul class="grid-row grid-gap add-list-reset" id="menu-footer">
-            <li><a href="//www.gsa.gov/reference/freedom-of-information-act-foia">{{ t.menu.foia }}</a></li>
-            <li><a href="//www.gsa.gov/website-information/website-policies#privacy">{{ t.menu.privacy }}</a></li>
-            <li><a href="//www.gsa.gov/website-information/website-policies#accessibility">{{ t.menu.accessibility }}</a></li>
-          </ul>
-        </div>
-        <div class="tablet:grid-col"></div>
-        <div class="tablet:grid-col">
-          <ul class="add-list-reset" id="menu-footer2">
-            <li><a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/contact.md %}">{{ t.menu.contact_us }}</a></li>
-            <li><a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/cookies.md %}">{{ t.menu.cookies }}</a></li>
-          </ul>
-        </div>
+<footer role="contentinfo">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-9">
+        <a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/contact.md %}">{{ t.menu.contact_us }}</a> |
+        <a href="{{ site.baseurl }}{{ baseurl_folder }}{% link _pages/cookies.md %}">{{ t.menu.cookies }}</a>
       </div>
     </div>
   </div>
 </footer>
+<div class="usa-identifier">
+    <section class="usa-identifier__section usa-identifier__section--masthead container" aria-label="Agency identifier,,,">
+        <div class="usa-identifier__container">
+            <div class="usa-identifier__identity" aria-label="Agency description">
+                <p class="usa-identifier__identity-domain">sdg.data.gov</p>
+                <p class="usa-identifier__identity-disclaimer">
+                    {{ t.menu.disclaimer }}
+                </p>
+            </div>
+        </div>
+    </section>
+    <nav class="usa-identifier__section usa-identifier__section--required-links container" aria-label="Important links,,,">
+        <div class="usa-identifier__container">
+            <ul class="usa-identifier__required-links-list">
+                <li class="usa-identifier__required-links-item">
+                    <a href="https://www.whitehouse.gov/omb/" class="usa-identifier__required-link usa-link">{{ t.menu.about_omb }}</a>
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a
+                        href="https://www.gsa.gov/website-information/website-policies#accessibility"
+                        class="usa-identifier__required-link usa-link"
+                        >{{ t.menu.accessibility }}</a
+                    >
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a
+                        href="https://www.gsa.gov/reference/freedom-of-information-act-foia"
+                        class="usa-identifier__required-link usa-link"
+                        >{{ t.menu.foia }}</a
+                    >
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a
+                        href="https://www.gsa.gov/reference/civil-rights-programs/notification-and-federal-employee-antidiscrimination-and-retaliation-act-of-2002"
+                        class="usa-identifier__required-link usa-link"
+                        >{{ t.menu.no_fear_act }}</a
+                    >
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a href="https://www.gsaig.gov" class="usa-identifier__required-link usa-link"
+                        >{{ t.menu.oig_office }}</a
+                    >
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a
+                        href="https://www.gsa.gov/reference/reports/budget-performance"
+                        class="usa-identifier__required-link usa-link"
+                        >{{ t.menu.performance }}</a
+                    >
+                </li>
+                <li class="usa-identifier__required-links-item">
+                    <a
+                        href="https://www.gsa.gov/website-information/website-policies#privacy"
+                        class="usa-identifier__required-link usa-link"
+                        >{{ t.menu.privacy }}</a
+                    >
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section
+        class="usa-identifier__section usa-identifier__section--usagov container"
+        aria-label="U.S. government information and services,,,"
+    >
+        <div class="usa-identifier__container">
+            <div class="usa-identifier__usagov-description">{{ t.menu.usgov_info }}</div>
+            <a href="https://www.usa.gov/" class="usa-link">{{ t.menu.usgov_link }}</a>
+        </div>
+    </section>
+</div>
+
 
 
 <!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
