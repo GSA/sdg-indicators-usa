@@ -68,15 +68,11 @@ header {
   }
 }
 
-footer.usa-footer {
-  height: auto;
-  a {
-    color: #595959;
-  }
-  #menu-footer {
-    padding: .5rem 0 0 0;
-  }
-  #menu-footer2 li {
-    padding-bottom: .5rem;
-  }
+footer {
+  position: relative;
+}
+
+.usa-identifier .usa-identifier__container {
+  max-width: inherit;
+  padding: 0;
 }
