@@ -23,7 +23,7 @@ jekyll_get_json:
   - data: schema
     json: 'https://gsa.github.io/sdg-data-usa/prod/meta/schema.json'
   - data: translations
-    json: 'https://gsa.github.io/sdg-translations/translations-0.4.0.json'
+    json: 'https://gsa.github.io/sdg-translations/translations-0.6.1.json'
 
 analytics:
   ga_prod: 'UA-42145528-4'
@@ -108,3 +108,8 @@ remote_theme: open-sdg/open-sdg@0.1.0
 
 custom_css:
   - /assets/css/custom.css
+  - /assets/css/uswds.css
+
+custom_js:
+  - /assets/js/uswds.js
+
