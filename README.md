@@ -1,4 +1,5 @@
-[![CircleCI](https://circleci.com/gh/GSA/sdg-indicators-usa.svg?style=svg)](https://circleci.com/gh/GSA/sdg-indicators-usa)
+[![GitHub Actions](https://github.com/GSA/sdg-indicators-usa/actions/workflows/build.yml/badge.svg)](https://github.com/GSA/sdg-indicators-usa/actions/workflows/build.yml)
+[![GitHub Actions](https://github.com/GSA/sdg-indicators-usa/actions/workflows/qa.yml/badge.svg)](https://github.com/GSA/sdg-indicators-usa/actions/workflows/qa.yml)
 
 # Sustainable Development Goal indicators
 
@@ -6,17 +7,16 @@ This is a development website for collecting and disseminating US data for the S
 
 For any guidance on how to use the website or develop it further for your own country, please refer to the [wiki](https://github.com/ONSdigital/sdg-indicators/wiki).
 
-
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
 
 This site is automatically published based on the branch.
 
-Branch    | Environment | URL | Description
-------    | ----------- | --- | -----------
-`develop` | staging     | [sdg-staging.data.gov](https://sdg-staging.data.gov/) | Ad-hoc development and reviewing significant changes with partners.
-`main`  | production  | [sdg.data.gov](https://sdg.data.gov/) | Production instance  of sdg.data.gov.
+| Branch    | Environment | URL                                                   | Description                                                         |
+| --------- | ----------- | ----------------------------------------------------- | ------------------------------------------------------------------- |
+| `develop` | staging     | [sdg-staging.data.gov](https://sdg-staging.data.gov/) | Ad-hoc development and reviewing significant changes with partners. |
+| `main`    | production  | [sdg.data.gov](https://sdg.data.gov/)                 | Production instance of sdg.data.gov.                                |
 
 Federalist automatically builds previews for all branches. Changes to `main` are
 automatically published to [sdg.data.gov](https://sdg.data.gov/).
@@ -24,7 +24,6 @@ Feature branches should be branched from `main`.
 
 `develop` is used ad-hoc in order to preview significant changes with partners
 and is not part of the development workflow.
-
 
 ## Public domain
 
