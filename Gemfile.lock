@@ -12,9 +12,7 @@ GEM
     ethon (0.16.0)
       ffi (>= 1.15.0)
     eventmachine (1.2.7)
-    eventmachine (1.2.7-x64-mingw32)
     ffi (1.15.5)
-    ffi (1.15.5-x64-mingw32)
     forwardable-extended (2.6.0)
     html-proofer (3.19.4)
       addressable (~> 2.3)
@@ -68,8 +66,6 @@ GEM
     nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    nokogiri (1.13.10-x64-mingw32)
-      racc (~> 1.4)
     parallel (1.22.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -94,16 +90,14 @@ GEM
 
 PLATFORMS
   ruby
-  x64-mingw32
 
 DEPENDENCIES
   html-proofer (~> 3.19, >= 3.19.2)
   jekyll (~> 3.9, >= 3.9.0)
   jekyll-get-json (~> 0.0.2)
-  jekyll-open-sdg-plugins (~> 0.0.16)
+  jekyll-open-sdg-plugins (= 0.0.16)
   jekyll-remote-theme (>= 0.4.3)
   kramdown-parser-gfm (~> 1.1.0)
-  nokogiri (>= 1.13.9)
 
 BUNDLED WITH
-   1.17.3
+   1.17.2

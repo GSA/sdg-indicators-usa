@@ -1,8 +1,18 @@
-name: Build & Test
+name: Build Static Site
 
 on: [push]
 
 jobs:
   build:
     name: Build Static Site
-    uses: gsa/data.gov/.github/workflows/static-site-build-template.yml@data-gov-static-site-templates
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+          bundler-cache: true
+      - name: Build
+        run: |
+          bundle exec jekyll build

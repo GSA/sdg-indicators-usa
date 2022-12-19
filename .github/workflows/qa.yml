@@ -1,4 +1,4 @@
-name: QA
+name: QA Static Site
 
 on:
   workflow_dispatch:
@@ -7,5 +7,16 @@ on:
 
 jobs:
   qa:
-    name: Test HTML Links
-    uses: gsa/data.gov/.github/workflows/static-site-qa-template.yml@data-gov-static-site-templates
+    name: QA Static Site
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+          bundler-cache: true
+      - name: Build static site
+        run: bundle exec jekyll build
+      - name: Test External Links
+        run: bundle exec htmlproofer --check-html _site
