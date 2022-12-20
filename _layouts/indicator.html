@@ -124,13 +124,13 @@
             <div role="tabpanel" class="tab-pane" id="tableview">
               <div id="selectionsTable"></div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="mapview" class="map">
+            <div role="tabpanel" class="tab-pane map" id="mapview">
               <div id="map">
                 <img src="{{ site.baseurl }}/assets/img/loading.gif" alt="{{ t.indicator.loading_map }}" />
               </div>
             </div>
             {% if meta.embedded_map_html %}
-            <div role="tabpanel" class="tab-pane" id="embeddedmapview" class="embedded-map">
+            <div role="tabpanel" class="tab-pane embedded-map" id="embeddedmapview">
               {{ meta.embedded_map_html }}
             </div>
             {% endif %}

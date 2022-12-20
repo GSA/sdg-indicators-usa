@@ -1,0 +1,22 @@
+name: QA Static Site
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 15 * * 1'
+
+jobs:
+  qa:
+    name: QA Static Site
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '2.6'
+          bundler-cache: true
+      - name: Build static site
+        run: bundle exec jekyll build
+      - name: Test External Links
+        run: bundle exec htmlproofer --check-html _site
