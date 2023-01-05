@@ -7,6 +7,26 @@ This is a development website for collecting and disseminating US data for the S
 
 For any guidance on how to use the website or develop it further for your own country, please refer to the [wiki](https://github.com/ONSdigital/sdg-indicators/wiki).
 
+### Requirements
+
+-   [Ruby](https://www.ruby-lang.org/en/) = 2.6.0
+-   [Bundler](https://bundler.io/) > 2.0
+-   [Node](https://nodejs.org/en/download/) > 16.0
+
+NOTE: You must build this repo with Ruby 2.6.0. 
+### Setup
+
+After you've confirmed the above requirements, all lifecycle operations can be run with NPM scripts (ex. `npm run build`)
+
+| NPM Command | Description                     |
+| ----------- | ------------------------------- |
+| build       | Build the site                  |
+| setup       | Install ruby gems               |
+| start       | Serve a local build             |
+| test        | Check for broken internal links |
+| qa          | Check for broken external links |
+
+
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
