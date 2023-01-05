@@ -17,6 +17,6 @@ jobs:
           ruby-version: '2.6'
           bundler-cache: true
       - name: Build static site
-        run: bundle exec jekyll build
+        run: npm run build
       - name: Test External Links
-        run: bundle exec htmlproofer --check-html _site
+        run: npm run qa
