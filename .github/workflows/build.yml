@@ -14,5 +14,4 @@ jobs:
           ruby-version: '2.6'
           bundler-cache: true
       - name: Build
-        run: |
-          bundle exec jekyll build
+        run: npm run build
