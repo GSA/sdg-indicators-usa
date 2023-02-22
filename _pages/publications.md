@@ -14,7 +14,7 @@ If you have any feedback on our publications please contact us at <a href="mailt
 **[UK data gaps: Inclusive Data Action Plan towards the global Sustainable Development Goal indicators, 19 March 2018](https://www.ons.gov.uk/economy/environmentalaccounts/articles/ukdatagapsinclusivedataactionplantowardstheglobalsustainabledevelopmentgoalindicators/2018-03-19)**  
 This is our first report on UK data gaps for reporting progress towards the global Sustainable Development Goal indicators.
 
-**[Response to our consulation on the approach to measuring and reporting SDGs in the UK, 11 December 2017](https://consultations.ons.gov.uk/sustainable-development-goals/ons-approach-to-measuring-reporting-sdgs-in-the-uk/)**  
+**[Response to our consultation on the approach to measuring and reporting SDGs in the UK, 11 December 2017](https://consultations.ons.gov.uk/sustainable-development-goals/ons-approach-to-measuring-reporting-sdgs-in-the-uk/)**  
 We ran a public consultation between 29 June and 29 September 2017 to look at our approach to reporting and how we prioritise areas for developing data for the SDG indicators. We received 111 responses from a wide variety of sectors. This report is our response to your feedback.
 
 **[Sustainable Development Goals: progress and possibilities, 9 November 2017](https://www.ons.gov.uk/economy/environmentalaccounts/articles/sustainabledevelopmentgoalstakingstockprogressandpossibilities/november2017)**  
