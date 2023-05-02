@@ -5,4 +5,4 @@ title: Categories
 language: es
 ---
 
-Needs translation.
+Translation needed.

@@ -5,4 +5,4 @@ permalink: /es/news/
 language: es
 ---
 
-Needs translation.
+Translation needed.
