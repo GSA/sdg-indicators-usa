@@ -26,7 +26,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
 
-remote_data_prefix: 'https://btylerburton.github.io/open-sdg-data'
+remote_data_prefix: 'https://gsa.github.io/sdg-data-usa-staging'
 
 languages:
   - en

@@ -212,7 +212,7 @@ progress_status:
   status_heading: ''
   status_help: ''
   status_types: []
-remote_data_prefix: 'https://btylerburton.github.io/open-sdg-data'
+remote_data_prefix: 'https://gsa.github.io/sdg-data-usa-staging'
 reporting_status:
   title: status.reporting_status
   description: status.description
