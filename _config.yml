@@ -30,8 +30,8 @@ analytics:
 
 ###################################################################################################
 email_contacts:
-  questions: mbx.omb.oirasdgs@omb.eop.gov
-  suggestions: mbx.omb.oirasdgs@omb.eop.gov
+  questions: USChiefStatistician@omb.eop.gov
+  suggestions: USChiefStatistician@omb.eop.gov
   functional: datagov@gsa.gov
 ###################################################################################################
 
