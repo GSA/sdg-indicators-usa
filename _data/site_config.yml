@@ -56,9 +56,9 @@ disclaimer:
   message: ''
   hidden: false
 email_contacts:
-  questions: test@example.com
-  suggestions: test@example.com
-  functional: test@example.com
+  questions: USChiefStatistician@omb.eop.gov
+  suggestions: USChiefStatistician@omb.eop.gov
+  functional: datagov@gsa.gov
 empty_metadata_placeholder: ''
 empty_metadata_placeholder_sources: ''
 environment: staging
