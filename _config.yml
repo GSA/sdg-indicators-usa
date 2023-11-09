@@ -9,6 +9,10 @@ url: ""
 baseurl: ""
 environment: staging
 
+observation_attributes:
+  - field: COMMENT_OBS
+    label: ''
+
 # Pages
 collections:
   pages:
