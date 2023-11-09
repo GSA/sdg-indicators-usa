@@ -6,6 +6,7 @@ remote_theme: open-sdg/open-sdg@2.3.0-dev
 # Replace this title as needed.
 title: general.site_title
 url: ""
+baseurl: ""
 environment: staging
 
 # Pages

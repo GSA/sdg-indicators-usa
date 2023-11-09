@@ -3,7 +3,7 @@ name: QA Static Site
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 15 * * 1'
+    - cron: "0 15 * * 1"
 
 jobs:
   qa:
@@ -16,6 +16,6 @@ jobs:
         with:
           bundler-cache: true
       - name: Build static site
-        run: bundle exec jekyll build --baseurl=sdg-data-usa-staging 
+        run: bundle exec jekyll build
       - name: Test External Links
         run: bundle exec htmlproofer --check-html _site

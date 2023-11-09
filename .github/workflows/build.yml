@@ -14,4 +14,4 @@ jobs:
           bundler-cache: true
       - name: Build
         run: |
-          bundle exec jekyll build --baseurl=sdg-data-usa-staging 
+          bundle exec jekyll build
