@@ -3,7 +3,7 @@ name: QA Static Site
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 15 * * 1'
+    - cron: "0 15 * * 1"
 
 jobs:
   qa:
@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.6'
           bundler-cache: true
       - name: Build static site
         run: bundle exec jekyll build

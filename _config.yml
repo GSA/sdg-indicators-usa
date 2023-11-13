@@ -1,12 +1,17 @@
 # Jekyll configuration for Open SDG platform
 
 # Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
-remote_theme: open-sdg/open-sdg@2.1.0
+remote_theme: open-sdg/open-sdg@2.3.0-dev
 
 # Replace this title as needed.
 title: general.site_title
 url: ""
+baseurl: ""
 environment: staging
+
+observation_attributes:
+  - field: COMMENT_OBS
+    label: ''
 
 # Pages
 collections:
