@@ -103,6 +103,7 @@ plugins:
   - jekyll-remote-theme
   - jekyll-open-sdg-plugins
   - jekyll-get-json
+  - jekyll-sitemap
 
 remote_theme: open-sdg/open-sdg@0.1.0
 
