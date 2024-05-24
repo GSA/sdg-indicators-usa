@@ -140,6 +140,7 @@ indicator_tabs:
 languages:
   - en
   - es
+  - fr
 languages_public: []
 logos: []
 map_layers: []
@@ -222,6 +223,9 @@ reporting_status:
       hide_on_goal_pages: false
     - value: notapplicable
       label: status.not_applicable
+      hide_on_goal_pages: false
+    - value: inprogress
+      label: status.statistics_in_progress
       hide_on_goal_pages: false
 repository_url_data: "https://github.com/open-sdg/open-sdg-data-starter"
 repository_url_site: "https://github.com/btylerburton/open-sdg-site"
