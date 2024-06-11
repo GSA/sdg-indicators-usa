@@ -1,8 +1,8 @@
 ﻿analytics:
-  ua: ""
-  gtag: ""
-  gtm: ""
-  ga_prod: ""
+  ua: ''
+  gtag: ''
+  gtm: ''
+  ga_prod: ''
 breadcrumbs:
   goal:
     - path: /
@@ -22,24 +22,24 @@ breadcrumbs:
 cookie_consent_form:
   enabled: false
 country:
-  name: "United States"
+  name: United States
   adjective: American
 create_goals:
-  previous_next_links: false
-  goal_content_heading: ""
+  previous_next_links: true
+  goal_content_heading: ''
   goals: []
 create_indicators:
-  previous_next_links: false
+  previous_next_links: true
 create_pages:
-  - filename: ""
+  - filename: ''
     folder: /goals
     layout: goals
     title: general.goals
-  - filename: ""
+  - filename: ''
     folder: /reporting-status
     layout: reportingstatus
     title: status.reporting_status
-  - filename: ""
+  - filename: ''
     folder: /search
     layout: search
     title: search.search
@@ -48,19 +48,19 @@ custom_js:
   - /assets/js/custom.js
 data_edit_url: data
 data_fields:
-  units: ""
-  series: ""
+  units: ''
+  series: ''
 date_formats: []
 disclaimer:
-  phase: ""
-  message: ""
+  phase: ''
+  message: ''
   hidden: false
 email_contacts:
   questions: USChiefStatistician@omb.eop.gov
   suggestions: USChiefStatistician@omb.eop.gov
   functional: datagov@gsa.gov
-empty_metadata_placeholder: ""
-empty_metadata_placeholder_sources: ""
+empty_metadata_placeholder: ''
+empty_metadata_placeholder_sources: ''
 environment: staging
 footer_language_toggle: none
 footer_menu:
@@ -70,40 +70,24 @@ footer_menu:
     translation_key: menu.cookies
 frontpage_cards:
   - title: frontpage.download_all
-    content: ""
+    content: ''
     include: components/download-all-data.html
-    button_label: ""
-    button_link: ""
-    rule_color: ""
-  - title: Lorem ipsum
-    content: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi mollis
-      cursus est sed dapibus.
-    include: ""
-    button_label: Read more
-    button_link: "https://example.com"
-    rule_color: ""
-  - title: Nam vestibulum
-    content: |
-      Nam vestibulum, purus quis porttitor imperdiet, nisl sem mollis nisl, a
-      interdum risus enim vitae tortor. Donec feugiat accumsan rutrum.
-    include: ""
-    button_label: Read more
-    button_link: "https://example.com"
-    rule_color: ""
+    button_label: ''
+    button_link: ''
+    rule_color: ''
 frontpage_goals_grid:
   title: frontpage.heading_short
   description: frontpage.instructions_shorter
 frontpage_introduction_banner:
   title: frontpage.intro_title
   description: frontpage.intro_body
-goal_image_base: "https://open-sdg.org/sdg-translations/assets/img/goals"
-goal_image_extension: ""
+goal_image_base: 'https://open-sdg.org/sdg-translations/assets/img/goals'
+goal_image_extension: ''
 goals_page:
   title: general.goals
   description: goal.description
-graph_color_headline: "#004466"
-graph_color_headline_high_contrast: "#55a6e5"
+graph_color_headline: '#004466'
+graph_color_headline_high_contrast: '#55a6e5'
 graph_color_set: accessible
 graph_color_list: []
 graph_color_number: 0
@@ -117,7 +101,7 @@ indicator_config_form:
   enabled: true
   dropdowns: []
   repository_link: /tree/develop/indicator-config
-  translation_link: ""
+  translation_link: ''
 indicator_data_form:
   enabled: true
   repository_link: /tree/develop/data
@@ -125,18 +109,18 @@ indicator_metadata_form:
   enabled: true
   dropdowns: []
   repository_link: /tree/develop/meta
-  translation_link: ""
-  language: ""
+  translation_link: ''
+  language: ''
   scopes:
     - national
     - global
   exclude_fields: []
   translated: false
 indicator_tabs:
-  tab_1: ""
-  tab_2: ""
-  tab_3: ""
-  tab_4: ""
+  tab_1: ''
+  tab_2: ''
+  tab_3: ''
+  tab_4: ''
 languages:
   - en
   - es
@@ -148,31 +132,31 @@ map_options:
   disaggregation_controls: false
   minZoom: 5
   maxZoom: 10
-  tileURL: ""
+  tileURL: ''
   tileOptions:
-    id: ""
-    accessToken: ""
-    attribution: ""
+    id: ''
+    accessToken: ''
+    attribution: ''
   colorRange: chroma.brewer.BuGn
-  noValueColor: "#f0f0f0"
+  noValueColor: '#f0f0f0'
   styleNormal:
     weight: 1
     opacity: 1
     fillOpacity: 0.7
-    color: "#888888"
-    dashArray: ""
+    color: '#888888'
+    dashArray: ''
   styleHighlighted:
     weight: 1
     opacity: 1
     fillOpacity: 0.7
-    color: "#111111"
-    dashArray: ""
+    color: '#111111'
+    dashArray: ''
   styleStatic:
     weight: 2
     opacity: 1
     fillOpacity: 0
-    color: "#172d44"
-    dashArray: "5,5"
+    color: '#172d44'
+    dashArray: '5,5'
 menu:
   - path: /
     translation_key: general.home
@@ -202,17 +186,30 @@ metadata_tabs:
     description: indicator.global_metadata_blurb
   - scope: sources
     title: indicator.sources
-    description: ""
+    description: ''
+meta_tags: []
 news:
   category_links: false
+observation_attributes:
+  - field: COMMENT_OBS
+    label: Comment
 progress_status:
-  status_heading: ""
-  status_help: ""
+  status_heading: ''
+  status_help: ''
   status_types: []
-remote_data_prefix: "https://gsa.github.io/sdg-data-usa-staging"
+progressive_web_app:
+  enabled: false
+  name: ''
+  short_name: ''
+  precaching: false
+proxy_indicators:
+  label: ''
+  description: ''
+remote_data_prefix: 'https://gsa.github.io/sdg-data-usa-staging'
 reporting_status:
   title: status.reporting_status
   description: status.description
+  disaggregation_indicator_count_label: ''
   disaggregation_tabs: false
   status_types:
     - value: notstarted
@@ -227,20 +224,21 @@ reporting_status:
     - value: inprogress
       label: status.statistics_in_progress
       hide_on_goal_pages: false
-repository_url_data: "https://github.com/open-sdg/open-sdg-data-starter"
-repository_url_site: "https://github.com/btylerburton/open-sdg-site"
+repository_url_data: 'https://github.com/GSA/sdg-data-usa-staging'
+repository_url_site: 'https://github.com/GSA/sdg-indicators-usa'
 search_index_boost: []
 search_index_extra_fields: []
 site_config_form:
   enabled: true
   dropdowns: []
   repository_link: /tree/develop/_data
-  translation_link: ""
+  translation_link: ''
 time_series_attributes:
   - field: COMMENT_TS
     label: indicator.footnote
   - field: DATA_LAST_UPDATE
     label: metadata_fields.national_data_update_url
+use_new_config_forms: false
 validate_indicator_config: false
 validate_site_config: false
-x_axis_label: ""
+x_axis_label: ''
