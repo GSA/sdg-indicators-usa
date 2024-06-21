@@ -8,6 +8,7 @@ title: general.site_title
 url: ""
 baseurl: ""
 environment: staging
+usa_environment: staging
 
 observation_attributes:
   - field: COMMENT_OBS
