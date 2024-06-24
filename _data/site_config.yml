@@ -93,7 +93,7 @@ graph_color_list: []
 graph_color_number: 0
 graph_title_from_series: false
 header_language_toggle: dropdown
-hide_empty_metadata: false
+hide_empty_metadata: true
 hide_single_series: true
 hide_single_unit: true
 ignored_disaggregations: []
