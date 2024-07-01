@@ -100,21 +100,22 @@ ignored_disaggregations: []
 indicator_config_form:
   enabled: true
   dropdowns: []
-  repository_link: /tree/develop/indicator-config
+  repository_link: /tree/main/indicator-config
   translation_link: ''
 indicator_data_form:
   enabled: true
-  repository_link: /tree/develop/data
+  repository_link: /tree/main/data
 indicator_metadata_form:
   enabled: true
   dropdowns: []
-  repository_link: /tree/develop/meta
+  repository_link: /tree/main/meta
   translation_link: ''
   language: ''
   scopes:
     - national
-    - global
-  exclude_fields: []
+  exclude_fields:
+    - national_data_updated_date
+    - national_metadata_updated_date
   translated: false
 indicator_tabs:
   tab_1: ''
