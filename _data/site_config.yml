@@ -113,6 +113,8 @@ indicator_metadata_form:
   language: ''
   scopes:
     - national
+    - source_1
+    - source_2
   exclude_fields:
     - national_data_updated_date
     - national_metadata_updated_date
