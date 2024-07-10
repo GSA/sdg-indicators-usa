@@ -215,11 +215,11 @@ reporting_status:
   disaggregation_indicator_count_label: ''
   disaggregation_tabs: false
   status_types:
-    - value: notstarted
-      label: status.exploring_data_sources
-      hide_on_goal_pages: false
     - value: complete
       label: status.reported_online
+      hide_on_goal_pages: false
+    - value: notstarted
+      label: status.exploring_data_sources
       hide_on_goal_pages: false
     - value: notapplicable
       label: status.not_applicable
