@@ -170,9 +170,6 @@ menu:
   - path: /reporting-status
     translation_key: menu.reporting_status
     dropdown: []
-  - path: /news
-    translation_key: menu.updates
-    dropdown: []
   - path: /faq
     translation_key: menu.faq
     dropdown: []
