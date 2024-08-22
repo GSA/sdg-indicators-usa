@@ -1,0 +1,17 @@
+{
+  "name": "sdg-indicators-usa",
+  "version": "1.0.0",
+  "description": "This is a starter repository to help in implementing the [Open SDG](https://github.com/open-sdg/open-sdg) platform. [See here for documentation](https://open-sdg.readthedocs.io).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uswds/uswds": "3.8.2"
+  },
+  "devDependencies": {
+    "@uswds/compile": "^1.1.0"
+  }
+}
