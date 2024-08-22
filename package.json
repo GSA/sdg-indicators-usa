@@ -4,7 +4,9 @@
   "description": "This is a starter repository to help in implementing the [Open SDG](https://github.com/open-sdg/open-sdg) platform. [See here for documentation](https://open-sdg.readthedocs.io).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "serve": "bundle exec jekyll serve"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +14,7 @@
     "@uswds/uswds": "3.8.2"
   },
   "devDependencies": {
-    "@uswds/compile": "^1.1.0"
+    "@uswds/compile": "^1.1.0",
+    "gulp": "^5.0.0"
   }
 }

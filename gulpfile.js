@@ -1,9 +1,14 @@
-/* gulpfile.js */
-
-/**
-* Import uswds-compile
-*/
+const { src, pipe, dest, series, parallel, watch } = require('gulp');
 const uswds = require("@uswds/compile");
+
+const defaultTask = parallel(
+    series(
+        uswds.compile,
+        uswds.copyAssets,
+    )
+)
+
+exports.default = defaultTask
 
 /**
 * USWDS version
@@ -20,7 +25,7 @@ uswds.paths.dist.css = './assets/uswds/css';
 uswds.paths.dist.fonts = './assets/uswds/fonts';
 uswds.paths.dist.js = './assets/uswds/js';
 uswds.paths.dist.img = './assets/uswds/img';
-uswds.paths.dist.theme = './uswds-sass';
+uswds.paths.dist.theme = './_sass';
 
 /**
 * Exports
@@ -29,3 +34,6 @@ uswds.paths.dist.theme = './uswds-sass';
 exports.init = uswds.init;
 exports.compile = uswds.compile;
 exports.watch = uswds.watch;
+exports.copyAll = uswds.copyAll;
+exports.copyAssets = uswds.copyAssets;
+exports.updateUswds = uswds.updateUswds;
