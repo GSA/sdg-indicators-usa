@@ -18,5 +18,5 @@ jobs:
       - name: Build
         run: |
           npm install
-          npx gulp init
+          npm run gulp
           bundle exec jekyll build

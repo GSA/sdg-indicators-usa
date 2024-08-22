@@ -21,7 +21,7 @@ jobs:
       - name: USWDS
         run: |
           npm install
-          npx gulp init
+          npm run gulp
       - name: Build static site
         run: bundle exec jekyll build
       - name: Test External Links
