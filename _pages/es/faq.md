@@ -1,6 +1,6 @@
 ---
-title: Frequently Asked Questions (FAQ)
-permalink: /es/faq/
+title: Resources
+permalink: /es/resources/
 layout: page
 language: es
 ---
