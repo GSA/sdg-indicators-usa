@@ -20,4 +20,4 @@ environment: production
 
 analytics:
   # For production, you likely want to enter a Google Analytics code below.
-  ga_prod: ''
+  gtag: 'G-WP7FK9QXZD'
