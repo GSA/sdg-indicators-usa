@@ -91,7 +91,7 @@ graph_color_headline_high_contrast: '#55a6e5'
 graph_color_set: accessible
 graph_color_list: []
 graph_color_number: 0
-graph_title_from_series: false
+graph_title_from_series: true
 header_language_toggle: dropdown
 hide_empty_metadata: true
 hide_single_series: true
@@ -126,8 +126,6 @@ indicator_tabs:
   tab_4: ''
 languages:
   - en
-  - es
-  - fr
 languages_public: []
 logos: []
 map_layers: []
@@ -170,11 +168,14 @@ menu:
   - path: /reporting-status
     translation_key: menu.reporting_status
     dropdown: []
-  - path: /faq
-    translation_key: menu.faq
-    dropdown: []
   - path: /about
     translation_key: menu.about
+    dropdown: []
+  - path: /resources
+    translation_key: Resources
+    dropdown: []
+  - path: "https://www.statspolicy.gov/"
+    translation_key: U.S. Federal Statistical System
     dropdown: []
 metadata_edit_url: metadata
 metadata_tabs:
