@@ -176,7 +176,7 @@ menu:
   - path: /resources
     translation_key: Resources
     dropdown: []
-  - path: https://www.statspolicy.gov/
+  - path: "https://www.statspolicy.gov/"
     translation_key: U.S. Federal Statistical System
     dropdown: []
 metadata_edit_url: metadata
