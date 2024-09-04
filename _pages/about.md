@@ -94,4 +94,4 @@ Our website works with most of the latest versions of the commonly used browsers
 
 ## Feedback
 
-To provide feedback on our SDG data please [contact us]({{ site.baseurl }}/contact-us)
+To provide feedback on our SDG data please [contact us]({{ site.baseurl }}/contact-us).
