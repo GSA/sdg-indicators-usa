@@ -171,9 +171,6 @@ menu:
   - path: /about
     translation_key: menu.about
     dropdown: []
-  - path: /resources
-    translation_key: Resources
-    dropdown: []
   - path: "https://www.statspolicy.gov/"
     translation_key: U.S. Federal Statistical System
     dropdown: []

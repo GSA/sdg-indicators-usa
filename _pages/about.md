@@ -5,11 +5,11 @@ permalink: /about/
 layout: page
 ---
 ## Table of contents
-- [About this site](#about-this-site)
 - [Background](#background)
 - [Purpose of the U.S. SDG Data Platform](#purpose-of-the-us-sdg-data-platform)
 - [Who Contributes Platform Data?](#who-contributes-platform-data)
-- [Need more info?](#frequently-asked-questions-faqs)
+- [Need more info?](#need-more-info)
+- [About this site](#about-this-site)
 - [Feedback](#feedback)
 
 The [Sustainable Development Goals](http://www.un.org/sustainabledevelopment/sustainable-development-goals/) (SDGs) are a universal call to action to:
@@ -21,14 +21,6 @@ The [Sustainable Development Goals](http://www.un.org/sustainabledevelopment/sus
   * improve the lives and prospects of everyone, everywhere
 
 The 17 Goals were adopted by all UN Member States in 2015, as part of the [2030 Agenda for Sustainable Development](https://sustainabledevelopment.un.org/post2015/transformingourworld).
-
-## About this site
-
-This site is based on the open source [Open SDG](https://open-sdg.org/) platform.
-    
-Other countries or organisations wishing to reuse the Open SDG reporting platform are welcome to do so for free. The [Open SDG Quick Start Guide](https://open-sdg.readthedocs.io/en/latest/quick-start/) gives technical instructions on the quickest way to get a copy of the Open SDG platform up and running.
-
-If you have comments, feedback, or want to get involved with the Open SDG community please email <opensdg@outlook.com> or contact the [Open SDG GitHub](https://github.com/open-sdg/open-sdg).
 
 ## Background
 
@@ -64,33 +56,49 @@ The Expert Group identified Federal data providers for each indicator for which 
 
 Most recently, the U.S. updated the U.S. SDG data platform to reflect changes in the global SDG indicators and metadata and the overall functioning of the tool.  To prepare the update of the U.S. SDG data platform, the Office of the Chief Statistician of the United States (OCSOTUS) asked the [Interagency Council on Statistical Policy (ICSP)](https://www.statspolicy.gov/about/) member agencies to provide and affirm data provider contacts for this effort.
 
-## Frequently Asked Questions (FAQs)
+## Need more info?
 
-### How often will new data be added to this site?
+### Frequently Asked Questions (FAQs)
+
+#### How often will new data be added to this site?
 
 We will add data as soon as it has been sourced and checked. This includes new data as well as updates to data we have already published. We will continue to collect data from existing sources where possible.
 
-### How do I suggest new or different data sources?
+#### How do I suggest new or different data sources?
 
 If you have feedback on the data sources we have used or have suggestions for new data sources then please email us at <a href="mailto:{{site.email_contacts.questions}}">{{site.email_contacts.questions}}</a>.
 
-### What are you doing to fill data gaps?
+#### What are you doing to fill data gaps?
 
 For some indicators, although we may have data at the national level, our existing data sources don’t always allow us to disaggregate by all main groups.
 
 This means we need to look for new data sources, link existing ones, or model data.
 
-### Can other countries copy this website?
+#### Can other countries copy this website?
 
 Yes. See the [Open SDG Quick Start guide](https://open-sdg.readthedocs.io/en/latest/quick-start/) for technical instructions on the quickest way to get a copy of the Open SDG platform up and running.
 
-### How accessible is this website?
+#### How accessible is this website?
 
 Open SDG aims to be as accessible and usable as possible for every user and works towards meeting AA level of [Web Content Accessibility Guidelines (WCAG 2.0)](https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag-20).
 
-### What browsers can I use to view this website?
+#### What browsers can I use to view this website?
 
 Our website works with most of the latest versions of the commonly used browsers.
+
+### Resources
+
+* [UN SDG Data Portal](https://unstats.un.org/sdgs/dataportal/)
+* [UN SDG Global Indicator Repository](https://unstats.un.org/sdgs/metadata/)
+* [SDG Data Platforms in Other Countries]({{ site.baseurl }}/sdg-data-platforms-in-other-countries/)
+
+## About this site
+
+This site is based on the open source [Open SDG](https://open-sdg.org/) platform.
+    
+Other countries or organisations wishing to reuse the Open SDG reporting platform are welcome to do so for free. The [Open SDG Quick Start Guide](https://open-sdg.readthedocs.io/en/latest/quick-start/) gives technical instructions on the quickest way to get a copy of the Open SDG platform up and running.
+
+If you have comments, feedback, or want to get involved with the Open SDG community please email <opensdg@outlook.com> or contact the [Open SDG GitHub](https://github.com/open-sdg/open-sdg).
 
 ## Feedback
 
