@@ -56,8 +56,8 @@ disclaimer:
   message: ''
   hidden: false
 email_contacts:
-  questions: USChiefStatistician@omb.eop.gov
-  suggestions: USChiefStatistician@omb.eop.gov
+  questions: sdg@omb.eop.gov
+  suggestions: sdg@omb.eop.gov
   functional: Stephen.B.Fanning@omb.eop.gov
 empty_metadata_placeholder: ''
 empty_metadata_placeholder_sources: ''
