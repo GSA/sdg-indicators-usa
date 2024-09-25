@@ -17,6 +17,26 @@ This is a starter repository to help in implementing the [Open SDG](https://gith
 ### Publication 
 - the static sites created using this repo are configured to be published by pages.cloud.gov via webhooks. For more information on cloud.gov pages visit the [website](https://cloud.gov/pages/)
 
+### Requirements
+
+-   [Ruby](https://www.ruby-lang.org/en/) = 2.6.0
+-   [Bundler](https://bundler.io/) > 2.0
+-   [Node](https://nodejs.org/en/download/) > 16.0
+
+NOTE: You must build this repo with Ruby 2.6.0. 
+### Setup
+
+After you've confirmed the above requirements, all lifecycle operations can be run with NPM scripts (ex. `npm run build`)
+
+| NPM Command | Description                     |
+| ----------- | ------------------------------- |
+| build       | Build the site                  |
+| setup       | Install ruby gems               |
+| start       | Serve a local build             |
+| test        | Check for broken internal links |
+| qa          | Check for broken external links |
+
+
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.

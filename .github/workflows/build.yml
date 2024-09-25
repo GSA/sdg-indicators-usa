@@ -20,3 +20,4 @@ jobs:
           npm install
           npm run gulp
           bundle exec jekyll build
+
