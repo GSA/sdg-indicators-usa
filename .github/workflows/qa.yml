@@ -23,6 +23,6 @@ jobs:
           npm install
           npm run gulp
       - name: Build static site
-        run: npm run build
+        run: bundle exec jekyll build
       - name: Test External Links
-        run: npm run qa
+        run: bundle exec htmlproofer --check-html _site
