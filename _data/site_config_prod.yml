@@ -7,7 +7,7 @@
 # -- replace "open-sdg-site-starter" with "my-awesome-site-repo"
 # -- replace "open-sdg-data-starter" with "my-awesome-data-repo"
 #
-# NOTE: This "production" version only contains differences from site_config_prod.yml.
+# NOTE: This "production" version only contains differences from site_config.yml.
 #
 # Whereas site_config.yml can be produced using the site configuration
 # form, we recommend you manually edit this file directly.
@@ -15,8 +15,8 @@
 # See also _config_prod.yml in the root of this repository.
 
 environment: production
-# Replace my-github-org and open-sdg-data-starter as needed.
-# remote_data_prefix: "https://my-github-org.github.io/open-sdg-data-starter"
+
+remote_data_prefix: 'https://gsa.github.io/sdg-data-usa'
 
 analytics:
   # For production, you likely want to enter a Google Analytics code below.
