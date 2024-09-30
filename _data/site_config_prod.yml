@@ -16,7 +16,7 @@
 
 environment: production
 
-remote_data_prefix: 'https://gsa.github.io/sdg-data-usa'
+remote_data_prefix: 'https://gsa.github.io/sdg-data-usa-staging'
 
 analytics:
   # For production, you likely want to enter a Google Analytics code below.
