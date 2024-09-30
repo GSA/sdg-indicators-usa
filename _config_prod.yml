@@ -1,8 +1,50 @@
 # Jekyll configuration for Open SDG platform
-#
-# NOTE: This "production" version only contains differences from _config.yml.
-#       See also _data/site_config_prod.yml in this repository.
 
+# Tell the Remote Theme plugin to use the Open SDG platform (Jekyll theme).
+remote_theme: open-sdg/open-sdg@2.3.2
+
+# Replace this title as needed.
+title: general.site_title
+url: ""
 baseurl: ""
 environment: production
 usa_environment: production
+
+observation_attributes:
+  - field: COMMENT_OBS
+    label: ''
+
+# Pages
+collections:
+  pages:
+    output: true
+    permalink: /:path/
+  posts:
+    output: true
+    permalink: /news/:year/:month/:day/:title.html
+  indicators:
+    output: true
+  goals:
+    output: true
+
+# Tell Jekyll to use the Remote Theme plugin.
+plugins:
+  - jekyll-remote-theme
+  - jekyll-open-sdg-plugins
+
+remote_data_prefix: 'https://gsa.github.io/sdg-data-usa-staging'
+
+languages:
+  - en
+  - es
+
+# Exclude some files/folders.
+exclude:
+  - vendor
+  - scripts
+  - remotedata
+  - Gemfile
+  - Gemfile.lock
+  - README
+  - README.md
+  - LICENSE
