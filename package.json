@@ -1,24 +1,21 @@
 {
   "name": "sdg-indicators-usa",
   "version": "1.0.0",
-  "description": "[![GitHub Actions](https://github.com/GSA/sdg-indicators-usa/actions/workflows/build.yml/badge.svg)](https://github.com/GSA/sdg-indicators-usa/actions/workflows/build.yml) [![GitHub Actions](https://github.com/GSA/sdg-indicators-usa/actions/workflows/qa.yml/badge.svg)](https://github.com/GSA/sdg-indicators-usa/actions/workflows/qa.yml)",
+  "description": "This is a starter repository to help in implementing the [Open SDG](https://github.com/open-sdg/open-sdg) platform. [See here for documentation](https://open-sdg.readthedocs.io).",
   "main": "index.js",
   "scripts": {
-    "build": "bundle exec jekyll build",
-    "pages": "",
-    "qa": "bundle exec htmlproofer --check-html _site",
-    "setup": "bundle install",
-    "start": "bundle exec jekyll serve",
-    "test": "bundle exec htmlproofer --check-html --disable-external _site"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "pages": "npm run gulp",
+    "serve": "bundle exec jekyll serve"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GSA/sdg-indicators-usa.git"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uswds/uswds": "3.8.2"
   },
-  "author": "Data.gov <datagovhelp@gsa.gov>",
-  "license": "CC0-1.0",
-  "bugs": {
-    "url": "https://github.com/GSA/sdg-indicators-usa/issues"
-  },
-  "homepage": "https://github.com/GSA/sdg-indicators-usa#readme"
+  "devDependencies": {
+    "@uswds/compile": "^1.1.0",
+    "gulp": "^5.0.0"
+  }
 }

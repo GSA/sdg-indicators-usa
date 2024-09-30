@@ -15,7 +15,14 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: USWDS
+        run: |
+          npm install
+          npm run gulp
       - name: Build static site
-        run: npm run build
+        run: bundle exec jekyll build
       - name: Test External Links
-        run: npm run qa
+        run: bundle exec htmlproofer --check-html _site

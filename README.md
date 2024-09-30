@@ -1,11 +1,21 @@
-[![GitHub Actions](https://github.com/GSA/sdg-indicators-usa/actions/workflows/build.yml/badge.svg)](https://github.com/GSA/sdg-indicators-usa/actions/workflows/build.yml)
-[![GitHub Actions](https://github.com/GSA/sdg-indicators-usa/actions/workflows/qa.yml/badge.svg)](https://github.com/GSA/sdg-indicators-usa/actions/workflows/qa.yml)
+# Open SDG - Site starter
 
-# Sustainable Development Goal indicators
+This is a starter repository to help in implementing the [Open SDG](https://github.com/open-sdg/open-sdg) platform. [See here for documentation](https://open-sdg.readthedocs.io).
 
-This is a development website for collecting and disseminating US data for the Sustainable Development Goal global indicators.
+### Requirements
 
-For any guidance on how to use the website or develop it further for your own country, please refer to the [wiki](https://github.com/ONSdigital/sdg-indicators/wiki).
+-   [Ruby](https://www.ruby-lang.org/en/) > 3.0
+-   [Bundler](https://bundler.io/) > 2.0
+
+# Usage
+| Command | Description |
+|---------|-------------|
+| `bundle install` | install the current dependencies |
+| `bundle exec jekyll build` | build the site. dumps to `_site` |
+| `bundle exec jekyll serve` | builds the site and serves it locally |
+
+### Publication 
+- the static sites created using this repo are configured to be published by pages.cloud.gov via webhooks. For more information on cloud.gov pages visit the [website](https://cloud.gov/pages/)
 
 ### Requirements
 
@@ -32,18 +42,6 @@ After you've confirmed the above requirements, all lifecycle operations can be r
 See [CONTRIBUTING](CONTRIBUTING.md) for additional information.
 
 This site is automatically published based on the branch.
-
-| Branch    | Environment | URL                                                   | Description                                                         |
-| --------- | ----------- | ----------------------------------------------------- | ------------------------------------------------------------------- |
-| `develop` | staging     | [sdg-staging.data.gov](https://sdg-staging.data.gov/) | Ad-hoc development and reviewing significant changes with partners. |
-| `main`    | production  | [sdg.data.gov](https://sdg.data.gov/)                 | Production instance of sdg.data.gov.                                |
-
-Federalist automatically builds previews for all branches. Changes to `main` are
-automatically published to [sdg.data.gov](https://sdg.data.gov/).
-Feature branches should be branched from `main`.
-
-`develop` is used ad-hoc in order to preview significant changes with partners
-and is not part of the development workflow.
 
 ## Public domain
 
