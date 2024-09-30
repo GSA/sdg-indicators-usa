@@ -182,9 +182,6 @@ metadata_tabs:
   - scope: global
     title: indicator.global_metadata
     description: indicator.global_metadata_blurb
-  - scope: sources
-    title: indicator.sources
-    description: ''
 meta_tags: []
 news:
   category_links: false
