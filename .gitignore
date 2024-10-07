@@ -15,3 +15,6 @@ data/edges/
 data/headlines/
 data/json/
 vendor/*
+.vscode/*
+node_modules/*
+assets/uswds/*

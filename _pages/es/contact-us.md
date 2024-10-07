@@ -1,7 +1,7 @@
 ---
-title: About
-permalink: /es/about/
 layout: page
+title: Contact us
+permalink: /es/contact-us/
 language: es
 ---
 

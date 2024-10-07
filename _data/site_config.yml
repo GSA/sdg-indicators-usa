@@ -1,0 +1,239 @@
+﻿analytics:
+  ua: ''
+  gtag: ''
+  gtm: ''
+  ga_prod: ''
+breadcrumbs:
+  goal:
+    - path: /
+      label: general.home
+    - path: /goals
+      label: general.goals
+  indicator:
+    - path: /
+      label: general.home
+    - path: /goals
+      label: general.goals
+  post:
+    - path: /
+      label: general.home
+    - path: /news
+      label: menu.updates
+cookie_consent_form:
+  enabled: false
+country:
+  name: United States
+  adjective: American
+create_goals:
+  previous_next_links: true
+  goal_content_heading: ''
+  goals: []
+create_indicators:
+  previous_next_links: true
+create_pages:
+  - filename: ''
+    folder: /goals
+    layout: goals
+    title: general.goals
+  - filename: ''
+    folder: /reporting-status
+    layout: reportingstatus
+    title: status.reporting_status
+  - filename: ''
+    folder: /search
+    layout: search
+    title: search.search
+custom_css: []
+custom_js:
+  - /assets/js/custom.js
+data_edit_url: data
+data_fields:
+  units: ''
+  series: ''
+date_formats: []
+disclaimer:
+  phase: ''
+  message: ''
+  hidden: false
+email_contacts:
+  questions: sdg@omb.eop.gov
+  suggestions: sdg@omb.eop.gov
+  functional: Stephen.B.Fanning@omb.eop.gov
+empty_metadata_placeholder: ''
+empty_metadata_placeholder_sources: ''
+environment: staging
+footer_language_toggle: none
+footer_menu:
+  - path: /contact-us
+    translation_key: menu.contact_us
+  - path: /about/cookies-and-privacy/
+    translation_key: menu.cookies
+frontpage_cards:
+  - title: frontpage.download_all
+    content: ''
+    include: components/download-all-data.html
+    button_label: ''
+    button_link: ''
+    rule_color: ''
+frontpage_goals_grid:
+  title: frontpage.heading_short
+  description: frontpage.instructions_shorter
+frontpage_introduction_banner:
+  title: frontpage.intro_title
+  description: frontpage.intro_body
+goal_image_base: 'https://open-sdg.org/sdg-translations/assets/img/goals'
+goal_image_extension: ''
+goals_page:
+  title: general.goals
+  description: goal.description
+graph_color_headline: '#004466'
+graph_color_headline_high_contrast: '#55a6e5'
+graph_color_set: accessible
+graph_color_list: []
+graph_color_number: 0
+graph_title_from_series: true
+header_language_toggle: dropdown
+hide_empty_metadata: true
+hide_single_series: true
+hide_single_unit: true
+ignored_disaggregations: []
+indicator_config_form:
+  enabled: true
+  dropdowns: []
+  repository_link: /tree/main/indicator-config
+  translation_link: ''
+indicator_data_form:
+  enabled: true
+  repository_link: /tree/main/data
+indicator_metadata_form:
+  enabled: true
+  dropdowns: []
+  repository_link: /tree/main/meta
+  translation_link: ''
+  language: ''
+  scopes:
+    - national
+    - source_1
+    - source_2
+  exclude_fields:
+    - national_data_updated_date
+    - national_metadata_updated_date
+  translated: false
+indicator_tabs:
+  tab_1: ''
+  tab_2: ''
+  tab_3: ''
+  tab_4: ''
+languages:
+  - en
+languages_public: []
+logos: []
+map_layers: []
+map_options:
+  disaggregation_controls: false
+  minZoom: 5
+  maxZoom: 10
+  tileURL: ''
+  tileOptions:
+    id: ''
+    accessToken: ''
+    attribution: ''
+  colorRange: chroma.brewer.BuGn
+  noValueColor: '#f0f0f0'
+  styleNormal:
+    weight: 1
+    opacity: 1
+    fillOpacity: 0.7
+    color: '#888888'
+    dashArray: ''
+  styleHighlighted:
+    weight: 1
+    opacity: 1
+    fillOpacity: 0.7
+    color: '#111111'
+    dashArray: ''
+  styleStatic:
+    weight: 2
+    opacity: 1
+    fillOpacity: 0
+    color: '#172d44'
+    dashArray: '5,5'
+menu:
+  - path: /
+    translation_key: general.home
+    dropdown: []
+  - path: /goals
+    translation_key: general.goals
+    dropdown: []
+  - path: /reporting-status
+    translation_key: menu.reporting_status
+    dropdown: []
+  - path: /about
+    translation_key: menu.about
+    dropdown: []
+  - path: "https://www.statspolicy.gov/"
+    translation_key: U.S. Federal Statistical System
+    dropdown: []
+metadata_edit_url: metadata
+metadata_tabs:
+  - scope: national
+    title: indicator.national_metadata
+    description: indicator.national_metadata_blurb
+  - scope: global
+    title: indicator.global_metadata
+    description: indicator.global_metadata_blurb
+meta_tags: []
+news:
+  category_links: false
+observation_attributes:
+  - field: COMMENT_OBS
+    label: Comment
+progress_status:
+  status_heading: ''
+  status_help: ''
+  status_types: []
+progressive_web_app:
+  enabled: false
+  name: ''
+  short_name: ''
+  precaching: false
+proxy_indicators:
+  label: ''
+  description: ''
+remote_data_prefix: 'https://gsa.github.io/sdg-data-usa-staging'
+reporting_status:
+  title: status.reporting_status
+  description: status.description
+  disaggregation_indicator_count_label: ''
+  disaggregation_tabs: false
+  status_types:
+    - value: complete
+      label: status.reported_online
+      hide_on_goal_pages: false
+    - value: notstarted
+      label: status.exploring_data_sources
+      hide_on_goal_pages: false
+    - value: notapplicable
+      label: status.not_applicable
+      hide_on_goal_pages: false
+    - value: inprogress
+      label: status.statistics_in_progress
+      hide_on_goal_pages: false
+repository_url_data: 'https://github.com/GSA/sdg-data-usa-staging'
+repository_url_site: 'https://github.com/GSA/sdg-indicators-usa'
+search_index_boost: []
+search_index_extra_fields: []
+site_config_form:
+  enabled: true
+  dropdowns: []
+  repository_link: /tree/develop/_data
+  translation_link: ''
+time_series_attributes:
+  - field: COMMENT_TS
+    label: indicator.footnote
+  - field: DATA_LAST_UPDATE
+    label: metadata_fields.national_data_update_url
+use_new_config_forms: false
+validate_indicator_config: false
+validate_site_config: false
+x_axis_label: ''
