@@ -1,11 +1,10 @@
 const { src, pipe, dest, series, parallel, watch } = require('gulp');
 const uswds = require("@uswds/compile");
 
-const defaultTask = parallel(
-    series(
-        uswds.compile,
+
+const defaultTask = series(
         uswds.copyAssets,
-    )
+        uswds.compile,
 )
 
 exports.default = defaultTask
