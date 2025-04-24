@@ -15,7 +15,7 @@
     "@uswds/uswds": "3.9.0"
   },
   "devDependencies": {
-    "@uswds/compile": "^1.2.0",
+    "@uswds/compile": "^1.2.2",
     "gulp": "^5.0.0"
   }
 }
